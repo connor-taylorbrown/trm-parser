@@ -10,10 +10,21 @@ corpus = Corpus()
 
 
 def format_date(conversation: Conversation, format):
-    if format:
-        return conversation.parse_date()
-    else:
+    if format & 1:
         return conversation.date
+    else:
+        return conversation.parse_date()
+
+
+def print_text(text, format):
+    t, v = text
+    if t != TokenType.content:
+        return text
+    
+    if format & 2:
+        return (t, v)
+    else:
+        return (t, ' '.join(word.text for word in v))
 
 
 def summarise_conversations(conversations: list[Conversation], format):
@@ -48,24 +59,16 @@ def show_summary(conversations, all, format):
         print(*line)
 
 
-def print_text(text):
-    t, v = text
-    if t == TokenType.content:
-        return (t, ' '.join(word.text for word in v))
-    
-    return text
-
-
 def show_lines(conversations: list[Conversation], format):
     for conversation in conversations:
         for turn in conversation.turns:
             for line in turn.text:
                 n, text = line
-                print(conversation.document, n, format_date(conversation, format), turn.speaker, print_text(text))
+                print(conversation.document, n, format_date(conversation, format), turn.speaker, print_text(text, format))
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument('-F', '--format', action=argparse.BooleanOptionalAction)
+parser.add_argument('-F', '--format', type=int, default=0)
 parser.add_argument('-d', '--document', type=int)
 parser.add_argument('-g', '--goto', type=int)
 parser.add_argument('-r', '--range', type=int, default=0)

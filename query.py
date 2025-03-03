@@ -10,31 +10,42 @@ class TextQuery:
         self.trim = trim
         self.end = end
 
+    def match_line(self, words):
+        if self.word and any(word.text == self.query for word in words):
+            return [words]
+        elif any(self.query in word.text for word in words):
+            return [words]
+        
+        return []
+    
+    def match_section(self, words):
+        if not self.end:
+            return [words]
+        
+        return [words[:self.end]] + self.queries(words[1:])
+        
+    def queries(self, words):
+        for i, word in enumerate(words):
+            if self.word and self.query != word.text:
+                continue
+            elif self.query not in word.text:
+                continue
+            
+            return self.match_section(words[i:])
+        
+        return []
+
     def apply(self, type, words: list[Word]):
         if not self.query:
-            return words
+            return [words]
         
         if not type == TokenType.content:
-            return None
+            return []
         
-        result = []
-        for word in words:
-            if self.end and len(result) > self.end:
-                break
-
-            text = word.text
-            if not result:
-                if self.word and text != self.query:
-                    continue
-                elif self.query not in text:
-                    continue
-
-            if not self.trim:
-                return words
-            
-            result.append(word)
-
-        return result
+        if not self.trim:
+            return self.match_line(words)
+        
+        return self.queries(words)
 
 
 class DocumentQuery:
@@ -48,7 +59,7 @@ class DocumentQuery:
         
     def filter_turns(self, turns: list[Turn]):
         for turn in turns:
-            result = Turn(turn.speaker)
+            included = Turn(turn.speaker)
             for line in turn.text:
                 n, (t, v) = line
                 if self.type and t != self.type:
@@ -57,14 +68,12 @@ class DocumentQuery:
                 if self.speaker and turn.speaker != self.speaker:
                     continue
 
-                queried = self.query.apply(t, v)
-                if not queried:
-                    continue
-                
-                result.add_text(n, (t, queried))
+                results = self.query.apply(t, v)
+                for result in results:
+                    included.add_text(n, (t, result))
             
-            if len(result.text):
-                yield result
+            if len(included.text):
+                yield included
 
     def read_conversations(self, label):
         lines = self.reader.read_file(label)
