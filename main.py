@@ -2,7 +2,7 @@ import argparse
 from datetime import datetime
 from corpus import Conversation, Corpus, TokenType
 from files import FileReader
-from query import DocumentQuery, TextQuery
+from query import DocumentQuery, FeatureQuery, StringQuery, TextQuery
 
 
 reader = FileReader(name='MBC-raw/mbc{:03d}-not-stripped.txt', encoding='cp1252')
@@ -84,12 +84,18 @@ parser.add_argument('-q', '--query')
 parser.add_argument('-w', '--word', action=argparse.BooleanOptionalAction)
 parser.add_argument('-x', '--exclude', action=argparse.BooleanOptionalAction)
 parser.add_argument('-e', '--end', type=int, default=0)
+parser.add_argument('-f', '--features')
 
 args = parser.parse_args()
 
+if args.features:
+    word_query = FeatureQuery(args.features)
+else:
+    word_query = StringQuery(args.query, args.word)
+
+
 query = TextQuery(
-    query=args.query,
-    word=args.word,
+    query=word_query,
     trim=args.exclude,
     end=args.end
 )

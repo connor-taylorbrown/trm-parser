@@ -1,19 +1,66 @@
+from abc import ABC, abstractmethod
+import re
 from content import Word
 from corpus import Conversation, Corpus, TokenType, Turn
 from files import FileReader
 
 
-class TextQuery:
-    def __init__(self, query, word, trim, end):
+class WordQuery(ABC):
+    @abstractmethod
+    def match_word(self, word):
+        pass
+
+
+class StringQuery(WordQuery):
+    def __init__(self, query, word):
         self.query = query
         self.word = word
+
+    def match_word(self, word):
+        if not self.query:
+            return True
+        
+        if self.word:
+            return word.text == self.query
+        
+        return self.query in word.text
+
+
+class FeatureQuery(WordQuery):
+    term = re.compile(r'[+-][A-Za-z_]+')
+    
+    def __init__(self, features):
+        self.features = FeatureQuery.parse(features)
+
+    def match_word(self, word: Word):
+        on, off = self.features
+        return sum(word.features & on) > 0 and sum(word.features & ~off) > 0
+    
+    @staticmethod
+    def parse(query):
+        on = Word.features.none
+        off = Word.features.none
+        while len(query):
+            term = FeatureQuery.term.match(query).group()
+            op, feature = term[0], term[1:]
+            if op == '+':
+                on += Word.features[feature]
+            elif op == '-':
+                off += Word.features[feature]
+
+            query = query[len(term):]
+        
+        return on, off
+
+
+class TextQuery:
+    def __init__(self, query: WordQuery, trim, end):
+        self.query = query
         self.trim = trim
         self.end = end
 
     def match_line(self, words):
-        if self.word and any(word.text == self.query for word in words):
-            return [words]
-        elif any(self.query in word.text for word in words):
+        if any(self.query.match_word(word) for word in words):
             return [words]
         
         return []
@@ -26,9 +73,7 @@ class TextQuery:
         
     def queries(self, words):
         for i, word in enumerate(words):
-            if self.word and self.query != word.text:
-                continue
-            elif self.query not in word.text:
+            if not self.query.match_word(word):
                 continue
             
             return self.match_section(words[i:])
