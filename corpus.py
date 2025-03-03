@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from datetime import datetime
 import re
 
-from sentence import Sentence, read_sentences
+from content import read_content
 
 
 @dataclass
@@ -17,7 +17,7 @@ class TokenType:
     header = 3
     speaker = 4
     date = 5
-    sentence = 6
+    content = 6
 
 
 class Turn:
@@ -26,6 +26,10 @@ class Turn:
         self.text = []
     
     def add_text(self, n, text):
+        t, v = text
+        if t == TokenType.text:
+            text = (TokenType.content, [word for word in read_content(v)])
+        
         self.text.append((n, text))
 
 

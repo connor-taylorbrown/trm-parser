@@ -1,31 +1,67 @@
-from corpus import Conversation, Corpus, Turn
+from content import Word
+from corpus import Conversation, Corpus, TokenType, Turn
 from files import FileReader
 
 
+class TextQuery:
+    def __init__(self, query, word, trim, end):
+        self.query = query
+        self.word = word
+        self.trim = trim
+        self.end = end
+
+    def apply(self, type, words: list[Word]):
+        if not self.query:
+            return words
+        
+        if not type == TokenType.content:
+            return None
+        
+        result = []
+        for word in words:
+            if self.end and len(result) > self.end:
+                break
+
+            text = word.text
+            if not result:
+                if self.word and text != self.query:
+                    continue
+                elif self.query not in text:
+                    continue
+
+            if not self.trim:
+                return words
+            
+            result.append(word)
+
+        return result
+
+
 class DocumentQuery:
-    def __init__(self, reader: FileReader, corpus: Corpus, type, speaker, date, query):
+    def __init__(self, reader: FileReader, corpus: Corpus, query: TextQuery, type, speaker, date):
         self.reader = reader
         self.corpus = corpus
+        self.query = query
         self.type = type
         self.speaker = speaker
         self.date = date
-        self.query = query
-
+        
     def filter_turns(self, turns: list[Turn]):
         for turn in turns:
             result = Turn(turn.speaker)
             for line in turn.text:
-                _, (t, v) = line
+                n, (t, v) = line
                 if self.type and t != self.type:
                     continue
 
                 if self.speaker and turn.speaker != self.speaker:
                     continue
 
-                if self.query and self.query not in v:
+                queried = self.query.apply(t, v)
+                if not queried:
                     continue
                 
-                result.add_text(*line)
+                result.add_text(n, (t, queried))
             
             if len(result.text):
                 yield result
