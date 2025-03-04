@@ -34,7 +34,7 @@ class FeatureQuery(WordQuery):
 
     def match_word(self, word: Word):
         on, off = self.features
-        return sum(word.features & on) > 0 and sum(word.features & ~off) > 0
+        return all(word.features & on == on) and all(word.features & ~off == word.features)
     
     @staticmethod
     def parse(query):
@@ -53,9 +53,25 @@ class FeatureQuery(WordQuery):
         return on, off
 
 
-class TextQuery:
-    def __init__(self, query: WordQuery, trim, end):
+class WordBuffer:
+    def __init__(self, query: WordQuery):
         self.query = query
+        self.words = []
+        self.matched = False
+
+    def match(self, word):
+        self.words.append(word)
+        if self.matched:
+            return
+        
+        if self.query.match_word(word):
+            self.matched = True
+
+
+class TextQuery:
+    def __init__(self, query: WordQuery, buffer, trim, end):
+        self.query = query
+        self.buffer = buffer
         self.trim = trim
         self.end = end
 
@@ -64,21 +80,34 @@ class TextQuery:
             return [words]
         
         return []
-    
-    def match_section(self, words):
-        if not self.end:
-            return [words]
         
-        return [words[:self.end]] + self.queries(words[1:])
-        
-    def queries(self, words):
+    def match_from(self, words):
         for i, word in enumerate(words):
             if not self.query.match_word(word):
                 continue
             
-            return self.match_section(words[i:])
+            if not self.end:
+                return [words[i:]]
+            
+            return [words[i:self.end]] + self.match_from(words[i+1:])
         
         return []
+    
+    def match_buffer(self, words: list[Word]):
+        buffer = WordBuffer(self.query)
+        for i, word in enumerate(words):
+            buffer.match(word)
+
+            if any(word.features & Word.features.stop != Word.features.stop):
+                continue
+
+            if buffer.matched:
+                return [buffer.words] + self.match_buffer(words[i+1:])
+            
+            buffer = WordBuffer(self.query)
+
+        return []
+
 
     def apply(self, type, words: list[Word]):
         if not self.query:
@@ -90,7 +119,10 @@ class TextQuery:
         if not self.trim:
             return self.match_line(words)
         
-        return self.queries(words)
+        if not self.buffer:
+            return self.match_from(words)
+        
+        return self.match_buffer(words)
 
 
 class DocumentQuery:

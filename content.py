@@ -16,6 +16,18 @@ class Feature(dict):
             'exotic',
             'meta',
             'novel',
+            'past',
+            'causative',
+            'alienable',
+            'possessive',
+            'speaker',
+            'listener',
+            'determiner',
+            'tense',
+            'past',
+            'base',
+            'plural',
+            'dual'
         ])
     }
 
@@ -56,17 +68,68 @@ class Word:
         '!': features.pause + features.stop + features.exclamation
     }
 
-    def __init__(self, text, features):
+    words = {
+        'nō': features.causative + features.past + features.possessive,
+        'nōku': features.causative + features.past + features.possessive + features.speaker + features.determiner + features.base,
+        'nōu': features.causative + features.past + features.possessive + features.listener + features.determiner + features.base,
+        'nōna': features.causative + features.past + features.possessive + features.determiner + features.base,
+
+        'mō': features.causative,
+        'mōku': features.causative + features.speaker + features.determiner + features.base,
+        'mōu': features.causative + features.listener + features.determiner + features.base,
+        'mōna': features.causative + features.determiner + features.base,
+
+        'nā': features.causative + features.past + features.alienable + features.possessive,
+        'nāku': features.causative + features.past + features.alienable + features.possessive + features.speaker + features.determiner + features.base,
+        'nāu': features.causative + features.past + features.alienable + features.possessive + features.listener + features.determiner + features.base,
+        'nāna': features.causative + features.past + features.alienable + features.possessive + features.determiner + features.base,
+
+        'mā': features.causative + features.alienable + features.possessive,
+        'māku': features.causative + features.alienable + features.possessive + features.speaker + features.determiner + features.base,
+        'māu': features.causative + features.alienable + features.possessive + features.listener + features.determiner + features.base,
+        'māna': features.causative + features.alienable + features.possessive + features.determiner + features.base,
+
+        'e': features.tense,
+        'i': features.tense + features.past,
+
+        'te': features.determiner,
+        'ngā': features.determiner + features.plural,
+        
+        'au': features.base + features.determiner + features.speaker,
+        'koe': features.base + features.determiner + features.listener,
+        'ia': features.base + features.determiner,
+        
+        'māua': features.base + features.determiner + features.speaker + features.dual,
+        'tāua': features.base + features.determiner + features.speaker + features.listener + features.dual,
+        'korua': features.base + features.determiner + features.listener + features.dual,
+        'rāua': features.base + features.determiner + features.dual,
+
+        'mātou': features.base + features.determiner + features.speaker + features.plural,
+        'tātou': features.base + features.determiner + features.speaker + features.listener + features.plural,
+        'koutou': features.base + features.determiner + features.listener + features.plural,
+        'rātou': features.base + features.determiner + features.plural,
+    }
+
+    def __init__(self, word, text, features):
+        self.word = word
         self.text = text
         self.features = features
 
     def __repr__(self):
-        return f'({self.text},{self.features})'
+        return f'({self.word},{self.features})'
+    
+    @staticmethod
+    def annotate(word: str):
+        features = Word.words.get(word.lower())
+        if features is None:
+            return Word.features.none
+        
+        return features
     
 
 def read_prefix(text: str):
     for prefix in Word.prefixes:
-        if not text.startswith(prefix):
+        if not text[:len(prefix)].lower() == prefix:
             continue
 
         features, stem = read_prefix(text[len(prefix):]) 
@@ -77,15 +140,16 @@ def read_prefix(text: str):
 
 
 def read_suffix(stem: str):
+    stem = stem.rstrip()
     for suffix in Word.suffixes:
         if not stem.endswith(suffix):
             continue
 
-        features = read_suffix(stem[:-len(suffix)])
+        features, word = read_suffix(stem[:-len(suffix)])
         features += Word.suffixes[suffix]
-        return features
+        return features, word
     
-    return Word.features.none
+    return Word.features.none, stem
 
 
 def read_brackets(text: str):
@@ -114,14 +178,14 @@ def read_word(text: str):
 
     m = Word.delimiter.search(stem)
     if not m:
-        return Word(text, prefix_features + bracket_features), ''
+        return Word(text, text, prefix_features + bracket_features + Word.features.stop), ''
     
-    word = stem[:m.end()]
-    suffix_features = read_suffix(word)
+    suffix_features, word = read_suffix(stem[:m.end()])
+    features = prefix_features + bracket_features + suffix_features + Word.annotate(word)
     
     tail = stem[m.end():]
     head = text if not len(tail) else text[:-len(tail)]
-    return Word(head.strip(), prefix_features + bracket_features + suffix_features), tail
+    return Word(word, head.strip(), features), tail
 
 
 def read_content(text):
