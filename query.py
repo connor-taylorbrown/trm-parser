@@ -53,30 +53,28 @@ class FeatureQuery(WordQuery):
         return on, off
 
 
-class WordBuffer:
-    def __init__(self, query: WordQuery):
-        self.query = query
-        self.words = []
-        self.matched = False
-
-    def match(self, word):
-        self.words.append(word)
-        if self.matched:
-            return
-        
-        if self.query.match_word(word):
-            self.matched = True
-
-
 class TextQuery:
-    def __init__(self, query: WordQuery, buffer, trim, end):
-        self.query = query
-        self.buffer = buffer
+    def __init__(self, query: list[WordQuery], trim, end):
+        self.query, *self.further = query
         self.trim = trim
         self.end = end
 
+    def match_segment(self, segment):
+        queries = [self.query] + [q for q in self.further]
+        for word in segment:
+            if not queries:
+                return True
+            
+            if queries[0].match_word(word):
+                queries.pop(0)
+        
+        return False
+
     def match_line(self, words):
-        if any(self.query.match_word(word) for word in words):
+        if not any(self.query.match_word(word) for word in words):
+            return []
+        
+        if self.match_segment(words):
             return [words]
         
         return []
@@ -87,27 +85,15 @@ class TextQuery:
                 continue
             
             if not self.end:
-                return [words[i:]]
+                return [words]
             
-            return [words[i:self.end]] + self.match_from(words[i+1:])
-        
-        return []
-    
-    def match_buffer(self, words: list[Word]):
-        buffer = WordBuffer(self.query)
-        for i, word in enumerate(words):
-            buffer.match(word)
-
-            if any(word.features & Word.features.stop != Word.features.stop):
+            segment = words[i:i+self.end]
+            if not self.match_segment(segment):
                 continue
 
-            if buffer.matched:
-                return [buffer.words] + self.match_buffer(words[i+1:])
-            
-            buffer = WordBuffer(self.query)
-
+            return [segment] + self.match_from(words[i+1:])
+        
         return []
-
 
     def apply(self, type, words: list[Word]):
         if not self.query:
@@ -119,10 +105,7 @@ class TextQuery:
         if not self.trim:
             return self.match_line(words)
         
-        if not self.buffer:
-            return self.match_from(words)
-        
-        return self.match_buffer(words)
+        return self.match_from(words)
 
 
 class DocumentQuery:
