@@ -54,13 +54,14 @@ class FeatureQuery(WordQuery):
 
 
 class TextQuery:
-    def __init__(self, query: list[WordQuery], trim, end):
-        self.query, *self.further = query
+    def __init__(self, query: list[WordQuery], buffer, trim, end):
+        self.query = query
         self.trim = trim
+        self.buffer = FeatureQuery(buffer) if buffer else None
         self.end = end
 
     def match_segment(self, segment):
-        queries = [self.query] + [q for q in self.further]
+        queries = [term for term in self.query]
         for word in segment:
             if not queries:
                 return True
@@ -71,7 +72,8 @@ class TextQuery:
         return False
 
     def match_line(self, words):
-        if not any(self.query.match_word(word) for word in words):
+        term = self.query[0]
+        if not any(term.match_word(word) for word in words):
             return []
         
         if self.match_segment(words):
@@ -80,12 +82,13 @@ class TextQuery:
         return []
         
     def match_from(self, words):
+        term = self.query[0]
         for i, word in enumerate(words):
-            if not self.query.match_word(word):
+            if not term.match_word(word):
                 continue
             
             if not self.end:
-                return [words]
+                return [words[i:]]
             
             segment = words[i:i+self.end]
             if not self.match_segment(segment):
@@ -94,13 +97,34 @@ class TextQuery:
             return [segment] + self.match_from(words[i+1:])
         
         return []
+    
+    def match_buffer(self, words: list[Word]):
+        buffer = []
+        matched = True
+        for i, word in enumerate(words):
+            buffer.append(word)
+            if not matched:
+                matched = self.query.match_word(word)
+
+            if not self.buffer.match_word(word):
+                continue
+
+            if matched and self.match_segment(buffer):
+                return [buffer] + self.match_buffer(words[i+1:])
+            
+            buffer = []
+
+        return []
 
     def apply(self, type, words: list[Word]):
-        if not self.query:
+        if not self.query and not self.buffer:
             return [words]
         
         if not type == TokenType.content:
             return []
+        
+        if self.buffer:
+            return self.match_buffer(words)
         
         if not self.trim:
             return self.match_line(words)
@@ -165,18 +189,20 @@ class DocumentQuery:
     def goto_line(self, document, goto, range):
         def get_turns():
             for turn in conversation.turns:
-                result = Turn(turn.speaker)
+                included = Turn(turn.speaker)
                 for line in turn.text:
-                    n, text = line
+                    n, (t, v) = line
                     if n < goto - range:
                         continue
                     elif n > goto + range:
                         break
 
-                    result.add_text(n, text)
+                    results = self.query.apply(t, v)
+                    for result in results:
+                        included.add_text(n, (t, result))
                 
-                if len(result.text):
-                    yield result
+                if len(included.text):
+                    yield included
 
         for conversation in self.read_conversations(document):
             result = Conversation(conversation.document, conversation.date)

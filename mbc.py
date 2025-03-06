@@ -23,6 +23,7 @@ parser.add_argument('-S', '--speaker')
 
 parser.add_argument('-q', '--query', action='append')
 parser.add_argument('-f', '--features', action='append')
+parser.add_argument('-b', '--buffer')
 parser.add_argument('-w', '--word', action=argparse.BooleanOptionalAction)
 parser.add_argument('-x', '--exclude', action=argparse.BooleanOptionalAction)
 parser.add_argument('-e', '--end', type=int, default=0)
@@ -113,13 +114,16 @@ def run(query: TextQuery):
 if __name__ == '__main__':
     if args.features:
         word_query = [FeatureQuery(f) for f in args.features]
-    else:
+    elif args.query:
         word_query = [StringQuery(q, args.word) for q in args.query]
+    else:
+        word_query = []
     
     query = TextQuery(
         query=word_query,
         trim=args.exclude,
-        end=args.end
+        end=args.end,
+        buffer=args.buffer
     )
     
     run(query)

@@ -7,6 +7,7 @@ class Feature(dict):
         k: v 
         for v, k in enumerate([
             'none',
+            'start',
             'pause',
             'stop',
             'exclamation',
@@ -16,15 +17,23 @@ class Feature(dict):
             'exotic',
             'meta',
             'novel',
-            'past',
+            'equative',
+            'partitive',
             'causative',
+            'ergative',
+            'accusative',
             'alienable',
             'possessive',
+            'personal',
             'speaker',
             'listener',
             'determiner',
+            'demonstrative',
+            'proximal',
+            'medial',
             'tense',
             'past',
+            'future',
             'base',
             'plural',
             'dual'
@@ -70,44 +79,82 @@ class Word:
 
     words = {
         'nō': features.causative + features.past + features.possessive,
-        'nōku': features.causative + features.past + features.possessive + features.speaker + features.determiner + features.base,
-        'nōu': features.causative + features.past + features.possessive + features.listener + features.determiner + features.base,
-        'nōna': features.causative + features.past + features.possessive + features.determiner + features.base,
-
-        'mō': features.causative,
-        'mōku': features.causative + features.speaker + features.determiner + features.base,
-        'mōu': features.causative + features.listener + features.determiner + features.base,
-        'mōna': features.causative + features.determiner + features.base,
+        'nōku': features.causative + features.past + features.possessive + features.personal + features.speaker + features.determiner + features.base,
+        'nōu': features.causative + features.past + features.possessive + features.personal + features.listener + features.determiner + features.base,
+        'nōna': features.causative + features.past + features.possessive + features.personal + features.determiner + features.base,
 
         'nā': features.causative + features.past + features.alienable + features.possessive,
-        'nāku': features.causative + features.past + features.alienable + features.possessive + features.speaker + features.determiner + features.base,
-        'nāu': features.causative + features.past + features.alienable + features.possessive + features.listener + features.determiner + features.base,
-        'nāna': features.causative + features.past + features.alienable + features.possessive + features.determiner + features.base,
+        'nāku': features.causative + features.past + features.alienable + features.possessive + features.personal + features.speaker + features.determiner + features.base,
+        'nāu': features.causative + features.past + features.alienable + features.possessive + features.personal + features.listener + features.determiner + features.base,
+        'nāna': features.causative + features.past + features.alienable + features.possessive + features.personal + features.determiner + features.base,
+
+        'mō': features.causative,
+        'mōku': features.causative + features.personal + features.speaker + features.determiner + features.base,
+        'mōu': features.causative + features.personal + features.listener + features.determiner + features.base,
+        'mōna': features.causative + features.personal + features.determiner + features.base,
 
         'mā': features.causative + features.alienable + features.possessive,
-        'māku': features.causative + features.alienable + features.possessive + features.speaker + features.determiner + features.base,
-        'māu': features.causative + features.alienable + features.possessive + features.listener + features.determiner + features.base,
-        'māna': features.causative + features.alienable + features.possessive + features.determiner + features.base,
+        'māku': features.causative + features.alienable + features.possessive + features.personal + features.speaker + features.determiner + features.base,
+        'māu': features.causative + features.alienable + features.possessive + features.personal + features.listener + features.determiner + features.base,
+        'māna': features.causative + features.alienable + features.possessive + features.personal + features.determiner + features.base,
 
-        'e': features.tense,
-        'i': features.tense + features.past,
+        'tō': features.possessive + features.determiner,
+        'tōku': features.possessive + features.personal + features.speaker + features.determiner + features.base,
+        'tōu': features.possessive + features.personal + features.listener + features.determiner + features.base,
+        'tōna': features.possessive + features.personal + features.determiner + features.base,
+
+        'tā': features.alienable + features.possessive + features.determiner,
+        'tāku': features.alienable + features.possessive + features.personal + features.speaker + features.determiner + features.base,
+        'tāu': features.alienable + features.possessive + features.personal + features.listener + features.determiner + features.base,
+        'tāna': features.alienable + features.possessive + features.personal + features.determiner + features.base,
+
+        'ō': features.plural + features.possessive + features.determiner,
+        'ōku': features.plural + features.possessive + features.personal + features.speaker + features.determiner + features.base,
+        'ōu': features.plural + features.possessive + features.personal + features.listener + features.determiner + features.base,
+        'ōna': features.plural + features.possessive + features.personal + features.determiner + features.base,
+
+        'ā': features.plural + features.alienable + features.possessive + features.determiner,
+        'āku': features.plural + features.alienable + features.possessive + features.personal + features.speaker + features.determiner + features.base,
+        'āu': features.plural + features.alienable + features.possessive + features.personal + features.listener + features.determiner + features.base,
+        'āna': features.plural + features.alienable + features.possessive + features.personal + features.determiner + features.base,
+
+        'e': features.tense + features.ergative,
+        'i': features.tense + features.past + features.accusative,
+        'hei': features.tense + features.future,
 
         'te': features.determiner,
         'ngā': features.determiner + features.plural,
         
-        'au': features.base + features.determiner + features.speaker,
-        'koe': features.base + features.determiner + features.listener,
+        'a': features.determiner + features.personal + features.possessive + features.alienable,
+        'o': features.possessive,
+
+        'tēnei': features.determiner + features.demonstrative + features.proximal,
+        'ēnei': features.determiner + features.demonstrative + features.proximal + features.plural,
+        'wēnei': features.determiner + features.demonstrative + features.proximal + features.plural,
+        'tēnā': features.determiner + features.demonstrative + features.medial,
+        'ēnā': features.determiner + features.demonstrative + features.medial + features.plural,
+        'wēnā': features.determiner + features.demonstrative + features.medial + features.plural,
+        'tērā': features.determiner + features.demonstrative,
+        'ērā': features.determiner + features.demonstrative + features.plural,
+        'wērā': features.determiner + features.demonstrative + features.plural,
+
+        'ko': features.equative,
+        'he': features.partitive,
+        
+        'au': features.base + features.determiner + features.personal + features.speaker,
+        'koe': features.base + features.determiner + features.personal + features.listener,
+        'wai': features.base + features.determiner + features.personal + features.question,
         'ia': features.base + features.determiner,
         
-        'māua': features.base + features.determiner + features.speaker + features.dual,
-        'tāua': features.base + features.determiner + features.speaker + features.listener + features.dual,
-        'korua': features.base + features.determiner + features.listener + features.dual,
-        'rāua': features.base + features.determiner + features.dual,
+        'māua': features.base + features.determiner + features.personal + features.speaker + features.dual,
+        'tāua': features.base + features.determiner + features.personal + features.speaker + features.listener + features.dual,
+        'korua': features.base + features.determiner + features.personal + features.listener + features.dual,
+        'rāua': features.base + features.determiner + features.personal + features.dual,
 
-        'mātou': features.base + features.determiner + features.speaker + features.plural,
-        'tātou': features.base + features.determiner + features.speaker + features.listener + features.plural,
-        'koutou': features.base + features.determiner + features.listener + features.plural,
-        'rātou': features.base + features.determiner + features.plural,
+        'mātou': features.base + features.determiner + features.personal + features.speaker + features.plural,
+        'tātou': features.base + features.determiner + features.personal + features.speaker + features.listener + features.plural,
+        'koutou': features.base + features.determiner + features.personal + features.listener + features.plural,
+        'rātou': features.base + features.determiner + features.personal + features.plural,
     }
 
     def __init__(self, word, text, features):
@@ -122,7 +169,10 @@ class Word:
     def annotate(word: str):
         features = Word.words.get(word.lower())
         if features is None:
-            return Word.features.none
+            features = Word.features.none
+
+        if word and word[0].isupper():
+            features += Word.features.start
         
         return features
     
