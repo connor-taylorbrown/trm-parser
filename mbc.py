@@ -3,6 +3,7 @@ from datetime import datetime
 from corpus import Conversation, Corpus, TokenType
 from files import FileReader
 from query import DocumentQuery, FeatureQuery, StringQuery, TextQuery, WordQuery
+from summary import ConversationFormatter, Summary
 
 
 reader = FileReader(name='MBC-raw/mbc{:03d}-not-stripped.txt', encoding='cp1252')
@@ -16,6 +17,7 @@ parser.add_argument('-r', '--range', type=int, default=0)
 
 parser.add_argument('-s', '--summary', action=argparse.BooleanOptionalAction)
 parser.add_argument('-a', '--all', action=argparse.BooleanOptionalAction)
+parser.add_argument('-c', '--count')
 
 parser.add_argument('-D', '--date', type=lambda s: datetime.strptime(s, "%Y-%m-%d").date())
 parser.add_argument('-t', '--type', type=int)
@@ -31,62 +33,12 @@ parser.add_argument('-e', '--end', type=int, default=0)
 args = parser.parse_args()
 
 
-def format_date(conversation: Conversation, format):
-    if format & 1:
-        return conversation.date
-    else:
-        return conversation.parse_date()
-
-
-def print_text(text, format):
-    t, v = text
-    if t != TokenType.content:
-        return text
-    
-    if format & 2:
-        return (t, v)
-    else:
-        return (t, ' '.join(word.text for word in v))
-
-
-def summarise_conversations(conversations: list[Conversation], format):
-    for conversation in conversations:
-        summary = conversation.summarise()
-
-        yield conversation.document, format_date(conversation, format), len(conversation.turns), len(summary), summary
-
-
-def summarise_all(conversations: list[Conversation]):
-    all = {}
-    for conversation in conversations:
-        summary = conversation.summarise()
-        for speaker in summary:
-            running = all.get(speaker)
-            if not running:
-                all[speaker] = 0
-            
-            all[speaker] += summary[speaker]
-    
-    for k in all:
-        yield all[k], k
-
-
-def show_summary(conversations, all, format):
-    if all:
-        lines = summarise_all(conversations)
-    else:
-        lines = summarise_conversations(conversations, format)
-    
-    for line in lines:
-        print(*line)
-
-
-def show_lines(conversations: list[Conversation], format):
+def show_lines(formatter: ConversationFormatter, conversations: list[Conversation]):
     for conversation in conversations:
         for turn in conversation.turns:
             for line in turn.text:
                 n, text = line
-                print(conversation.document, n, format_date(conversation, format), turn.speaker, print_text(text, format))
+                print(conversation.document, n, formatter.format_date(conversation), turn.speaker, formatter.print_text(text))
 
 
 def run(query: TextQuery):
@@ -105,10 +57,17 @@ def run(query: TextQuery):
     else:
         conversations = documents.filter_conversations(args.document)
 
+    formatter = ConversationFormatter(format=args.format)
+    summary = Summary(
+        formatter=formatter,
+        conversations=conversations,
+        all=args.all,
+        count=args.count
+    )
     if args.summary:
-        show_summary(conversations, args.all, args.format)
+        summary.show()
     else:
-        show_lines(conversations, args.format)
+        show_lines(formatter, conversations)
 
 
 if __name__ == '__main__':

@@ -52,17 +52,6 @@ class Conversation:
             return datetime.strptime(date, '%y-%m-%d').date()
         except:
             return datetime.strptime(date, '%Y-%m-%d').date()
-
-    def summarise(self):
-        summary = {}
-        for turn in self.turns:
-            count = summary.get(turn.speaker)
-            if not count:
-                summary[turn.speaker] = 0
-            
-            summary[turn.speaker] += 1
-
-        return summary
     
     def add_turn(self, turn):
         self.turns.append(turn)
