@@ -1,16 +1,16 @@
 import numpy as np
 from content import Word
-from header import Header
+from sentence.header import Header
 
 
 lexicon = [
-    ('m', Word.features.possessive, Word.features.causative, Word.features.plural),
-    ('n', Word.features.possessive, Word.features.causative + Word.features.past, Word.features.plural),
-    ('ō', Word.features.none, Word.features.possessive + Word.features.plural, Word.features.none),
-    ('ā', Word.features.none, Word.features.possessive + Word.features.alienable + Word.features.plural, Word.features.none),
-    ('na', Word.features.possessive, Word.features.none, Word.features.none),
-    ('ku', Word.features.possessive, Word.features.speaker, Word.features.none),
-    ('u', Word.features.possessive, Word.features.listener, Word.features.none),
+    ('m', True, Word.features.possessive, Word.features.causative, Word.features.plural),
+    ('n', True, Word.features.possessive, Word.features.causative + Word.features.past, Word.features.plural),
+    ('ō', True, Word.features.none, Word.features.possessive + Word.features.plural, Word.features.none),
+    ('ā', True, Word.features.none, Word.features.possessive + Word.features.alienable + Word.features.plural, Word.features.none),
+    ('na', False, Word.features.possessive, Word.features.none, Word.features.none),
+    ('ku', False, Word.features.possessive, Word.features.speaker, Word.features.none),
+    ('u', False, Word.features.possessive, Word.features.listener, Word.features.none),
 ]
 
 

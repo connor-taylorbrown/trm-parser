@@ -1,7 +1,7 @@
 import numpy as np
 
-from content import Word
-from header import Header
+from content import Feature, Word
+from sentence.header import Header
 
 
 class Phrase:
@@ -10,10 +10,16 @@ class Phrase:
         self.features = np.copy(Word.features.none)
 
     def __repr__(self):
-        return f'Phrase(words=[{",".join(self.words)}])'
+        features = []
+        for feature in Feature.features:
+            i = Feature.features[feature]
+            if self.features[i-1]:
+                features.append('+' + feature)
 
-    def append(self, word, features):
-        self.words.append(word)
+        return f'Phrase(words="{" ".join(self.words)}", {"".join(features)})'
+
+    def append(self, word: Word, features):
+        self.words.append(word.text)
         self.features |= features
 
     '''
@@ -35,7 +41,15 @@ class Sentence:
         
         return Phrase()
     
-    def splice(self, phrase: Phrase, last):
+    def splice(self, phrase: Phrase, last, current):
+        # Commit existing interpretation
+        if not np.any(last & Word.features.preposition):
+            return self.terminate(phrase)
+        
+        # Interpretation as determiner is valid, continue
+        if np.any(current & Word.features.determiner):
+            return phrase
+        
         # End of first phrase
         if not self.phrases:
             return self.terminate(phrase)
@@ -46,18 +60,14 @@ class Sentence:
             return self.terminate(phrase)
         
         # Amend interpretation given two sequential prepositions
-        if np.any(last & Word.features.preposition):
-            target.splice(phrase)
-            return Phrase()
-        
-        # Commit existing interpretation
-        return self.terminate(phrase)
+        target.splice(phrase)
+        return Phrase()
 
     
     def read(self, words: list[Word]):
         buffer = Phrase()
         last = Word.features.none
-        for text in words:
+        for i, text in enumerate(words):
             # Fetch prefix semantics and apply punctuation
             signifier = text.word
             stem, prefix_features = self.header.enter(signifier)
@@ -65,7 +75,7 @@ class Sentence:
             # Start new buffer when reading preposition
             word_features = self.header.match(prefix_features, stem)
             if np.any(word_features & Word.features.preposition):
-                buffer = self.splice(buffer, last)
+                buffer = self.splice(buffer, last, word_features)
 
             # Start new buffer when reading determiner, unless local to a preposition
             if np.any(word_features & Word.features.determiner) and not np.any(last & Word.features.preposition):
@@ -73,9 +83,12 @@ class Sentence:
             
             # Append with punctuation features and terminate if necessary
             word_features |= text.features
-            buffer.append(signifier, word_features)
+            buffer.append(text, word_features)
             if np.any(word_features & Word.features.pause):
                 buffer = self.terminate(buffer)
+
+            if np.any(word_features & Word.features.stop):
+                return i
 
             # If stem matches prefix, suppress local matching of prepositions
             if not np.any(word_features & ~prefix_features):
@@ -84,4 +97,5 @@ class Sentence:
                 last = Word.features.none
 
         self.terminate(buffer)
+        return len(words)
     

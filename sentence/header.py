@@ -7,7 +7,10 @@ class Header:
         self.lexicon = lexicon
 
     def enter(self, word: str):
-        for signifier, expectation, effect, override in self.lexicon:
+        for signifier, is_prefix, expectation, effect, override in self.lexicon:
+            if not is_prefix:
+                continue
+
             # Identify a valid signifier
             prefix = word[:len(signifier)]
             if prefix.lower() != signifier:
@@ -30,12 +33,16 @@ class Header:
         if not stem:
             return conditions
         
-        for signifier, expectation, effect, override in self.lexicon:
+        for signifier, _, expectation, effect, override in self.lexicon:
             # Identify a valid signifier
             if stem.lower() != signifier:
                 continue
 
-            # Reject signifier if it does not match conditions
+            # Reject signifier if it has no expectations (is not a clitic)
+            if not np.any(expectation):
+                return np.copy(Word.features.none)
+
+            # Reject signifier if it does not match expectations
             if np.any(expectation & ~conditions):
                 return np.copy(Word.features.none)
             
