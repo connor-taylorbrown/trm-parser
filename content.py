@@ -17,6 +17,7 @@ class Feature(dict):
             'exotic',
             'meta',
             'novel',
+            'preposition',
             'equative',
             'partitive',
             'causative',
