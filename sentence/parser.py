@@ -13,17 +13,28 @@ causative = Word.features.preposition + Word.features.causative
 determiner = Word.features.determiner
 personal = Word.features.determiner + Word.features.personal
 
-speaker = Word.features.personal + Word.features.speaker
-listener = Word.features.personal + Word.features.listener
-
 stop = Word.features.pause + Word.features.stop
 
 lexicon = [
-    ('ku', False, Word.features.possessive, speaker, Word.features.none),
-    ('u', False, Word.features.possessive, listener, Word.features.none),
+    ('ku', False, Word.features.possessive, Word.features.personal + Word.features.speaker, Word.features.none),
+    ('u', False, Word.features.possessive, Word.features.personal + Word.features.listener, Word.features.none),
     ('na', False, Word.features.possessive, Word.features.personal, Word.features.none),
     ('tahi', False, Word.features.demonstrative, Word.features.number, Word.features.none),
     ('tehi', False, Word.features.demonstrative, Word.features.number, Word.features.none),
+
+    ('au', True, Word.features.none, Word.features.pronoun + Word.features.personal + Word.features.speaker, Word.features.none),
+    ('koe', True, Word.features.none, Word.features.pronoun + Word.features.personal + Word.features.listener, Word.features.none),
+    ('ia', True, Word.features.none, Word.features.pronoun + Word.features.personal + Word.features.other, Word.features.none),
+
+    ('tāua', True, Word.features.none, Word.features.pronoun + Word.features.personal + Word.features.speaker + Word.features.listener + Word.features.dual, Word.features.none),
+    ('māua', True, Word.features.none, Word.features.pronoun + Word.features.personal + Word.features.speaker + Word.features.dual, Word.features.none),
+    ('korua', True, Word.features.none, Word.features.pronoun + Word.features.personal + Word.features.listener + Word.features.dual, Word.features.none),
+    ('rāua', True, Word.features.none, Word.features.pronoun + Word.features.personal + Word.features.other + Word.features.dual, Word.features.none),
+
+    ('tātou', True, Word.features.none, Word.features.pronoun + Word.features.personal + Word.features.speaker + Word.features.listener + Word.features.plural, Word.features.none),
+    ('mātou', True, Word.features.none, Word.features.pronoun + Word.features.personal + Word.features.speaker + Word.features.plural, Word.features.none),
+    ('koutou', True, Word.features.none, Word.features.pronoun + Word.features.personal + Word.features.listener + Word.features.plural, Word.features.none),
+    ('rātou', True, Word.features.none, Word.features.pronoun + Word.features.personal + Word.features.other + Word.features.plural, Word.features.none),
 
     ('tahi', True, Word.features.none, Word.features.number, Word.features.none),
     ('rua', True, Word.features.none, Word.features.number, Word.features.none),
@@ -50,7 +61,6 @@ lexicon = [
     ('ki', True, Word.features.none, goal, Word.features.none),
     ('ka', True, Word.features.none, Word.features.preposition, Word.features.none),
     ('ana', True, Word.features.none, Word.features.determiner + Word.features.plural, Word.features.none),
-    ('au', True, Word.features.none, Word.features.speaker, Word.features.none),
     ('ai', True, Word.features.none, Word.features.conditional, Word.features.none),
     ('a', True, Word.features.none, possessive + personal, Word.features.none),
     ('ko', True, Word.features.none, Word.features.preposition, Word.features.none),
@@ -138,8 +148,13 @@ class Sentence:
             signifier = text.word
             stem, prefix_features = self.header.enter(signifier)
 
-            # Start new buffer when reading preposition
             word_features = self.header.match(prefix_features, stem)
+
+            # Incorporate determiner via pronoun unless previously specified
+            if np.any(word_features & Word.features.pronoun) and not np.any(last & Word.features.determiner):
+                word_features |= Word.features.determiner
+
+            # Start new buffer when reading preposition
             if np.any(word_features & Word.features.preposition):
                 buffer = self.splice(buffer, last, word_features)
 
@@ -158,8 +173,11 @@ class Sentence:
             if np.any(word_features & Word.features.pause):
                 buffer = self.terminate(buffer)
 
+            # Suppress requirement for complement if possible
+            if np.any(word_features & (Word.features.demonstrative | Word.features.pronoun)):
+                last = word_features & ~Word.features.determiner
             # If stem matches prefix, suppress local matching of prepositions
-            if not np.any(word_features & ~prefix_features):
+            elif not np.any(word_features & ~prefix_features):
                 last = word_features
             else:
                 last = Word.features.none

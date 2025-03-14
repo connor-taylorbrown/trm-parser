@@ -1,6 +1,6 @@
 import numpy as np
 from content import Word, read_content
-from sentence.parser import Phrase, Sentence, lexicon, causative, alienable, determiner, speaker, possessive, personal, goal, stop
+from sentence.parser import Phrase, Sentence, lexicon, causative, alienable, determiner, possessive, personal, goal, stop
 
 import logging
 
@@ -37,6 +37,8 @@ def test_read():
         
         return [Word(word, word, Word.features.none)] + words(end_features, *text[1:])
 
+    speaker = Word.features.personal + Word.features.speaker
+    other = Word.features.personal + Word.features.other
     past = Word.features.preposition + Word.features.past
     cases = [
         (
@@ -117,7 +119,7 @@ def test_read():
         (
             'preposition-ambiguous determiner',
             words(Word.features.none, 'ki', 'a', 'au'),
-            [phrase(goal + possessive + determiner + speaker, 'ki', 'a', 'au')]
+            [phrase(Word.features.pronoun + goal + possessive + determiner + speaker, 'ki', 'a', 'au')]
         ),
         (
             'unusual',
@@ -132,7 +134,7 @@ def test_read():
         (
             'sentence terminator',
             words(stop, 'Nā', 'rātou', 'i', 'kī', 'mai', 'ki', 'a', 'au') + words(stop, 'Āe'),
-            [phrase(causative + past + alienable, 'Nā', 'rātou'), phrase(past + Word.features.tense, 'i', 'kī', 'mai'), phrase(goal + possessive + determiner + speaker + stop, 'ki', 'a', 'au')]
+            [phrase(Word.features.determiner + Word.features.pronoun + causative + past + alienable + other + Word.features.plural, 'Nā', 'rātou'), phrase(past + Word.features.tense, 'i', 'kī', 'mai'), phrase(Word.features.pronoun + goal + possessive + determiner + speaker + stop, 'ki', 'a', 'au')]
         )
     ]
 
