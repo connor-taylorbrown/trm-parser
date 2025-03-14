@@ -1,60 +1,11 @@
 import numpy as np
 from content import Word, read_content
-from sentence.parser import Phrase, Sentence
+from sentence.parser import Phrase, Sentence, lexicon, causative, alienable, determiner, speaker, possessive, personal, goal, stop
 
 import logging
 
 logger = logging.getLogger(__name__)
 
-
-alienable = Word.features.possessive + Word.features.alienable
-
-past = Word.features.preposition + Word.features.past
-goal = Word.features.preposition + Word.features.goal
-possessive = Word.features.preposition + alienable
-causative = Word.features.preposition + Word.features.causative
-
-determiner = Word.features.determiner
-personal = Word.features.determiner + Word.features.personal
-
-speaker = Word.features.personal + Word.features.speaker
-listener = Word.features.personal + Word.features.listener
-
-stop = Word.features.pause + Word.features.stop
-
-lexicon = [
-    ('ngā', True, Word.features.none, determiner + Word.features.plural, Word.features.none),
-    ('n', True, Word.features.possessive, causative + past, Word.features.determiner + Word.features.plural),
-    ('me', True, Word.features.none, Word.features.preposition, Word.features.none),
-    ('m', True, Word.features.possessive, causative, Word.features.determiner + Word.features.plural),
-    ('ā', True, Word.features.none, alienable + Word.features.determiner + Word.features.plural, Word.features.none),
-    ('ō', True, Word.features.none, Word.features.possessive + Word.features.determiner + Word.features.plural, Word.features.none),
-    ('i', True, Word.features.none, past, Word.features.none),
-    ('te', True, Word.features.none, determiner, Word.features.none),
-    ('t', True, Word.features.determiner, Word.features.none, Word.features.plural),
-    ('ē', True, Word.features.none, Word.features.demonstrative + Word.features.determiner + Word.features.plural, Word.features.none),
-    ('kia', True, Word.features.none, Word.features.preposition, Word.features.none),
-    ('ki', True, Word.features.none, goal, Word.features.none),
-    ('ka', True, Word.features.none, Word.features.preposition, Word.features.none),
-    ('ana', True, Word.features.none, Word.features.none, Word.features.none),
-    ('au', True, Word.features.none, Word.features.speaker, Word.features.none),
-    ('a', True, Word.features.none, possessive + personal, Word.features.none),
-    ('ko', True, Word.features.none, Word.features.preposition, Word.features.none),
-    ('he', True, Word.features.none, Word.features.determiner, Word.features.none),
-    ('e', True, Word.features.none, Word.features.preposition, Word.features.none),
-    ('o', True, Word.features.none, Word.features.preposition, Word.features.none),
-    ('kei', True, Word.features.none, Word.features.preposition, Word.features.none),
-    ('hei', True, Word.features.none, Word.features.preposition, Word.features.none),
-
-    ('tahi', False, Word.features.demonstrative, Word.features.none, Word.features.none),
-    ('rā', False, Word.features.demonstrative, Word.features.none, Word.features.none),
-    ('nei', False, Word.features.demonstrative, Word.features.none, Word.features.none),
-    ('nā', False, Word.features.demonstrative, Word.features.none, Word.features.none),
-    ('ku', False, Word.features.possessive, speaker, Word.features.none),
-    ('u', False, Word.features.possessive, listener, Word.features.none),
-    ('na', False, Word.features.possessive, Word.features.personal, Word.features.none),
-]
-    
 
 def phrase(features, *words):
     phrase = Phrase()
@@ -86,6 +37,7 @@ def test_read():
         
         return [Word(word, word, Word.features.none)] + words(end_features, *text[1:])
 
+    past = Word.features.preposition + Word.features.past
     cases = [
         (
             'single word',
@@ -105,7 +57,7 @@ def test_read():
         (
             'content-preposition',
             words(Word.features.none, 'nā', 'Hone', 'i'),
-            [phrase(causative + past + alienable, 'nā', 'Hone'), phrase(past, 'i')]
+            [phrase(causative + past + alienable, 'nā', 'Hone'), phrase(past + Word.features.tense, 'i')]
         ),
         (
             'content-determiner',
@@ -125,27 +77,37 @@ def test_read():
         (
             'embedded preposition-preposition',
             words(Word.features.none, 'nāku', 'i'),
-            [phrase(causative + past + alienable + speaker, 'nāku'), phrase(past, 'i')]
+            [phrase(causative + past + alienable + speaker, 'nāku'), phrase(past + Word.features.tense, 'i')]
         ),
         (
             'false start',
             words(Word.features.none, 'nā', 'i'),
-            [phrase(causative + past + alienable, 'nā'), phrase(past, 'i')]
+            [phrase(causative + past + alienable, 'nā'), phrase(past + Word.features.tense, 'i')]
         ),
         (
-            'splicing',
+            'splicing preposition on preposition',
             words(Word.features.none, 'te', 'whare', 'nā', 'i'),
-            [phrase(determiner, 'te', 'whare', 'nā'), phrase(past, 'i')]
+            [phrase(determiner, 'te', 'whare', 'nā'), phrase(past + Word.features.tense, 'i')]
+        ),
+        (
+            'splicing determiner on preposition',
+            words(Word.features.none, 'e', 'ngaro', 'ana', 'i'),
+            [phrase(Word.features.preposition + Word.features.tense, 'e', 'ngaro', 'ana'), phrase(past + Word.features.tense, 'i')]
+        ),
+        (
+            'splicing determiner on determiner',
+            words(Word.features.none, 'e', 'rongohia', 'ake', 'ana', 'te'),
+            [phrase(Word.features.preposition + Word.features.tense, 'e', 'rongohia', 'ake', 'ana'), phrase(determiner, 'te')]
         ),
         (
             'prosodic splicing prohibition',
             words(Word.features.pause, 'te', 'whare') + words(Word.features.none, 'nā', 'i'),
-            [phrase(determiner + Word.features.pause, 'te', 'whare'), phrase(causative + past + alienable, 'nā'), phrase(past, 'i')]
+            [phrase(determiner + Word.features.pause, 'te', 'whare'), phrase(causative + past + alienable, 'nā'), phrase(past + Word.features.tense, 'i')]
         ),
         (
             'semantic splicing prohibition',
             words(Word.features.none, 'te', 'tāne', 'nāna', 'i'),
-            [phrase(determiner, 'te', 'tāne'), phrase(causative + past + alienable + Word.features.personal, 'nāna'), phrase(past, 'i')]
+            [phrase(determiner, 'te', 'tāne'), phrase(causative + past + alienable + Word.features.personal, 'nāna'), phrase(past + Word.features.tense, 'i')]
         ),
         (
             'ambiguous preposition-determiner',
@@ -160,12 +122,17 @@ def test_read():
         (
             'unusual',
             words(Word.features.none, 'e', 'tēnā', 'iwi', 'rānei', 'ki', 'mua'),
-            [phrase(Word.features.preposition + Word.features.determiner + Word.features.demonstrative, 'e', 'tēnā', 'iwi', 'rānei'), phrase(goal, 'ki', 'mua')]
+            [phrase(Word.features.preposition + Word.features.determiner + Word.features.demonstrative + Word.features.tense, 'e', 'tēnā', 'iwi', 'rānei'), phrase(goal, 'ki', 'mua')]
+        ),
+        (
+            'unusual #2',
+            words(Word.features.none, 'mā', 'te', 'marae', 'rā', 'pea', 'hei', 'whakaata', 'mai'),
+            [phrase(causative + alienable + determiner, 'mā', 'te', 'marae', 'rā', 'pea'), phrase(Word.features.preposition + Word.features.tense, 'hei', 'whakaata', 'mai')]
         ),
         (
             'sentence terminator',
             words(stop, 'Nā', 'rātou', 'i', 'kī', 'mai', 'ki', 'a', 'au') + words(stop, 'Āe'),
-            [phrase(causative + past + alienable, 'Nā', 'rātou'), phrase(past, 'i', 'kī', 'mai'), phrase(goal + possessive + determiner + speaker + stop, 'ki', 'a', 'au')]
+            [phrase(causative + past + alienable, 'Nā', 'rātou'), phrase(past + Word.features.tense, 'i', 'kī', 'mai'), phrase(goal + possessive + determiner + speaker + stop, 'ki', 'a', 'au')]
         )
     ]
 
@@ -194,10 +161,10 @@ def test_selected_cases():
         13: 'Tū whakahīhī ana te, te, te tangata, erangi ka ū, titiro whakamuri, ā, i neke pēwhea, pēwhea mai tātou i roto i ngā mamaetanga, ā, haere mai ana te, te konohi aroha me te roimata.',
         14: 'Ko ētahi o rātou ka, kāore i te tino mārama.',
         15: 'Ā, mēnā ka whakaae mai a [Marie Clay] i wā mātou mahi, āe.',
-        16: 'Koira noa iho aku mahi.',
+        16: 'Ka kōrero mai a Rehua ki a Pou, "Me āta mau rawa i tā tāua pōtiki.',
         17: 'E korekore hoki, ā, tērā ka kōrero koutou i te kaupapa nei, ka tangi ake ngā reo o ngā koroua, o ngā kuia, ā, ko tētahi mea e ngaro ana i roto i te reo i tēnei wā, ahakoa tātou kōrero mō tō tātou reo Māori nei, te pai o tērā tangata mō te kōrero, te ātaahua o ana kōrero, engari, mehemea kāhore te wairua i roto i ana kōrero kei a ia, kāhore e rongohia ake ana te reka o ana kōrero.',
         18: 'Koinei te whakaaro a ētahi o tāua i te hui o ngā takawaenga mātauranga o te motu i Māngere inakuanei.',
-        19: 'Ā, i muri i tērā, ka hoki mai ai ia.',
+        19: 'Kia whai hua, kia whai wāhi mātou {unclear} Kia āhei ahau e Ihowa ki te tāpae i ōku hē katoa ki mua i a koe, māu e Ihowa, e te matua, {unclear} i ēnei hē katoa, ōku hāereeretanga i roto i ngā {unclear} (o te whenua pōuri), ōku nekeneketanga, kia tahuri ai koutou i roto hoki i tā koutou',
         20: 'Nō konei rā mātou rā ko Te Whiti te karaipiture, whakarunga ki roto i te, i te reo Māori.'
     }
 

@@ -1,8 +1,8 @@
 import argparse
 from datetime import datetime
-from corpus import Conversation, Corpus, TokenType
+from corpus import Conversation, Corpus
 from files import FileReader
-from query import DocumentQuery, FeatureQuery, StringQuery, TextQuery, WordQuery
+from query import DocumentQuery, FeatureQuery, StringQuery, TextQuery
 from summary import ConversationFormatter, Summary
 
 
@@ -10,7 +10,6 @@ reader = FileReader(name='MBC-raw/mbc{:03d}-not-stripped.txt', encoding='cp1252'
 corpus = Corpus()
 
 parser = argparse.ArgumentParser()
-parser.add_argument('-F', '--format', type=int, default=0)
 parser.add_argument('-d', '--document', type=int)
 parser.add_argument('-g', '--goto', type=int)
 parser.add_argument('-r', '--range', type=int, default=0)
@@ -23,15 +22,6 @@ parser.add_argument('-D', '--date', type=lambda s: datetime.strptime(s, "%Y-%m-%
 parser.add_argument('-t', '--type', type=int)
 parser.add_argument('-S', '--speaker')
 
-parser.add_argument('-q', '--query', action='append')
-parser.add_argument('-f', '--features', action='append')
-parser.add_argument('-b', '--buffer')
-parser.add_argument('-w', '--word', action=argparse.BooleanOptionalAction)
-parser.add_argument('-x', '--exclude', action=argparse.BooleanOptionalAction)
-parser.add_argument('-e', '--end', type=int, default=0)
-
-args = parser.parse_args()
-
 
 def show_lines(formatter: ConversationFormatter, conversations: list[Conversation]):
     for conversation in conversations:
@@ -41,7 +31,7 @@ def show_lines(formatter: ConversationFormatter, conversations: list[Conversatio
                 print(conversation.document, n, formatter.format_date(conversation), turn.speaker, formatter.print_text(text))
 
 
-def run(query: TextQuery):
+def run(args, query: TextQuery, formatter: ConversationFormatter):
     documents = DocumentQuery(
         reader=reader,
         corpus=corpus,
@@ -57,7 +47,6 @@ def run(query: TextQuery):
     else:
         conversations = documents.filter_conversations(args.document)
 
-    formatter = ConversationFormatter(format=args.format)
     summary = Summary(
         formatter=formatter,
         conversations=conversations,
@@ -71,6 +60,15 @@ def run(query: TextQuery):
 
 
 if __name__ == '__main__':
+    parser.add_argument('-F', '--format', type=int, default=0)
+    parser.add_argument('-q', '--query', action='append')
+    parser.add_argument('-f', '--features', action='append')
+    parser.add_argument('-b', '--buffer')
+    parser.add_argument('-w', '--word', action=argparse.BooleanOptionalAction)
+    parser.add_argument('-x', '--exclude', action=argparse.BooleanOptionalAction)
+    parser.add_argument('-e', '--end', type=int, default=0)
+    
+    args = parser.parse_args()
     if args.features:
         word_query = [FeatureQuery(f) for f in args.features]
     elif args.query:
@@ -85,4 +83,5 @@ if __name__ == '__main__':
         buffer=args.buffer
     )
     
-    run(query)
+    formatter = ConversationFormatter(format=args.format)
+    run(args, query, formatter)

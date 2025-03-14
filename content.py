@@ -38,7 +38,10 @@ class Feature(dict):
             'goal',
             'base',
             'plural',
-            'dual'
+            'dual',
+            'conditional',
+            'locative',
+            'number'
         ])
     }
 
