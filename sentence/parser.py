@@ -84,6 +84,7 @@ class Phrase:
     def __init__(self):
         self.words = []
         self.features = np.copy(Word.features.none)
+        self.base = None
 
     def __repr__(self):
         features = []
@@ -92,11 +93,15 @@ class Phrase:
             if self.features[i-1]:
                 features.append('+' + feature)
 
-        return f'Phrase(words="{" ".join(self.words)}", {"".join(features)})'
+        return f'Phrase(base={self.base}, words="{" ".join(self.words)}", {"".join(features)})'
 
-    def append(self, word: Word, features):
+    def append(self, word: Word, features, payload):
         self.words.append(word.text)
         self.features |= features
+
+        # Set core lexical content of phrase
+        if payload and not self.base:
+            self.base = word.text
 
     '''
     Enable two phrases to be joined if optimistic matching fails.
@@ -155,16 +160,22 @@ class Sentence:
                 word_features |= Word.features.determiner
 
             # Start new buffer when reading preposition
-            if np.any(word_features & Word.features.preposition):
+            is_preposition = np.any(word_features & Word.features.preposition)
+            if is_preposition:
                 buffer = self.splice(buffer, last, word_features)
 
             # Start new buffer when reading determiner, unless local to a preposition
-            if np.any(word_features & Word.features.determiner) and not np.any(last & Word.features.preposition):
+            is_determiner = np.any(word_features & Word.features.determiner)
+            if is_determiner and not np.any(last & Word.features.preposition):
                 buffer = self.splice(buffer, last, word_features)
             
-            # Append with punctuation features and splice on sentence terminator
+            # Append with punctuation features and identify as lexical payload
+            is_anaphora = np.any(word_features & (Word.features.demonstrative | Word.features.pronoun))
+            is_clitic = np.any(word_features & ~prefix_features)
             word_features |= text.features
-            buffer.append(text, word_features)
+            buffer.append(text, word_features, is_anaphora or is_clitic or not is_preposition and not is_determiner)
+
+            # Splice on sentence terminator
             if np.any(word_features & Word.features.stop):
                 buffer = self.splice(buffer, word_features, Word.features.none)
                 return i
@@ -174,13 +185,13 @@ class Sentence:
                 buffer = self.terminate(buffer)
 
             # Suppress requirement for complement if possible
-            if np.any(word_features & (Word.features.demonstrative | Word.features.pronoun)):
+            if is_anaphora:
                 last = word_features & ~Word.features.determiner
             # If stem matches prefix, suppress local matching of prepositions
-            elif not np.any(word_features & ~prefix_features):
-                last = word_features
-            else:
+            elif is_clitic:
                 last = Word.features.none
+            else:
+                last = word_features
 
         self.terminate(buffer)
         return len(words)

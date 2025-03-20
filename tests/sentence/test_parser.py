@@ -7,11 +7,12 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-def phrase(features, *words):
+def phrase(base, features, *words):
     phrase = Phrase()
     for word in words:
-        phrase.append(Word(word, word, Word.features.none), features)
+        phrase.append(Word(word, word, Word.features.none), features, False)
     
+    phrase.base = base
     return phrase
 
 
@@ -20,7 +21,7 @@ def match_phrases(actual: list[Phrase], expected: list[Phrase]):
         yield False
 
     for p1, p2 in zip(actual, expected):
-        if np.all(p1.features == p2.features) and p1.words == p2.words:
+        if np.all(p1.features == p2.features) and p1.words == p2.words and p1.base == p2.base:
             yield True
         else:
             yield False
@@ -44,97 +45,97 @@ def test_read():
         (
             'single word',
             words(Word.features.none, 'nā'),
-            [phrase(causative + past + alienable, 'nā')]
+            [phrase(None, causative + past + alienable, 'nā')]
         ),
         (
             'preposition-determiner',
             words(Word.features.none, 'nā', 'te'),
-            [phrase(causative + past + alienable + determiner, 'nā', 'te')]
+            [phrase(None, causative + past + alienable + determiner, 'nā', 'te')]
         ),
         (
             'preposition-content',
             words(Word.features.none, 'nā', 'Hone'),
-            [phrase(causative + past + alienable, 'nā', 'Hone')]
+            [phrase('Hone', causative + past + alienable, 'nā', 'Hone')]
         ),
         (
             'content-preposition',
             words(Word.features.none, 'nā', 'Hone', 'i'),
-            [phrase(causative + past + alienable, 'nā', 'Hone'), phrase(past + Word.features.tense, 'i')]
+            [phrase('Hone', causative + past + alienable, 'nā', 'Hone'), phrase(None, past + Word.features.tense, 'i')]
         ),
         (
             'content-determiner',
             words(Word.features.none, 'nā', 'Hone', 'te'),
-            [phrase(causative + past + alienable, 'nā', 'Hone'), phrase(determiner, 'te')]
+            [phrase('Hone', causative + past + alienable, 'nā', 'Hone'), phrase(None, determiner, 'te')]
         ),
         (
             'embedded preposition-determiner',
             words(Word.features.none, 'nāku', 'te'),
-            [phrase(causative + past + alienable + speaker, 'nāku'), phrase(determiner, 'te')]
+            [phrase('nāku', causative + past + alienable + speaker, 'nāku'), phrase(None, determiner, 'te')]
         ),
         (
             'embedded preposition-content',
             words(Word.features.none, 'nāku', 'noa'),
-            [phrase(causative + past + alienable + speaker, 'nāku', 'noa')]
+            [phrase('nāku', causative + past + alienable + speaker, 'nāku', 'noa')]
         ),
         (
             'embedded preposition-preposition',
             words(Word.features.none, 'nāku', 'i'),
-            [phrase(causative + past + alienable + speaker, 'nāku'), phrase(past + Word.features.tense, 'i')]
+            [phrase('nāku', causative + past + alienable + speaker, 'nāku'), phrase(None, past + Word.features.tense, 'i')]
         ),
         (
             'false start',
             words(Word.features.none, 'nā', 'i'),
-            [phrase(causative + past + alienable, 'nā'), phrase(past + Word.features.tense, 'i')]
+            [phrase(None, causative + past + alienable, 'nā'), phrase(None, past + Word.features.tense, 'i')]
         ),
         (
             'splicing preposition on preposition',
             words(Word.features.none, 'te', 'whare', 'nā', 'i'),
-            [phrase(determiner, 'te', 'whare', 'nā'), phrase(past + Word.features.tense, 'i')]
+            [phrase('whare', determiner, 'te', 'whare', 'nā'), phrase(None, past + Word.features.tense, 'i')]
         ),
         (
             'splicing determiner on preposition',
             words(Word.features.none, 'e', 'ngaro', 'ana', 'i'),
-            [phrase(Word.features.preposition + Word.features.tense, 'e', 'ngaro', 'ana'), phrase(past + Word.features.tense, 'i')]
+            [phrase('ngaro', Word.features.preposition + Word.features.tense, 'e', 'ngaro', 'ana'), phrase(None, past + Word.features.tense, 'i')]
         ),
         (
             'splicing determiner on determiner',
             words(Word.features.none, 'e', 'rongohia', 'ake', 'ana', 'te'),
-            [phrase(Word.features.preposition + Word.features.tense, 'e', 'rongohia', 'ake', 'ana'), phrase(determiner, 'te')]
+            [phrase('rongohia', Word.features.preposition + Word.features.tense, 'e', 'rongohia', 'ake', 'ana'), phrase(None, determiner, 'te')]
         ),
         (
             'prosodic splicing prohibition',
             words(Word.features.pause, 'te', 'whare') + words(Word.features.none, 'nā', 'i'),
-            [phrase(determiner + Word.features.pause, 'te', 'whare'), phrase(causative + past + alienable, 'nā'), phrase(past + Word.features.tense, 'i')]
+            [phrase('whare', determiner + Word.features.pause, 'te', 'whare'), phrase(None, causative + past + alienable, 'nā'), phrase(None, past + Word.features.tense, 'i')]
         ),
         (
             'semantic splicing prohibition',
             words(Word.features.none, 'te', 'tāne', 'nāna', 'i'),
-            [phrase(determiner, 'te', 'tāne'), phrase(causative + past + alienable + Word.features.personal, 'nāna'), phrase(past + Word.features.tense, 'i')]
+            [phrase('tāne', determiner, 'te', 'tāne'), phrase('nāna', causative + past + alienable + Word.features.personal, 'nāna'), phrase(None, past + Word.features.tense, 'i')]
         ),
         (
             'ambiguous preposition-determiner',
             words(Word.features.none, 'a', 'te', 'iwi', 'Māori'),
-            [phrase(possessive + personal, 'a', 'te', 'iwi', 'Māori')]
+            [phrase('iwi', possessive + personal, 'a', 'te', 'iwi', 'Māori')]
         ),
         (
             'preposition-ambiguous determiner',
             words(Word.features.none, 'ki', 'a', 'au'),
-            [phrase(Word.features.pronoun + goal + possessive + determiner + speaker, 'ki', 'a', 'au')]
+            [phrase('au', Word.features.pronoun + goal + possessive + determiner + speaker, 'ki', 'a', 'au')]
         ),
         (
             'unusual',
             words(Word.features.none, 'e', 'tēnā', 'iwi', 'rānei', 'ki', 'mua'),
-            [phrase(Word.features.preposition + Word.features.determiner + Word.features.demonstrative + Word.features.tense, 'e', 'tēnā', 'iwi', 'rānei'), phrase(goal, 'ki', 'mua')]
+            [phrase('tēnā', Word.features.preposition + Word.features.determiner + Word.features.demonstrative + Word.features.tense, 'e', 'tēnā', 'iwi', 'rānei'), phrase('mua', goal, 'ki', 'mua')]
         ),
         (
             'unusual #2',
             words(Word.features.none, 'mā', 'te', 'marae', 'rā', 'pea', 'hei', 'whakaata', 'mai'),
-            [phrase(causative + alienable + determiner, 'mā', 'te', 'marae', 'rā', 'pea'), phrase(Word.features.preposition + Word.features.tense, 'hei', 'whakaata', 'mai')]
+            [phrase('marae', causative + alienable + determiner, 'mā', 'te', 'marae', 'rā', 'pea'), phrase('whakaata', Word.features.preposition + Word.features.tense, 'hei', 'whakaata', 'mai')]
         ),
         (
             'sentence terminator',
             words(stop, 'Nā', 'rātou', 'i', 'kī', 'mai', 'ki', 'a', 'au') + words(stop, 'Āe'),
-            [phrase(Word.features.determiner + Word.features.pronoun + causative + past + alienable + other + Word.features.plural, 'Nā', 'rātou'), phrase(past + Word.features.tense, 'i', 'kī', 'mai'), phrase(Word.features.pronoun + goal + possessive + determiner + speaker + stop, 'ki', 'a', 'au')]
+            [phrase('rātou', Word.features.determiner + Word.features.pronoun + causative + past + alienable + other + Word.features.plural, 'Nā', 'rātou'), phrase('kī', past + Word.features.tense, 'i', 'kī', 'mai'), phrase('au', Word.features.pronoun + goal + possessive + determiner + speaker + stop, 'ki', 'a', 'au')]
         )
     ]
 

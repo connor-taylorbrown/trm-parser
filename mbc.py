@@ -31,7 +31,7 @@ def show_lines(formatter: ConversationFormatter, conversations: list[Conversatio
                 print(conversation.document, n, formatter.format_date(conversation), turn.speaker, formatter.print_text(text))
 
 
-def run(args, query: TextQuery, formatter: ConversationFormatter):
+def run(args, query: TextQuery):
     documents = DocumentQuery(
         reader=reader,
         corpus=corpus,
@@ -47,6 +47,10 @@ def run(args, query: TextQuery, formatter: ConversationFormatter):
     else:
         conversations = documents.filter_conversations(args.document)
 
+    return conversations
+
+
+def display(args, conversations, formatter: ConversationFormatter):
     summary = Summary(
         formatter=formatter,
         conversations=conversations,
@@ -84,4 +88,5 @@ if __name__ == '__main__':
     )
     
     formatter = ConversationFormatter(format=args.format)
-    run(args, query, formatter)
+    conversations = run(args, query)
+    display(args, conversations, formatter)

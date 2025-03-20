@@ -1,8 +1,9 @@
+import argparse
 from content import Word
-from corpus import TokenType
+from corpus import Conversation, TokenType
 from query import FeatureQuery, TextQuery
-from sentence.parser import Sentence, lexicon
-from mbc import parser, run
+from sentence.parser import Phrase, Sentence, lexicon
+from mbc import display, parser, run
 from summary import ConversationFormatter
 
 
@@ -12,13 +13,14 @@ class PhraseFormatter(ConversationFormatter):
 
 
 class SentenceQuery(TextQuery):
-    def __init__(self, lexicon, features, end, format):
+    def __init__(self, lexicon, features, end, base, format):
         self.lexicon = lexicon
         self.features = [FeatureQuery(f) for f in features]
         self.end = end
+        self.base = base
         self.format = format
 
-    def match_buffer(self, buffer):
+    def match_buffer(self, buffer: list[Phrase]):
         queries = [i for i in self.features]
         for p in buffer:
             if queries and queries[0].match_word(p):
@@ -44,6 +46,8 @@ class SentenceQuery(TextQuery):
                 if self.match_buffer(buffer):
                     if self.format & 2:
                         result.append(buffer)
+                    elif self.base:
+                        result.append([p.base for p in buffer])
                     else:
                         result.append(' '.join(' '.join(p.words) for p in buffer))
             
@@ -52,14 +56,26 @@ class SentenceQuery(TextQuery):
         return result
     
 
+def show_base(conversations: list[Conversation]):
+    for conversation in conversations:
+        for turn in conversation.turns:
+            for line in turn.text:
+                print(line)
+    
+
 if __name__ == '__main__':
     parser.add_argument('-f', '--features', action='append', default=[])
     parser.add_argument('-e', '--end', type=int, default=1)
     parser.add_argument('-F', '--format', type=int, default=0)
+    parser.add_argument('-b', '--base', action=argparse.BooleanOptionalAction)
 
     args = parser.parse_args()
 
-    query = SentenceQuery(lexicon, args.features, args.end, args.format)
+    query = SentenceQuery(lexicon, args.features, args.end, args.base, args.format)
     formatter = PhraseFormatter(args.format)
     
-    run(args, query, formatter)
+    conversations = run(args, query)
+    if not args.base:
+        display(args, conversations, formatter)
+    else:
+        show_base(conversations)
