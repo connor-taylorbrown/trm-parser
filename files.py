@@ -31,3 +31,20 @@ class FileReader:
         with open(name, 'r', encoding=self.encoding) as f:
             for line in f.readlines():
                 yield self.convert(line)
+
+
+class InputReader:
+    def __init__(self):
+        self.terminated = False
+
+    def read_file(self, _):
+        if self.terminated:
+            raise FileNotFoundError("Input reading has been terminated.")
+        
+        while True:
+            try:
+                line = input()
+                yield line
+            except EOFError:
+                self.terminated = True
+                break

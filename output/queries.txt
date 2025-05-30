@@ -1,0 +1,17 @@
+Module: sentence.query
+Commit: 993a57b7cc7c9bad1ecc017aec0fbb675d7a1ed8
+
+Queries:
+- Please note the more general usage of -preposition will exclude the ambiguous personal article, which has been coded as both +determiner+preposition
+
+For Actor-Verb-Theme (to avoid confusion of subject-object terminology):
+-e 3 -f +causative+alienable+past-locative-number-pause -f +tense+past-determiner-locative-conditional -f +determiner-goal-tense-causative
+-e 3 -f +causative+alienable-past-locative-number-pause -f +tense-past-determiner-locative-conditional -f +determiner-goal-tense-causative
+
+For Actor-Theme-Verb
+-e 3 -f +causative+alienable+past-locative-number-pause -f +determiner-goal-tense-causative -f +tense+past-determiner-locative-conditional
+-e 3 -f +causative+alienable-past-locative-number-pause -f +determiner-goal-tense-causative -f +tense-past-determiner-locative-conditional
+
+Count each verb in an annotated context file:
+
+./base.sh output/context/ma-det-TA.txt -e 3 -f +causative+alienable-past-locative-number-pause -f +determiner-goal-tense-causative -f +tense-past-determiner-locative-conditional -b | awk '{print $5}' | sort | uniq -c | sed -e 's/^ *//' | sort -k 1 -V

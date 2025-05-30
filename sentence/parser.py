@@ -101,7 +101,7 @@ class Phrase:
 
         # Set core lexical content of phrase
         if payload and not self.base:
-            self.base = word.text
+            self.base = word.word
 
     '''
     Enable two phrases to be joined if optimistic matching fails.

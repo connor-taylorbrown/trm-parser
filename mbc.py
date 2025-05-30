@@ -1,15 +1,13 @@
 import argparse
 from datetime import datetime
 from corpus import Conversation, Corpus
-from files import FileReader
+from files import FileReader, InputReader
 from query import DocumentQuery, FeatureQuery, StringQuery, TextQuery
 from summary import ConversationFormatter, Summary
 
 
-reader = FileReader(name='MBC-raw/mbc{:03d}-not-stripped.txt', encoding='cp1252')
-corpus = Corpus()
-
 parser = argparse.ArgumentParser()
+parser.add_argument('-i', '--interactive', action=argparse.BooleanOptionalAction, default=False)
 parser.add_argument('-d', '--document', type=int)
 parser.add_argument('-g', '--goto', type=int)
 parser.add_argument('-r', '--range', type=int, default=0)
@@ -22,6 +20,8 @@ parser.add_argument('-D', '--date', type=lambda s: datetime.strptime(s, "%Y-%m-%
 parser.add_argument('-t', '--type', type=int)
 parser.add_argument('-S', '--speaker')
 
+corpus = Corpus()
+
 
 def show_lines(formatter: ConversationFormatter, conversations: list[Conversation]):
     for conversation in conversations:
@@ -32,6 +32,11 @@ def show_lines(formatter: ConversationFormatter, conversations: list[Conversatio
 
 
 def run(args, query: TextQuery):
+    if args.interactive:
+        reader = InputReader()
+    else:
+        reader = FileReader(name='MBC-raw/mbc{:03d}-not-stripped.txt', encoding='cp1252')
+
     documents = DocumentQuery(
         reader=reader,
         corpus=corpus,

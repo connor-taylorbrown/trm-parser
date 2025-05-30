@@ -60,7 +60,8 @@ def show_base(conversations: list[Conversation]):
     for conversation in conversations:
         for turn in conversation.turns:
             for line in turn.text:
-                print(line)
+                n, (_, bases) = line
+                print(conversation.document, n, *bases)
     
 
 if __name__ == '__main__':

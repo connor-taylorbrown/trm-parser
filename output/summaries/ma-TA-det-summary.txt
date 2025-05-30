@@ -1,0 +1,171 @@
+mbc015 1995-08-29 1 1 {'Albie Pryor': 1}
+mbc059 1995-09-07 1 1 {'Anaru Kira': 1}
+mbc191 None 1 1 {'Ani Black': 1}
+mbc156 None 1 1 {'Apikara Rarere': 1}
+mbc204 None 1 1 {'Apirana Mahuika': 1}
+mbc077 1995-03-08 1 1 {'Arnold Wilson': 1}
+mbc238 1995-08-13 1 1 {'Aroha Ormsby': 1}
+mbc069 1995-12-01 1 1 {'Dan Hiramana-rua': 1}
+mbc067 1995-11-15 1 1 {'Eva Rickard': 1}
+mbc169 1995-11-16 1 1 {'Glass Murray': 1}
+mbc004 1995-05-16 1 1 {'Haare Williams': 1}
+mbc001 1995-04-08 1 1 {'Hemana Waaka': 1}
+mbc005 1995-05-24 1 1 {'Hemana Waaka': 1}
+mbc005 1995-05-25 1 1 {'Hemana Waaka': 1}
+mbc016 1995-09-11 1 1 {'Hemana Waaka': 1}
+mbc085 1996-03-04 1 1 {'Hemana Waaka': 1}
+mbc188 None 1 1 {'Hemana Waaka': 1}
+mbc193 None 1 1 {'Hemana Waaka': 1}
+mbc196 None 1 1 {'Hemana Waaka': 1}
+mbc233 1995-04-02 1 1 {'Hemana Waaka': 1}
+mbc244 1996-01-21 1 1 {'Hemana Waaka': 1}
+mbc251 None 1 1 {'Hemana Waaka': 1}
+mbc165 None 1 1 {'Henare Kīngi': 1}
+mbc258 None 1 1 {'Henare Kīngi': 1}
+mbc050 1995-06-26 1 1 {'Hine-moa Grey': 1}
+mbc060 1995-09-15 1 1 {'Hine-rangi Goodman': 1}
+mbc083 1996-02-14 1 1 {'Hine-rangi Luckman': 1}
+mbc045 1995-05-12 1 1 {'Hirini Henare': 1}
+mbc052 1995-07-11 1 1 {'Hirini Henare': 1}
+mbc086 1996-03-11 1 1 {'Hirini Henare': 1}
+mbc087 1996-03-20 1 1 {'Hirini Henare': 1}
+mbc107 None 1 1 {'Hirini Melbourne': 1}
+mbc140 None 1 1 {'Hotu-roa Kerr': 1}
+mbc184 None 1 1 {'Hūhana Wai-wiri': 1}
+mbc203 None 1 1 {'Hākopa Karaka': 1}
+mbc202 None 1 1 {'Hēmi Te Wano': 1}
+mbc224 None 1 1 {'Hōne Apa-nui': 1}
+mbc236 1995-06-11 1 1 {'Hōne Tūrei': 1}
+mbc154 None 1 1 {'Hīria Beattie': 1}
+mbc042 1995-04-18 1 1 {'Joe Glen': 1}
+mbc011 1995-07-26 1 1 {'Kairo McLean': 1}
+mbc015 1995-08-26 1 1 {'Kairo McLean': 1}
+mbc049 1995-06-15 1 1 {'Kauika Stevens': 1}
+mbc076 1995-02-27 1 1 {'Kevin Prime': 1}
+mbc232 None 1 1 {'Kiri Dewes': 1}
+mbc076 1995-02-28 1 1 {'Kuru Waaka': 1}
+mbc001 1995-04-10 1 1 {'Lewis Moeau': 1}
+mbc214 1996-07-07 1 1 {'Lewis Moeau': 1}
+mbc219 1996-08-11 1 1 {'Lewis Moeau': 1}
+mbc130 None 1 1 {'Louie Tuhura': 1}
+mbc065 1995-10-30 1 1 {'Martin Epiha': 1}
+mbc089 1996-04-04 1 1 {'Martin Rakuraku': 1}
+mbc105 None 1 1 {'Miki Apiti': 1}
+mbc228 1996-05-19 1 1 {'Naki Paratene': 1}
+mbc116 None 1 1 {'Nepia': 1}
+mbc164 1995-03-21 1 1 {'Ngarongo Iwi-katea Nicholson': 1}
+mbc242 1995-11-26 1 1 {'Niko Tangaroa': 1}
+mbc241 1995-10-22 1 1 {'Penikara Hona': 1}
+mbc174 1995-12-05 1 1 {'Pierre Lyndon': 1}
+mbc032 1995-12-05 1 1 {'Puhi Rangi-aho': 1}
+mbc045 1995-05-15 1 1 {'Rau Kapa': 1}
+mbc066 1995-11-06 1 1 {'Rau Kapa': 1}
+mbc175 1995-12-12 1 1 {'Rauru Broughton': 1}
+mbc257 None 1 1 {'Rauru Broughton': 1}
+mbc147 None 1 1 {'Rauwharangi Peta': 1}
+mbc134 None 1 1 {'Rena Ngataki': 1}
+mbc074 1996-01-12 1 1 {'Rere-ata Makiha': 1}
+mbc108 None 1 1 {'Reuben Parkinson': 1}
+mbc215 1996-06-23 1 1 {'Rihari Dargaville': 1}
+mbc080 1995-03-31 1 1 {'Romio Kemara': 1}
+mbc128 None 1 1 {'Ruby Gray': 1}
+mbc159 None 1 1 {'Rutene Irwin': 1}
+mbc222 1995-09-10 1 1 {'Stacey Daniels': 1}
+mbc148 None 1 1 {'Tahu Potiki': 1}
+mbc104 None 1 1 {'Taina Ngā-rimu': 1}
+mbc210 1996-05-19 1 1 {'Tame Te Rangi': 1}
+mbc228 1996-05-05 1 1 {'Te Ahu-karamu Roera': 1}
+mbc222 1995-09-03 1 1 {'Te Aroha Anderson': 1}
+mbc236 1995-07-09 1 1 {'Te Hata Temo': 1}
+mbc261 1995-05-07 1 1 {'Te Rangi-hau Gilbert': 1}
+mbc088 1996-03-28 1 1 {'Terewai Stockman': 1}
+mbc079 1995-03-24 1 1 {'Tini Molyneux': 1}
+mbc082 1996-02-07 1 1 {'Tini Molyneux': 1}
+mbc230 None 1 1 {'Tommy Higgins': 1}
+mbc259 None 1 1 {'Tīkei Tōroa Ngā-tau-e-rua': 1}
+mbc038 1995-07-26 1 1 {'Wena Tait': 1}
+mbc073 1996-01-03 1 1 {'Wena Tait': 1}
+mbc003 1995-05-06 1 1 {'Whare-huia Milroy': 1}
+mbc246 1995-04-09 1 1 {'Whare-huia Milroy': 1}
+mbc247 1995-05-07 1 1 {'Whare-huia Milroy': 1}
+mbc247 1995-06-04 1 1 {'Whare-huia Milroy': 1}
+mbc247 1995-06-11 1 1 {'Whare-huia Milroy': 1}
+mbc248 1995-07-16 1 1 {'Whare-huia Milroy': 1}
+mbc248 1995-08-06 1 1 {'Whare-huia Milroy': 1}
+mbc249 1995-08-20 1 1 {'Whare-huia Milroy': 1}
+mbc250 1995-09-10 1 1 {'Whare-huia Milroy': 1}
+mbc251 1995-10-22 1 1 {'Whare-huia Milroy': 1}
+mbc252 1995-11-12 1 1 {'Whare-huia Milroy': 1}
+mbc253 1995-11-26 1 1 {'Whare-huia Milroy': 1}
+mbc253 None 1 1 {'Whare-huia Milroy': 1}
+mbc255 1996-01-28 1 1 {'Whare-huia Milroy': 1}
+mbc040 1995-11-24 1 1 {'Whetū McCorkindale': 1}
+mbc103 None 1 1 {'Wilford Kererū': 1}
+mbc205 None 1 1 {'unid M': 1}
+None None 1 1 {None: 1}
+mbc057 1995-08-24 1 2 {'Anituatua Black': 2}
+mbc152 None 1 2 {'Anituatua Delamere': 2}
+mbc007 1995-06-10 2 2 {'Haare Williams': 1, 'Richard Ngata': 1}
+mbc138 None 2 2 {'Hemana Waaka': 1, 'Hohapata McGarvey': 1}
+mbc167 None 1 2 {'Henare Kīngi': 2}
+mbc048 1995-06-07 1 2 {'Hirini Henare': 2}
+mbc226 1995-11-19 1 2 {'Hēmi Peke': 2}
+mbc141 None 1 2 {'Hēmi Ruarapata': 2}
+mbc123 None 1 2 {'Hōne Kaa': 2}
+mbc087 1996-03-19 2 2 {'Joe Glen': 1, 'Pat Heremaia': 1}
+mbc265 None 2 2 {'Julian Wilcox': 1, 'Henare Kīngi': 1}
+mbc172 None 1 2 {'Kohe': 2}
+mbc114 None 1 2 {'Kīngi Ihaka': 2}
+mbc271 None 1 2 {'Laurie Nichols': 2}
+mbc111 None 1 2 {'Mabel Wai-titi': 2}
+mbc060 1995-09-18 2 2 {'Martin Rakuraku': 1, 'Hine-rangi Goodman': 1}
+mbc166 None 2 2 {'Mira Szaszy': 1, 'Julian Wilcox': 1}
+mbc220 1995-04-09 1 2 {'Moko Tini': 2}
+mbc261 1995-04-09 1 2 {'Moko Tini': 2}
+mbc153 None 2 2 {'Paddy Eruera': 1, 'Hīria Walker': 1}
+mbc181 None 1 2 {'Pierre Lyndon': 2}
+mbc260 None 1 2 {'Pierre Lyndon': 2}
+mbc176 None 1 2 {'Puti Hemmingson': 2}
+mbc068 1995-11-23 2 2 {'Rau Kapa': 1, 'Joe Glen': 1}
+mbc183 None 1 2 {'Rewa Marsh': 2}
+mbc109 None 1 2 {'Roka Paora': 2}
+mbc195 None 2 2 {'Rāna Tahi': 1, 'Hemana Waaka': 1}
+mbc100 None 2 2 {'Shane Jones': 1, 'Tairongo Amoamo': 1}
+mbc206 1996-03-31 1 2 {'Tai-arahia Black': 2}
+mbc194 None 1 2 {'Te Ao Peehi Kara': 2}
+mbc102 None 2 2 {'Te Kotahi Mahuta': 1, 'Hāre Puke': 1}
+mbc112 None 2 2 {'Te Manawanui Pauro': 1, 'Agnes Whanarere': 1}
+mbc199 None 1 2 {'Tiki-rau Stevens': 2}
+mbc120 None 1 2 {'Timoti Kāretu': 2}
+mbc043 1995-04-26 2 2 {'Tini Molyneux': 1, 'Derek Asher': 1}
+mbc053 1995-07-20 2 2 {'Tū-koroī-rangi Morgan': 1, 'Rangi-nui Walker': 1}
+mbc209 1996-05-05 1 2 {'Tū-koroī-rangi Morgan': 2}
+mbc079 1995-03-23 2 2 {'Tāmati Mare': 1, 'Derek Fox': 1}
+mbc231 None 2 2 {'Tāwini Rangi-hau': 1, 'Rāhera Shortland': 1}
+mbc157 None 1 2 {'Tāwini Rangi-hau': 2}
+mbc055 1995-08-07 2 2 {'Wai-rete Walters': 1, 'Hōri Evans': 1}
+mbc246 1995-04-02 1 2 {'Whare-huia Milroy': 2}
+mbc255 1996-01-14 1 2 {'Whare-huia Milroy': 2}
+mbc223 None 2 3 {'Arapeta Tahana': 1, 'Rangi-tū-noa Black': 2}
+mbc185 None 1 3 {'Dennis Simpson': 3}
+mbc207 None 1 3 {'Haare Williams': 3}
+mbc182 None 2 3 {'Henare Kīngi': 1, 'Mere Karekare': 2}
+mbc146 None 2 3 {'Maata Edwards': 2, 'Rangi-puke Tari': 1}
+mbc051 1995-07-03 2 3 {'Martin Rakuraku': 2, 'Hine Rangi-aho-Kane': 1}
+mbc151 None 1 3 {'Pouroto Ngaropo': 3}
+mbc118 None 1 3 {'Rere-ata Makiha': 3}
+mbc168 1995-07-25 2 3 {'Tīkei Toroa': 2, 'Parehe Mōrehu': 1}
+mbc200 None 2 3 {'Tāmati Cairns': 1, 'Te Wai Harawira': 2}
+mbc201 None 2 3 {'Whakahuihui Vercoe': 2, 'Waka Vercoe': 1}
+mbc192 None 1 4 {'Ani Black': 4}
+mbc171 None 1 4 {'Henare Kīngi': 4}
+mbc178 None 2 4 {'Iris Whaanga': 2, 'Henare Kīngi': 2}
+mbc179 None 2 4 {'Jean Saunders': 3, 'Pierre Lyndon': 1}
+mbc096 None 2 4 {'Ngā-hiwi Apa-nui': 2, 'Ruia Aperehama': 2}
+mbc145 None 3 4 {'Rangiora Rakuraku': 1, 'Kina Noema': 1, 'Maui': 2}
+mbc240 1995-10-08 1 4 {'Tāmati Waaka': 4}
+mbc270 1995-07-18 1 4 {'unid F2': 4}
+mbc125 None 3 5 {'Denis Hansen': 3, 'Harai McIvor': 1, 'Numia Ponika Rangi': 1}
+mbc161 None 2 5 {'Henare Kīngi': 1, 'Te Ao Pēhi Kara': 4}
+mbc162 None 3 5 {'Piripi Whaanga': 2, 'Del Wihongi': 1, 'Henare Kīngi': 2}
+mbc099 None 2 6 {'Jim Perry': 5, 'JimPerry': 1}
