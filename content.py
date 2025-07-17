@@ -152,7 +152,7 @@ def read_word(text: str):
 
     m = Word.delimiter.search(stem)
     if not m:
-        return Word(text, text, prefix_features + bracket_features + Word.features.stop), ''
+        return Word(text, text, prefix_features + bracket_features + Word.features.pause + Word.features.stop), ''
     
     suffix_features, word = read_suffix(stem[:m.end()])
     features = prefix_features + bracket_features + suffix_features + Word.annotate(word)

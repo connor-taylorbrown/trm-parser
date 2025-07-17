@@ -34,8 +34,6 @@ while IFS=' ' read -r document lineNum rest; do
     python3 -m mbc -d "$document" -g "$lineNum" -b +stop | while IFS=' ' read -r label line; do
         line=$(echo "$line" | grep -o "\'.*\'" | sed "s/^'//;s/'$//")
         if [[ "$line" == *"$target"* ]]; then
-            echo "*\t$line"
-        else
             echo "\t$line"
         fi
     done

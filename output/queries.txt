@@ -14,4 +14,4 @@ For Actor-Theme-Verb
 
 Count each verb in an annotated context file:
 
-./base.sh output/context/ma-det-TA.txt -e 3 -f +causative+alienable-past-locative-number-pause -f +determiner-goal-tense-causative -f +tense-past-determiner-locative-conditional -b | awk '{print $5}' | sort | uniq -c | sed -e 's/^ *//' | sort -k 1 -V
+cat output/context/$mbc_context.txt | grep -w AE | ./base.sh | tr ' ' , | awk -F',' '{print $5}' | sort | uniq -c | sed -e 's/^ *//' | sort -k 1 -V -r

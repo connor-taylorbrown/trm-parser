@@ -42,14 +42,14 @@
 	Ki te hiahia tuku ki, ā, ki Amerika, he aha te hē o te kimi huarahi e puta atu ai ki reira?
 	Koinei te āhua o te wāhi, a Wī Te Kani mā, i ngā paihere a, a ngā rōpū, pērā i te [Apple Pear Board] te [Kiwi ... Board], koira tā rātou nā kaupapa.
 	He wāhi i ngā ture i whakatakotoria ai e rātou, kia puta ai he hua ki te iti me te rahi.
-015 73 AE (o, VS)
+015 73 AE VS (o)
 	I te wāhanga, kua hokona kēhia te Kura Tuarua o Tāmaki, toru rau mano tāra, ki a Ngāti Whātua.
 	Kua tono atu te Tāhuhu o te Mātauranga, kia kuhu mai te tari o te [Serious Fraud Office] ki te wherawhera i ngā kaupapa, he aha i pēnei ai te iti o te hoko?
 *	Whai anō, nā te Tāhuhu tonu o te Mātauranga i karanga atu te tari nei, i runga i ngā whakapae a te tōrangapū, a [Roger Douglas], kāre i tika te hoko i te kura nei mō tērā wāriu.
 	Anā, kua tata atu i te whā miriona tāra i ngaro, i te mea, toru rau mano tāra noa iho te kaute i tutuki ki waenganui i te Tāhuhu o te Mātauranga me te Poari o Ngāti Whātua.
 	
 	Tāpiri atu ki tēnei, kua kōrero kē atu rātou ki ngā rōia a te karauna mō ētahi whakamāramatanga.
-017 30 AE (o, VS, pause???)
+017 30 AE VS (o, pause???)
 	Hei ngā rā whakatā o Reipa, i te marama o Whiringa-ā-nuku, kua huihui mai anō ngā tīma Māori hutupōro rīki ki te pōwhiri a Wai-kato.
 	Heoi anō, koinei te tuatoru o ēnei tōnamana kua whakaritehia, hei whakaoti atu i ngā tākaro rīki mō tāua te iwi Māori.
 *	I ngā tau ki muri, nā te komiti Māori o Te Whanga-nui-ā-Tara, i whakaara ake tēnei tōnamana.
@@ -143,7 +143,7 @@
 	Koiraka ngā whakaaro ki tētahi kaupapa a te pukapuka nei e pā ana ki ngā mahi a [Wei Ming Chen] o Haina, Te Waihanga Taonga Māori.
 *	Ki ngā whakamārama, nā [Wei Ming Chen] ēnei kaitiaki tokorua i whakairoirotia nei ki roto o Tāmaki-makau-rau me tētahi atu anō ki Orewa, i roto o Te Whanga-parāoa.
 	Kātahi ka huri a ia ki te whai i ngā mahi whakairo a Ngāi Tāua.
-050 217 AE? (o, pause, pass, VS)
+050 217 AE? VS (o, pause, pass)
 	Neke atu i te rua tekau heketea te rahi o te whenua ka hoki mai ki raro i te mana o Ngāti Whātua, inā ka hainatia te kawenata waenganui i ana kaiāwhina me te karauna ngā rangi ka tū mai nei.
 *	Rua tau ki muri, rua tekau miriona tāra kē te utu mō tēneki whenua, heoi, nā te rironga mai pea o te Ipu Marikena, i pikitia ake tana wāriu.
 054 141 AE
@@ -177,7 +177,7 @@
 	He mōrehu nō te rōpū rua tekau mā waru.
 	Kei te marae o Pipi-tea i Te Whanga-nui-ā-Tara a [Charlie Tuarau] e takoto ana.
 	Ā te Tāite nehu ai.
-085 102 AE (riro, a, VS)
+085 102 AE VS (riro, a)
 *	I riro nā ngā tikanga a te tangata whenua i whakatuwhera te rā tuatahi o te Hui Taiopenga Toi Tuaono o Aotearoa i te ata nei.
 	Ki ngā whakapono a ngā kaiwhakahaere mō tēnei tau, kāre he kaupapa i kō atu.
 	Ki tā ētahi atu, he ōrite tonu ki ngā taiopenga toi o te ao te rahi.
@@ -211,7 +211,7 @@
 	Nā i te taenga ki tōku nei, [um], tāima, hore kau he whānau o roto o tāku whānau, ngā tāne, i mau i te mahi nei.
 	Pēnei au me tohu mārika ana au he whakakapi i aku mātua i ō tātou mātua i roto i taku whānau ake anō.
 *	Nā koia tēnei te mea i aroha ai au, ā, ka whakapono ana au kia ū, nā te atua au i tohu hei mahi i tēnei mahi, hei whakakapi i a rātou.
-097 81 AE 1(covert) 2(ntm)
+097 81 -
 	Tōku nei mōhiotanga, i te tau [nineteen twenty four].
 	Ka tatū mai a Rātana ki Te Kao nei.
 	I tēraka wā, te whare whakamoemiti kē i raro rā, i te haki atu ki te kura.
@@ -255,7 +255,7 @@
 	Ā, ki a au nei, he mahi hē tērā, patua ō tātou tīpuna mō te kōrero Māori, te tuhituhi i te reo Māori i roto i te kura, āe.
 101 120 AE
 *	E hoa nā wai kē koe i ako ki te kōrero Māori ?
-103 62 AE (o, covert)
+103 62 AE covert (o)
 	Ko au te wahine tuatahi i kuhu mai i roto i te, i te whatitoka nā.
 *	Nā te koroua, nā te rangatira o tēnei mahi i ui atu ki taku pāpā, inoi atu kia whakaaengia ko au te wahine tuatahi kia, kia tomo mai i te, te whatitoka.
 	Ā, ka whakaae atu taku, taku matua.
@@ -586,7 +586,7 @@
 *	Nā reira tino ātaahua kē, tana hemotanga o tēnā koroua, whakamomori ki tana tāne, ko tana hokitanga mai o konei, [and], nā [Rufus Kay Hardie] he Merikana, i hoki mai ki konei.
 	E maungia ana koe, e whakahokingia ana koe e au, ki Pātote, kia takoto koe i te taha o tō hoa rangatira.
 	Ā, ka haramai tika mai te kuia rā, haramai, [I think], e, e waru tekau mā rima pea ōna tau, e kāre koe e mōhio Huia?
-122 84 AE? (ko, pass, covert)
+122 84 AE? covert (ko, pass)
 	Tana kōrero i roto i tana reta ki a au, ā, ka tīmata ia ki te tuhituhi i runga i te tēpu, nē, i tana pukapuka, i roto i tana pukapuka, kāre he pai.
 	Kātahi anō ka meingia tana, mauria mai tana, tana pukapuka kei runga i ōna turi.
 	Kātahi anō ka, ka taea e ia te tuhituhi.
@@ -604,7 +604,7 @@
 *	Nāna ērā i whakahaere mō Mere.
 	Ā, te tumuaki o te hāhi, mahi ko ia, hei mahi manaaki i a Mere, ā , koina.
 	Ka tangi rā te ngākau, ka tangi, nō te mea, kei te kāinga kē mātou, kei konei tā mātou kuia e noho ana, i riro kē mā te iwi kāinga ia e manaaki, me tangi rā te ngākau.
-125 19 AE (me, VS)
+125 19 AE VS (me)
 *	Kīhai i tino roa, ka tae ki te wā mō te poroporoaki, ahakoa i pā te pōuri, nā te aroha me te waiata i whakamāmā ake te ngākau taumaha.
 126 11 AE
 	Āe, ko tēnei haere mai a ngā, a ngā manuhiri nei nā, he, he pīrangi, he hiahia nō rātou, ā, i tētehi o ō mātou whenua, he whenua nō mātou kei konei.
@@ -641,7 +641,7 @@
 	Ko ērā tū āhua mea katoa i tau i runga i te rangimārie.
 127 127 AE
 *	Nā wai te whare nei i whakairo?
-128 83 AE (o, pass, pause, VS)
+128 83 AE VS (o, pass, pause)
 	Neke atu i te rua tekau heketea te rahi o te whenua ka hoki mai ki raro i te mana o Ngāti Whātua, inā ka hainatia te kawenata waenganui āna kaiāwhina me te karauna i ngā rangi ka tū mai nei.
 	Rua tau ki muri, rua tekau miriona tāra kē te utu mō tēneki whenua.
 *	Heoi nā te rironga mai pea o te iwi Marikena, i pikitia ake tana wāriu.
@@ -652,7 +652,7 @@
 129 78 AE
 	Kua whakaeke rātou ki runga i te marae ātea ki mua i te pōhatu, te marae o Rongo-marae-roa o ngā hau e whā.
 *	Nā Tianara [Reed] tēnei wāhanga i whakatuwhera.
-130 96 AE (o, covert)
+130 96 AE covert (o)
 	Ko ngā kōrero mō tēnā tipuna o tātou, tuatahi, arā, ko te reta i tuhia ai.
 	Ka tukuna atu tāna reta ki Ingarangi, arā, ki ngā teitei, ka hoatu e au tekau eka o ōku whenua, hei whakatūranga whare hei ako i aku tamariki, aku mokopuna kāre anō kia whānau.
 	Ngā kōrero mō tēnei tipuna, arā atu, arā atu te hōhonu.
@@ -1326,7 +1326,7 @@
 	Mō te āhuatanga o ngā whakamārama kua matemate te hunga e mōhio ana.
 	Ā, heoi anō, ā, e pai hoki tō pātai.
 	Ākuanei me tīmata kē ngā kaumātua, ngā tohunga o te, o te Ringa-tū ki te whakatūtū wētahi rā hāpati pea, koira te mahi, he kōrero, he whakamārama i te āhuatanga o tēnei whakapono.
-188 11 AE (o, covert)
+188 11 AE covert (o)
 	Whai anō e te iwi, whakarongo ake tātou ki te rōpū kapa haka o Maunga-pōhatu.
 	Hei whakamārama atu ki a koutou ko tēnei rōpū, ā, kāre kau i ara ake ki te, ngā whakataetae o runga i te atamira, i nohonoho rātou ki te whakataetae i runga i te āhuatanga o te kākahu o te pōuri mō tō rātou koroua i a Te Mākarini Temara.
 	Ko ia rā hoki te heamana mō te Poari Matua o Tūhoe, ā, he kanohi kua ngaro atu rā i waenganui i tana iwi.
@@ -1360,7 +1360,7 @@
 	I whāiti katoa te rahinga o Te Arawa ki Tama-te-kapua mō tōna tangihanga.
 	Tekau mā tahi ngā kaumātua i noho ki te paepae.
 	Ko te kaikōrero tuatahi ko Hapi Winiata.
-190 5 AE? (o, covert)
+190 5 AE? covert (o)
 	E rau rangatira mā tēnā koutou katoa e whakarongo mai nā ki tēnei wāhanga ā tātou, Te Reo o te Pīpīwharauroa.
 	Ko Haare Te Wehinga [Williams] tēnei e whakatakoto atu nei i ā tātou kōrero mō tēnei pō.
 *	I te pō whakamutunga i a ia e takoto ai ki te kaokaoroa o Tama-te-kapua, ā, i mua i tōna wehenga atu ki tōna ūkaipō ki Porou-rangi ki roto o o Wai-o-mata-tini, nā ngā kaumātua o Te Arawa i karanga atu ki tāna mātāmua a Rau-huia [Green] kia tū mai ki te kōrero mō ōna kōrero e pā ana ki tōna whaea, ki a Heneriata Whai Ngata Tai [Green], te tamāhine whakamutunga hoki ā Tā Apirana Ngata, koia rā i noho i waenganui i ngā pūmanawa e waru o Te Arawa nuku atu i te ono tekau tau.
@@ -1475,7 +1475,7 @@
 	E, ka, ka tuohu kē, ka takahi kē mai ngā waewae o ērā ka tonongia atu ana he kāinga.
 	Ko ēnei, ē, ka homaingia he kāinga tae rā anō ki te pune wā rātou homai, ngā taonga o roto o te whare me te kāinga, ā, kei i a ahau katoa, me ngā kererū kei waho e rere haere ana, ka mea, kua tau mai ki runga i aku rākau.
 	Āe, e tama, kātahi te tino kāinga pai.
-192 22 AE (a, covert)
+192 22 AE covert (a)
 	Āe, te tikanga rā, kua kimi tangata hei, hei kawe i tōna tūranga.
 	Āe, he tino tangata te, tērā, ā, ko ia tētahi kaiawhi mai i a māua ko [Stewart], i tō māua neketanga mai ki konei, ko ia te rēhita.
 	Ā, he tūranga teitei tērā nō tēnei whare wānanga, ā, ko rāua tahi ko tana rangatira te kaiawhi mai i a māua.
@@ -1575,7 +1575,7 @@
 	Ana, he turi, nē.
 	Kāre kau ia i āta whakarongo ki ngā kōrero a taku hoa, nē, kei roto tonu i te rohe pōtae o Tūhoe, wā tātou, ngā taonga e kōrerohia nei e Rāna.
 	Nō reira, kei te moumou noa ngā moni.
-197 23 AE (o, covert)
+197 23 AE covert (o)
 *	E te iwi koutou e whakarongo mai nā, i muri mai i a Te Hue Rangi ka tū ake ko te hoariri mai i Te Wai-mana-kakū, engari nā te kaha o te hoihoi i muri mai, ka kore e rongohia tēnei wahine e whakahoki ana i ngā kōrero ki a Te Hue.
 	Otirā, ko tana kōrero atu ki a Te Hue, ā, pēnei nā, ā, kāti rā, kei te tautoko kē mai koutou, Rūātoki, ki a mātou ki a Te Wai-mana, kia noho tonu te poari, arā, ki Roto-rua i runga i te mea, arā, ngā hōiho kei a koutou e pupuri ana, he nui ngā hōiho kei a koutou.
 	Āna, kei te pai noa iho te haere o ngā kaumātua i runga kē i ō rātou waka ki Roto-rua rātou huihui ai.
@@ -1630,7 +1630,7 @@
 	Kei ētahi hoki o tātou mā runga rānei i te roro, eropareina e hoki mai ai.
 	Arā, kua pau ngā moni.
 	Ka pau ngā penehīni i kite au ki ngā motukā ki te hoki mai ki ngā hui.
-202 125 AE (o, VS)
+202 125 AE VS (o)
 	Ko te nguru he, ā, ā, ki tō mātou, ā, mōhio he, ko tōna mahi he kawe wai, he kawe waiata, he waiata, he reo, he kōrero.
 	He kōrero anō e rite ki te, ā, kōauau, ā, he reo mokemoke, he reo mā te tangata, mā, hei whakamārama, hei whaka-, hei whakaatu, ā, i te mamae i te pōuri, i te hari, i te aha rānei o te tangata.
 	Ā, māna anō e whakatangi i tōna, tōna kōauau, i tōna nguru hoki.
@@ -2153,7 +2153,7 @@
 	Ā, wētahi kei haramai ki te heri mai i ngā kai mō te waka o Mātaatua pea.
 	Engari, taua āhua rā anō.
 	Nō reira, ka mihi atu ki a koutou, huri noa i roto i tō tātou tipuna whare, tēnā koutou, tēnā koutou, kia ora hoki tātou e noho nei ki runga i te pae.
-236 17 AE (o, pause, VS)
+236 17 AE VS (o, pause)
 	I te rā nei, kua huihui mai ngā toa o tēnā karangatanga, o tēnā mana, ki te kōkiri i te āhuatanga o ngā whare tapere o ō koroua, kui mā, e kōrerotia ake nei.
 	Nāu e te kāwana i manaaki, i tautoko, i whakatinana, ka tika ai te kōrero nei, te whakaaro koinei tonu hei poutokomanawa whakamaharatanga a tō iwi Māori ki a koe, ake, ake.
 	Nō reira, haere mai, haere mai, tēnā kōrua, tēnā kōrua.
@@ -2230,7 +2230,7 @@
 	Me kī.
 	Ā, heoi anō, kei te, kei te hīkaka tonu ngā kaihaka ki ēnei āhuatanga, kei te tino hiahia ki ēnei āhuatanga o te mahi i ngā mahi ā rēhia, [um], nā reira, kei te mihi ahau ki ngā kaihaka, i tū kaha nā i taua, i te, i te Rāhoroi rā i ngā rōpū āhua hou tonu nei.
 	[Um], engari kei te, [you know] kei te whakahau au i ngā kaiako kia tika tonu te whakaako i te reo.
-239 123 AE (o, VS)
+239 123 AE VS (o)
 	Kia ora anō rā tātou, ahakoa kei hea, ko wai, e ngākaunui nei ki te whakarongo mai ki ā tātou kaupapa.
 	Kua uru atu tātou ināianei ki te wāhanga o Te Karere-ā-Rongo.
 	Ko ngā take kua whakaemi haerehia o te wiki kua pahure, e pā ana ki ngā kaupapa hōhonu kua ara ake.

@@ -56,6 +56,7 @@ lexicon = [
     ('t', True, Word.features.determiner, Word.features.none, Word.features.plural),
     ('ē', True, Word.features.none, Word.features.demonstrative + Word.features.determiner + Word.features.plural, Word.features.none),
     ('wē', True, Word.features.none, Word.features.demonstrative + Word.features.determiner + Word.features.plural, Word.features.none),
+    ('aua', True, Word.features.none, Word.features.demonstrative + Word.features.determiner + Word.features.plural, Word.features.none),
     ('kia', True, Word.features.none, Word.features.preposition, Word.features.none),
     ('kua', True, Word.features.none, Word.features.preposition, Word.features.none),
     ('ki', True, Word.features.none, goal, Word.features.none),
@@ -65,7 +66,7 @@ lexicon = [
     ('a', True, Word.features.none, possessive + personal, Word.features.none),
     ('ko', True, Word.features.none, Word.features.preposition, Word.features.none),
     ('e', True, Word.features.none, Word.features.preposition + Word.features.tense, Word.features.none),
-    ('o', True, Word.features.none, Word.features.preposition, Word.features.none),
+    ('o', True, Word.features.none, Word.features.preposition + Word.features.possessive, Word.features.none),
     ('kei', True, Word.features.none, Word.features.preposition + Word.features.tense, Word.features.none),
     ('hei', True, Word.features.none, Word.features.preposition + Word.features.tense, Word.features.none),
     ('he', True, Word.features.none, Word.features.determiner, Word.features.none),
@@ -74,6 +75,9 @@ lexicon = [
     ('runga', True, Word.features.none, Word.features.locative, Word.features.none),
     ('raro', True, Word.features.none, Word.features.locative, Word.features.none),
     ('waho', True, Word.features.none, Word.features.locative, Word.features.none),
+    ('muri', True, Word.features.none, Word.features.locative, Word.features.none),
+    ('mua', True, Word.features.none, Word.features.locative, Word.features.none),
+    ('waenganui', True, Word.features.none, Word.features.locative, Word.features.none),
     ('rā', True, Word.features.demonstrative, Word.features.none, Word.features.none),
     ('nei', True, Word.features.demonstrative, Word.features.none, Word.features.none),
     ('nā', True, Word.features.demonstrative, Word.features.none, Word.features.none),
@@ -175,6 +179,10 @@ class Sentence:
             word_features |= text.features
             buffer.append(text, word_features, is_anaphora or is_clitic or not is_preposition and not is_determiner)
 
+            # Suppress requirement for complement if possible
+            if is_anaphora:
+                word_features = word_features & ~Word.features.determiner
+
             # Splice on sentence terminator
             if np.any(word_features & Word.features.stop):
                 buffer = self.splice(buffer, word_features, Word.features.none)
@@ -184,11 +192,8 @@ class Sentence:
             if np.any(word_features & Word.features.pause):
                 buffer = self.terminate(buffer)
 
-            # Suppress requirement for complement if possible
-            if is_anaphora:
-                last = word_features & ~Word.features.determiner
             # If stem matches prefix, suppress local matching of prepositions
-            elif is_clitic:
+            if is_clitic:
                 last = Word.features.none
             else:
                 last = word_features

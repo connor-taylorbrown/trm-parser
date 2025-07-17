@@ -1,16 +1,19 @@
 #!/bin/bash
 
-input_file="$1"
-query="${@:2}"
+mbc_context="$1"; shift
+input_file="/dev/stdin"
+
+source output/context/queries.sh $mbc_context
+
+if [ -z "$query" ]; then
+    echo "Error: 'query' variable is not set for $mbc_context." >&2
+    exit 1
+fi
 
 test_line() {
     local context="$1"
     local i="$2"
     local tag="$3"
-
-    if [[ "$tag" != "AE" ]]; then
-        return
-    fi
 
     doc=$(echo "$context" | awk '{print $1}')
     line_num=$(echo "$context" | awk '{print $2}')
