@@ -1,0 +1,65 @@
+mbc001 23 ka hāmenehia rātou e te Tari Mātauranga
+mbc001 29 ka tirohia mai au e te [Super-League].
+mbc004 64 ka tohua he komiti e te kāwana
+mbc010 85 ka pēhia tātou e ngā mea
+mbc010 85 ka tautokongia mātou e rātou.
+mbc010 129 ka tukuna atu ngā kurī e ngā pirihimana,
+mbc014 121 ka hoatuhia he petihana e ngā māhita mai Ō-tautahi
+mbc016 67 ka kitea te mahi tahi e te Māori,
+mbc039 94 ka takahia tana pīra e te kaiwhakawā.
+mbc043 61 ka rangatira nui tēnei rā e koutou,
+mbc045 44 ka pēheangia ēnei para mōrikarika e rātou,
+mbc050 158 ka whakanuihia rātou e te iwi kāinga nei.
+mbc051 6 ka whakamaumaharatia tēnei parekuratanga e Ngā Puhi.
+mbc051 86 ka ora rawa atu tō tāua ao Māori e ngā tohutohu
+mbc052 200 ka tirohia anō tēnei take e te Tari Arotake.
+mbc063 121 ka pānuitia tēnei kaupapa e rātou,
+mbc064 140 ka whakamanahia anō rātou e ngā ringawera
+mbc065 197 ka pōtihia te māngai whakaae e ngā amorangi
+mbc089 60 ka whakaakotia au e taku,
+mbc095 23 ka haria au e ngā tākuta nei
+mbc099 37 Ka whakaitihia mātou e rātou.
+mbc104 429 ka tonongia mai mātou e ō mātou mātua,
+mbc106 37 ka whakangaro tērā kaupapa e ō māua mātua.
+mbc110 40 ka haria au e Te Rei-whati.
+mbc110 40 ka tīkina ake au e taku pāpā.
+mbc114 43 ka tonoa atu te wahine nei e Te Aupōuri
+mbc117 146 ka tīkina ngā, e ia,
+mbc121 26 ka heria au e ngā korou,
+mbc122 58 ka karanga atu rātou, e ia,
+mbc129 94 ka hoatu tēnei hōnore e ngā rangatira
+mbc136 23 ka tangohia au e ōku pākeke,
+mbc137 30 Ka takitakina koe e te tini,
+mbc138 5 Ka whiua mai te kōrero e Te Rangi-hau
+mbc138 26 Ka whakaarahia ake tō pāpā, e Te Kāri,
+mbc145 36 Ka kohukohuhia ngā kurī e ngā mea
+mbc149 13 ka (pāria) au e te mate,
+mbc149 102 ka karanga ia e ana tamariki
+mbc152 157 ka āhua pāngia au e te mate,
+mbc153 28 ka kōrerotia koe e rātou,
+mbc165 173 ka patua mātou e rātou,
+mbc168 191 Ka āwhinahia mai anō au e koe mehemea
+mbc172 106 ka pokea koe e te kōrero,
+mbc172 106 ka pokea koe e te,
+mbc173 89 ka mōhiongia koe e te tangata.
+mbc177 20 ka manaakitia koe e tō tātou kaihanga
+mbc178 198 ka katangia au e te tangata.
+mbc178 204 ka whakamāngia mai au e te tangata.
+mbc194 19 ka noho koe, e te kuini,
+mbc200 62 ka whaiwhai haerehia ngā kōrero rā e ngā kaikōrero tuarua,
+mbc207 10 ka ngaua tōna nei tinana e te auahi,
+mbc227 20 Ka herea ō rātou ringaringa e te ture,
+mbc227 139 Ka patua koe e ētahi.
+mbc231 227 ka pakari haere ngā iwi e ngā kaiwhakawā.
+mbc231 247 ka turakina ia e koe.
+mbc231 288 ka nui ēnei kōrero, e tātou
+mbc232 192 ka rongo ā taringa noa ihotia e ngā uri whakatipu.
+mbc233 15 ka whakaritea anō ia e tōna rōpū,
+mbc238 68 ka mahue iho koe, e taku rangatira.
+mbc241 95 ka muia te Whare Mīere e ngā uri
+mbc249 9 ka manakohia ngā tamariki nei e ngā mea,
+mbc260 4 ka mea atu au, e te matua,
+mbc264 95 Ka taiāwhiotia te motu e ōna manawarū,
+mbc270 35 Ka mātakitakitia tēnei mahi e te nuinga
+mbc270 60 ka whakamahia ēnei e ia
+mbc270 61 Ka whakahokia tonutia koe e mātou

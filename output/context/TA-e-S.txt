@@ -1,0 +1,961 @@
+001 27
+	Anā, ko te tikanga o tana kōrero, mēnā ka taea e ngā pirihimana te whakatau i raro i te hūmārie tēnei kaupapa, he aha te kāwana e kore nei e whawhai ake i ērā whakaaro?
+001 27
+	Tērā pea mā konei ka kitea e te kāwana he oranga ki te whakarata i ngā auē a te iwi i raro i te Tiriti o Wai-tangi.
+001 50
+	E rua tekau mā, ā, rua tekau mā ono ngā māngai i tae atu ki tēnei hui, kua kī, ka haere ake rātou, ā, ki Hāmoa ki te whakaatu i ngā tikanga, otirā, koira rā ngā hua nui, ā, ka whakaatu e tātou ā tātou taonga, anā, ka mātakitaki anō i ngā taonga, ētahi, ā, āhua ōrite, ā, ki ō tātou.
+003 11
+	Nā, ki a au, ā, tuatahi, ka whakapaohotia e rātou ō rātou reo, kua tīkina atu, ā, e te, e ngā nūpepa, e te reo irirangi, e te pouaka whakaata, ērā kōrero, kua whakaataatahia mai, ā, ka mutu, kua kitea atu, anō nei, kei te kōrero rātou mō te iwi Māori katoa.
+004 54
+	I mua atu i tō rātou wehenga atu i te whenua i nōhia tuatahitia e rātou ka whakatōria e rātou ngā rākau tokotoru hei whakamaumahara i ngā āhuatanga i te rangimārie i pā ki a rātou me te kaunihera ō taua rohe.
+008 104
+	Ki te kōrero mai a Haki [Cherrington] o Ngāti Hine ki te Tai Tokerau, ka taea e te tangata ngā mōhiotanga ahakoa he aha, mehemea kei te kaingākau taua tangata ki aua kaupapa.
+008 110
+	Kaua e whakahāweatia te haere ki ngā kura, nā te mea ka taea ai e koutou ngā mea katoa.
+009 8
+	Ki roto i ngā whakaaro a Matiu, ki te toa te pire kei te whare pāremata i tēnei wā ki te tono ā ēnei tōrangapū, ka hāmenehia e rātou te karauna mō te kore e whakaata tau i tēnei take mai rā anō.
+012 33
+	Kei te kite rā tātou, i tērā wā ka whakatū e te kāwanatanga ana ture, hei whakatū whare haere i roto i ā rātou, i ō rātou tāone nei.
+012 33
+	Whāia atu, ka kī atu e rātou te iwi, me huri ō koutou hinengaro ināianei ki roto i te ao hou, whakarerea ā koutou kaupapa, anei kē te ao mō koutou, ko te ao kei a mātou nei.
+012 33
+	I roto i ngā tau waru tekau, ka hurihia e te kāwana ngā whakanekeneke, ā, pūtea nei.
+013 12
+	Engari, nā te mea, i tautoko tonu ngā rōpū mai i tērā rohe, kua karanga anō a ia, kāti rā, ka waea tonuhia atu anō e ia ngā pirihimana kia hoki mai anō ki te hopuhopu i ngā nanakia e whakateka nei ki te hari tarutaru ki te kura.
+014 11
+	Ki tō mātou wawata, ka taea e mātou, ā, engari, ā, ki tō mātou whakaaro, ā, kia kaha taua taraipiunara, ā, ki te whakatū mārō, ā, mō tātou katoa.
+014 81
+	I konei ka kitea e ēnei mōrehu, tērā anō pea he hua tonu kei roto i ngā mahi a te tira nei.
+014 97
+	Nā rātou i pōhiri i a mātou i te rā o te Hātarei, ka mauria e mātou ngā, ngā taonga nei ki roto i tō rātou, kāre i roto i tō rātou wharenui, engari, ki roto i tō rātou, ā, wāhi tākaro rātou.
+016 54
+	Kua titiro tāua iāianei, ā, ngā hua kua puta mai i tēnei waka, ā, mō tāua te iwi Māori, ka pēheatia e tāua te, te whakamahi i tēnei waka ki wāu nā tirohanga?
+017 8
+	Heoi anō, mehemea, e maumahara ana tātou i te marama o Kohi-tātea o tēnei tau, ka karangahia e Tā Hepi Te Heuheu he hui ki Tūrangi.
+017 8
+	I reira, ka whakaitihia e te kāwanatanga tērā hui, kāre he hua, engari, i reira ka tautoko katoa ngā iwi, kaua rawa e whakaae atu ki te pānui i roto i te kōpaki pūtea rā.
+018 48
+	Nō muri i tērā, kātahi anō ka whāia atu e au te tika o te takoto mai o te reo.
+019 94
+	Ka pēhea ngā korowai kei roto i ngā papa tongarewa, arā, i tāwāhi, ā, [Cliff], ka, ka tirohia atu anō e koutou te whakahokihoki mai pea o wērā?
+021 29
+	Kei te oma kē rātou mai i ngā hōhonutanga me te wairua o tēnei kaupapa, anā, ko tā rātou, ā, hē tuatahi i te pō i mua o te hainatanga i te tiriti mō tēnei tau, ka whakaputahia e rātou te take mō te kōpaki pūtea.
+022 31
+	Anā, ko tā rātou tono mai, tērā pea, ka taea e rātou wētahi ā tātou mahi i te tautoko, mēnā koira tō tāua hiahia, ā, ki ētahi moni hei āwhina i te kaupapa.
+024 58
+	Ka taea iāianei e ngā kura tuarua, ngā kura takiura, whare wānanga me ētahi atu kura wānanga te whakahaere i ēnei akoranga i roto i ō rātou nā rohe.
+026 83
+	Nō reira, he pātai tāku ki a tātou, ki ngā kaiārahi o te iwi Māori i tēnei wā, he aha ō tātou whakaaro, e pēhea ana tā tātou titiro, ā, ka tuku e tātou ā tātou tamariki hōia ki, ki tērā tū āhua e mahia mai nei i tērā whenua?
+027 10
+	Kei te kī te Rūnanga-nui o Tūranga-nui-ā-Kiwa, ka whawhaitia e rātou ngā mahi hokonga whenua a te karauna ki tō rātou rohe.
+027 16
+	Ka tīkina e te kamupene ētahi atu kaimahi iti atu te utu.
+028 78
+	E ai ki te Tāhuhu o te Mātauranga ka taea e rātou te whakakī i ngā tūranga tahi mano māhita mō te tau e tū mai nei.
+028 109
+	I te rā nei, ka whakapatia e te kāwanatanga ngā kura kia whakawhiti atu ki ngā utu ā pūkoro.
+030 10
+	Ko te mea kē hei tā te Pirimia, a [Jim Bolger], e whakapono ana rātou ka taea tonu e te [UN] te hohou i te rongomau i taua whenua.
+030 50
+	Ka tirohia e ia te waihanga kaupapa i roto i te toa hoko ika a tana hoa, me tana tono kia whakatūria he whare pukapuka nui rawa atu mō reira.
+030 83
+	I te rā nei, ka kōrerohia e te Iuniana Whutupaoro mēnā ka whakakorea e rātou te haerenga atu o te tīma o ngā [All Blacks] ki te whenua o Wīwī.
+030 83
+	Ehara ko tēnā anake, engari e meatia ana, ka kōrerohia e te āpiha Māori tētahi kaupapa whakatū i tētahi whakataetae whutupaoro i waenganui te tīma whutupaoro Māori me te tīma o Wērā.
+030 100
+	Kei te kī Te Māngai Pāho, ā te whā marama kei mua i a tātou, ka utua e rātou te rima tekau ōrau o ngā mahi paoho i runga i ngā reo irirangi me te pouaka whakaata ki roto tonu i te reo Māori.
+034 158
+	Otirā, ka tīmatahia e ngā tīma [Super League] ā rātou anō whakataetae.
+035 79
+	Tērā pea, he, he whakaaro pai, ā, engari, ka taea rānei e ngā Māori te pīkau ko rātou anake?
+038 10
+	Ko te mate kē, kāhore ngā kaitiaki o ngā pūtea mō ngā tono ngāherehere e whakapono ana ka taea e te Rūnanga Whakamana te whakarongo wawe i aua tono, i te mea kei te herea rātou i te kore pūtea.
+038 20
+	E ai ki te rōia matua a te kāwanatanga, ka taea e rātou te whakaora anō i taua take kei mua tonu i te kōti.
+039 94
+	Heoi anō, ka kawea e ia tēnei take ki mua o te Kōti Pīra inanahi, ka takahia tana pīra e te kaiwhakawā.
+041 37
+	Nō ngā rā tata ake nei, ka whakaterehia e te kamupene [UMR], he pōti kia kitea ko wai o te motu e tautoko ana ki ngā mahi a te ao Māori i ngā whenua o Pākaitore i Whanga-nui.
+042 69
+	I te rā nei, ka tirohia e mātou te wāhanga ki tana noho i waenga i tana whānau.
+042 93
+	Ko te tūmanako ka pikitia e te kōtiro nei te toi huarewa o āna mahi katoa.
+043 180
+	Koia i te whakatauatanga kei te kōti, i hē te kapi i te kura nei, ka tohua e te Manatū Mātauranga tēnei uri anō o Ngāti Hine hei kōmihana waihanga i ngā āhuatanga mō tēnei kura ināianei me ākuanei.
+044 126
+	I konei, ka puta te kōrero a ētahi karere o te motu, ka tahuna e ngā hunga nei ngā ngahere, ka pahūtia ngā hōpua wai, mēnā ka hokoa ēnei rawa ki ngā whenua o tāwāhi.
+045 27
+	Heoi anō, ko te tūmanako ka taea e ia te ara e whakaarohia ana e ia.
+045 121
+	Tuatahi, ka taea tonu e te iwi te whakaara i ā rātou ake kaupapa, engari, mā te kāwanatanga tonu hei āta titiro.
+045 121
+	Tuatoru, mehemea ka taea e te kāwanatanga te whakamana tētahi kaupapa hei whakahaeretanga mā te karauna me te iwi.
+046 177
+	Ā, te nuinga o rātou i mate atu, i hora atu ki te riu o Wai-kato, ā, ka kīia e te kāwana tērā, ā, i te kiteatangahia o te kanohi o Tūhoe i reira, ā, ka kīia e te kāwana tērā, ā , kua kitea, ā, he hoariri a Tūhoe nō te kāwana.
+046 177
+	Ā, te nuinga o rātou i mate atu, i hora atu ki te riu o Wai-kato, ā, ka kīia e te kāwana tērā, ā, i te kiteatangahia o te kanohi o Tūhoe i reira, ā, ka kīia e te kāwana tērā, ā , kua kitea, ā, he hoariri a Tūhoe nō te kāwana.
+048 172
+	Hei reira tonu tātou ka kite kei a tātou tonu tēnei mea hoki te tino rangatiratanga, mēnā ka whakaaea mai e tēnā iwi, tēnā iwi, tēnā iwi, ka tū pakari tonu tātou i runga tonu i tō tātou nei papa, whenua nei.
+050 30
+	Nōnakuanei ka whārikihia e ia tēnei take ki mua ki tana iwi.
+052 90
+	Ka hainatia e mātou tētahi, ā, (kupu) kaupapa.
+053 174
+	Kua roa mātou e mahi ana i roto i tēnei tū mahi, nō reira, e whakapono ana mātou ka taea e mātou, ā, ahakoa ka uru mai te Pākehā ki te titiro ki ngā, ki ngā whakarāpopototanga pūtea nei.
+054 141
+	Ko tōna tikanga, koinei te rā ka whakaputahia e te tiati matua tāna whakatau mō te kaupapa nei.
+054 204
+	Heoi anō, nā te kaha o [Robert Robinson] ki te whakatinana i tana kaupapa, ka tōpūatia e te Kaunihera ā rohe o Waihōpai he tiwhikete taiao.
+057 194
+	Nō inanahi nei, ka whākina e ia te maha atu, engari, ki ētehi o tātou, he tika anō kia arohatia taua tangata.
+058 12
+	Ka tukuna e tātou te iwi Māori, ā, ngā Pākehā nei kia whakatinihanga i a tātou, nā te mea, nā te mea, e rua tekau mā whā ngā hāora i mua atu i te putanga mai te, i te hōhipera, nā ka tukuna ki ngā kai-, ā, whakatikatika i ngā tūpāpaku a mua atu i te haerenga mai i te marae.
+059 48
+	Ia whā tau ka tirohia e tētahi rōpū whakataunaki mātauranga ngā whakahaere i ngā kura kōhungahunga puta noa o te motu.
+060 15
+	I roto i ngā pukuriri mō tēnei kāpuratanga, ka whāia e Te Karere ngā whakaaro a tērā e whakapaea ana nāna tēnei mahi.
+060 209
+	Ā te tau e tū mai nei, ka whāia e te rōpū Te Awa-Haku ngā whakataetae pēnei i te rohe o Te Arawa ki Roto-rua.
+061 57
+	Kapi ana te wāhanga ki ngā kaikōrero, kātahi ka tāpae e te manuhiri ā rātou taonga ki a Tūmatauenga.
+061 87
+	Ko te wawata, ā, ka kitea katoahia e mātou, ā, koina te mea nui.
+061 170
+	E ai ki ēnei kaumātua, rangatira o Ngāti Whātua, tōna tikanga a te paunga rā anō o tēneki marama o te Mahuru, ka taea ai e rātou te kuhu atu ki roto i ngā tari o te kaunihera nei.
+066 215
+	Ka hoatungia te, te moni pūtea ki ngā mātua, mā rātou tonu e whiriwhiri ko tēhea kura ka tonongia e rātou wā rātou tamariki.
+068 149
+	Ko te tūmanako a te rōpū nei, ka kawea e rātou tā rātou take ki ētahi atu o ngā rōpū āpetihana i te rā nei.
+069 218
+	I Tāmaki-makau-rau ka whakatūhia e ngā tauira ētahi o ā rātou mahi i oti i roto i ngā tau e toru kua pahemo.
+070 6
+	Nōnakuanei ka tirohia e mātou ngā āhuatanga e pā ana ki taua raru.
+071 33
+	Ā, koina rā hoki te mea, ka tangohia e ngā, ngā nūpepa nei.
+072 90
+	Ā wērā o tātou ngā, ngā, ngā tāne, koira e haere ai ki te, ki tērā mea te kai, te kai waipiro, ā, ka hoki atu ki ngā kāinga ka patupatungia atu e ngā, ō tātou nei, ā, rangatira, whaea mārika, ā, huri noa ki wō tātou nei tamariki anō hoki tērā.
+073 112
+	Te whakapae a Ngāti Māhaki kāhore te tari Papa Atawhai i whakapono ka taea e rātou te tango mai i te kauae o te tohorā, koinei hoki te mea nui e kaingākautia atu ana e te iwi Māori hei mahi i ngā toanga.
+073 118
+	Kei te māharahara tonu te rōpū nei ki te kore e whakatau wawehia, mēnā ka taea anō e rātou te tīkaro pūtea mai i taua pūkoro tonu.
+074 34
+	Ka mahia e rātou wā rātou mahi ki te roanga ake o te pō.
+074 105
+	Kāre a [Tony] Waho i te mōhio mēnā ka mauria e ia tēnei nawe ki hea atu.
+075 63
+	Mehemea ka taea e tāua te haere ki te nuku o te ao, ki te kōrero atu ki te ao, anā, ko te kupu i puta mai i a tāua te Māori, āe, koina te mea nui ki a tāua, engari, kāre hoki e taea, nē.
+076 59
+	I roto anō i aua tū āhuatanga ka tirohia e mātou te tū a Tainui i roto i ngā take e pā ana ki ngā whenua raupatu o Wai-kato.
+076 136
+	Ahakoa ngā whakatūpato a te Kaunihera ā rohe o Tāmaki, engari i raro o ngā tohu a te Tari Rūri Whenua, ka pūrutoihahia e te kamupene [DML] tēnei papa tapu i te tonga o Tāmaki.
+077 8
+	Nōnakuanei ka tirohia e mātou tēnei take.
+081 172
+	I tēnei tau, ā, ka kore a, ka kōrero atu mātou ki, ki Amerika, ā, ka whakahokia e rātou te whakaahua nei ki, ki konei, ā, ki, ki, ki te wā, ki te whenua tūturu o
+084 79
+	Nō te ata nei, ka tirohia e au ngā hua mō ngā rōpū tūārangi.
+084 116
+	Heoi anō i tēnei ata, ka tirohia e au ngā kaupapa whakahaere.
+085 33
+	Nā te, te tatau o te, o ngā tāngata ia rohe, ia rohe, ka taeatia e rātou ngā rauemi ngā [resources] nē?
+085 188
+	Engari, tērā anō tō mātou heamana, arā, he rōia hoki a ia, a [John] Tamihere, ka kitea e ia he kupu iti hei, hei whakarangatira i te kaupapa.
+087 147
+	Ki te iti ake i tērā, ka taea e mātou tētahi moni te tango mai.
+088 6
+	I Tāmaki nei ka tirohia e mātou pēhea nei te kino o tēnei mate.
+090 30
+	I Tāmaki nei ka whāiatia e mātou ngā whakaaro o ēnei rā.
+090 45
+	Heoi anō, i ēnei rā, ōku nei whakaaro ka taea e te wahine te ārahi i tana iwi.
+091 24
+	Kotahi piriona tāra anake te nui o te moni ka taea e te kāwanatanga te whakaea i ēnei nama.
+091 50
+	Anei tāku ki a tātou, mehemea ka taea e te kāwanatanga te whakatārewa i te wāhanga tuarua o te Tiriti o Wai-tangi, ka taea e tātou te tārewa i te wāhanga tuatahi.
+091 50
+	Anei tāku ki a tātou, mehemea ka taea e te kāwanatanga te whakatārewa i te wāhanga tuarua o te Tiriti o Wai-tangi, ka taea e tātou te tārewa i te wāhanga tuatahi.
+094 4
+	Nā, e ono tau i muri iho, ka whakatūria e te kāwanatanga te Kōmihana mō te Reo Māori.
+094 6
+	Mai i tērā āhuatanga ka whakatūria e rātou te Taura Whiri i te Reo Māori, otirā, tērā kāinga i muri rā.
+094 40
+	Taku haeretanga ki te whare wānanga, i whakangungua mātou ki ngā kōrero a Te Rangi-ka-heke mā, a Te Whata-horo mā, a ngā kaumātua o tēnā rau tau, heoi anō, taku putanga mai, ka taea e au te kōrero mō, mō ēnā āhuatanga, heoi anō, taku nohotanga mai ki konei, ka noho ki te taha o ētahi i tipu ake ki roto i te reo, kātahi kōrero rātou mō ngā āhuatanga katoa o tā mātou noho ki te tari.
+094 64
+	Kātahi ka tāpiringia atu e au he rua tekau paiheneti ki runga.
+096 83
+	Ka tīmata mai i te tīmatatanga, ā, me taku koroua a Tei Noho-tima, e toru aku tau ka, ka whakawaiatahia ahau e ia, ō, whakakanikanihia ahau kia tae mai nei he, he manuhiri ki tō mātou kāinga, te kāinga o taku kuia me taku koroua.
+096 122
+	Koina anō tētahi wāhanga hei āwhina, ā, hei, hei whakapai i tēnei raruraru e whakaaro ana ahau, pēnā ka tarea e te iwi Māori katoa, ā, i roto i ōna iwi, ā, iwi katoa, ā, ki te whakakotahi ā rātou nā mahi ki roto i te kete, kia, kia tare te katoa ki te tiki atu i tēnei mō tēnei, tēnei mō tēnei.
+096 125
+	Mehemea ka kite ake rātou he hua kei roto i ā mātou mahi, tērā ka whakahōnoretia e rātou te tono.
+096 125
+	Nō reira, e kī ake ana au, mā te whakapā atu, mā te whakamōhio atu, tērā pea ka whakahōnoretia mai e rātou te tono, ka aro nui mai pea ki te kaupapa.
+099 31
+	I roto i ā rātou whiriwhiri, ka kimihia e rātou tētahi ingoa, ka whakahoki mai hei tirotiro mā mātou katoa.
+099 37
+	Ko tōku hiahia, tōku moemoeā, ā te wā ka haere rātou, ka whai mahi rātou, ka taea e rātou te, te wewehe atu rā i tētahi taha o te, te moni hei pūtea tonu mō rātou, ā, ā te wā ka tika ki a rātou, ka haere atu nei rātou ki te, ki ngā whare wānanga.
+099 73
+	Mātou ngā mea i whiwhi ki ngā tohu Pākehā e karangahia nei rā tātou ko te [School Certificate] nē, e toru noa iho pea ngā mahi ka taea ai e mātou te whai haere, nē.
+099 91
+	Ka whāia e tātou tēnā tikanga me kī, ā, ka kite tātou, ā, kua wehe kē rātou i ngā akoranga i roto i ngā kura kaupapa, kei konā tonu e piripiri ana.
+099 91
+	Ki te kore e hangaia e rātou he kaupapa tōtika mō tātou te iwi Māori, ka taea e rātou te kī mai, kaua, kāo, kāhore, ehara kē nō mātou te, tēnei tikanga, nō reira, kāore hoki rā e taea e mātou, ā, ki te whiu atu rā he moni hei kīnaki tonu, ko ērā mahi katoa.
+099 91
+	Ka taea e rātou te whakawehewehe i a tātou.
+100 122
+	Ka purua atu e rātou ngā kōrero nei kia, kia rongo mai ai te iwi e whakarongo ana, i tēnei wā kua purua atu, i, ki ngā kōrero nā rātou i, i tuhituhi.
+101 19
+	Nō, nō runga i, i aku haramai i konei, ka homaihia e te rangatira nei te, te tino hōnoretanga, ko ahau tētahi hei, hei kaiako i raro i, i ana ringaringa, me kī rā, koira tētahi, kātahi ka tino kaha rawa atu taku, taku, taku hiahia ki ēnei taonga.
+103 56
+	Ā, ka huri mai, ka moengia e ia te tamāhine a Te Whiro-nui, a Hotu-rangi.
+103 156
+	Kātahi ka kīngia, ka karangangia e au he hui, ka karangangia ko te kaunihera o Te Wai-roa me te Papa Atawhai.
+104 289
+	Ka haere tōku pāpā ki reira, ka tīkina atu e ia ngā kōura rā, wehe, i auē.
+104 310
+	I tērā tau, ka akongia e mātou ngā hau, e whā.
+104 313
+	Ka kitea e ngā koroua rā ngā, ngā hira, ngā hira karaka, ki roto i te kōhua.
+104 322
+	Ka kitea nei te wahine e haramai ana, ka tangohia e taku tipuna tana tarau, ka anga ki te wahine rā, i reira tō, kua hoki taku kōkā, he kōkā hoki a te wahine rā.
+104 429
+	Waihotia mātou ngā tamariki pakupaku ki reira kaukau ai, ā, i wētahi wā ka purua atu e ō mātou mātua he kōura pakupaku nei ki raro iho, hei hoputanga mā mātou.
+105 91
+	Nāku i te kōrero atu ki a ia, e Whina, kia mōhio koe, tērā taputapu, ka taea e koe te waea atu ki te ao whānui.
+106 65
+	Kātahi ka kimihia ai e te iwi tētehi o māua tahi ki te tū i te tūranga nei.
+107 59
+	Ka tīkina atu e ō tātou mātua ēnei puoro mō ā rātou waiata, mō tō rātou reo, ngā kupu tonu o te reo e kōrero nei tāua, i ahu mai i te whenua, otirā, i toitaketakehia ake i te whenua e noho nei tāua, i Te Ika-ā-Māui, i Aotearoa e kīia nei ngā kōrero.
+107 68
+	Ko ngā taonga whakatangitangi katoa a te Māori, ka kitea e koe ētahi katoa rā, i roto i ngā taonga whakatangitangi a ngā Māori o ētahi atu whenua.
+107 76
+	Nā, ka titiro tātou, he mea pakupaku ka taea e koe te rau ki tō pūkoro, ka hari ki tāwāhi.
+107 76
+	Mā tātou anō e rapu, mā tātou anō e hanga, e waihanga ngā mea nei, ngā taonga nei, me ngā whakamārama ka taea e tātou te kohikohi.
+107 76
+	Mātauranga mai i konā, he kōrero mai i konā, ahakoa pakupaku, ahakoa iti, engari, ka, ka kawea haerehia e koe ngā kōrero nei, kua tūtaki koe ki tētahi tangata noa atu, kua whakamoea tērā whakaaro ki tērā, nā, mai i reira, kua tipu te whakaaro.
+110 24
+	Kātahi ka kōrerongia e rātou, tō tātou reo, nē, ko ā tātou kupu, kia mau tonu tātou ki wēnei, ki wērā, nā te mea koira tō tātou reo, te whakahua o, o tērā kupu.
+110 44
+	Anā, ka horohoroia e ia ana ringa.
+110 47
+	Kātahi ka haere ia, ka whakatapua e ia te kōhatu nei.
+114 13
+	Ā, i reira, ā, ka kitea e tātou te tino kaupapa ake o tēnei mea ko te taumau.
+114 43
+	Ka hoki a Te Rarawa ki tō rātou kāinga, ka noho Te Aupōuri, ka whakataungia e rātou tēnei kaupapa, otirā, i mua atu i te haerenga o Meri Ngā-roto ki te moe i tana tāne, ā, a mea, a Pūhipi, me noho a ia mō ngā rā e whā, ā kia mahia ai, kia pokangia ai, tōna whare wahine, kia kore anō a ia e whai uri.
+114 51
+	Ka kitea e koe tēnei ko te huarahi.
+114 69
+	Kātahi ka kōrerohia e rātou, he kōrero, he whakaaro rā tēnei i kōrerohia ai, he whakamoenga, ka whakamoe a ngā maunga kia whānau ko te pae.
+117 146
+	Ka mutu he kore paru nō mātou i konei, kātahi ka mauria e tētahi te mea tokotoko rā tōna, ka whakahokia ki roto o te Tai Rāwhiti, ki roto o Te Aitanga-ā-Māhaki, ā, ki reira ka rapaia he paruparu, hei mahi i ngā, ngā piupiu nei.
+117 161
+	Nā, ka mahia e rātou he kēhi mā rātou kia haere rātou ki te kōti.
+117 161
+	Engari, nō tō taetanga atu ki reira, ā, ka waihongia e te kōti tā rātou take.
+117 173
+	I reira ka kitea e rātou ngā, ngā iwi nei, ā, ka whakahokia mai e rātou ki a rātou, ā, nā rātou i, i tāpoki.
+118 18
+	Engari, i mua atu o te hekenga atu o kiore ki tana kāinga hou, ka tikoina e ia te mātenga o wheke.
+118 33
+	Nā, kei roto i ngā kōrero a Ngāti Wai, ka, ka rongohia e tātou ēnā kōrero a tērā o ō tātou kaumātua, ko Mōrore Piripi tōna ingoa.
+118 69
+	Ē, kia kaua te tangata e haere ki te, ki te tiki ōi, kia, kia, kia tika te wā nē, kia tika te wā, mehemea koia tēnā kia wā tika ki te haere ki te tiki i te ōi, ā, ka tukuna e ngā kaumātua ngā tāngata ki, te haere ki ngā moutere ki te tiki i te ōi.
+119 23
+	Nā, i te taenga atu o ngā mea i runga i a Miringa-te-kakara, kātahi ka kitea e rātou te, te tohu nei.
+120 5
+	Nā, ka noho tēnā whakaaro i konā takoto ai, anā, nā, ka riro nā [Ray] Waru i whakaara ake anō, ana, tāna tono mai ki a mātou o Te Māngai Pāho mēnā ka taea e mātou te āwhina i te kaupapa.
+120 30
+	Ka whāia pea e au tēnā tohu mātauranga.
+120 211
+	Nā, reira ka taea noa ihotia e rātou, ā rātou ake kōrero te kimi mai, mehemea ka wareware, nē?
+121 62
+	Ā, heoi anō, ka homaihia tētahi pukapuka, ka pānuihia e au te pukapuka nei, ō, tino mīharo au ki ngā whakanekeneketanga, i ngā tohutohutanga a rātou.
+122 84
+	Kātahi anō ka, ka taea e ia te tuhituhi.
+123 177
+	Heoi anō, ka hutia e koe te, i te rau nei, ka tō koe.
+125 197
+	, ko ēnā ngā, ngā taonga ka hokona mai mai i ngā pūtea, ā, ka whāngaitia mai e te kāwana, ā, mō tēnā, tēnā wāhanga ako, anā, kua whakaae mai he pūtea hei hokohoko i ngā taonga rā, e āhei ai rātou ki te mahi i ā rātou mahi, nē.
+126 11
+	Ko tōna tikanga rā tērā, engari ā, nā, nā te kāwanatanga anō hoki ērā āhuatanga i whakatau i reira, ā, ka taea anō e te kāwanatanga te tīhaehae o ēnei mea, ka hokohokongia ngā pepa o ō tāua whenua o te Māori.
+126 58
+	Engari, ē, ā, ki ōku nei whakaaro, mehemea ka taea te whakatau o tētahi kaupapa, tēnā pea, e taea e mātou te hoko mai anō i te whenua ā te wā kua eke ki te whitu tekau tau pea, ki ērā, tēnā pea, ka taea e mātou te hoko mai anō o tō mātou whenua ki a mātou anō.
+126 67
+	I runga hoki i a Ō-pepe, nē, tō mātou pāmu, ā, rima tekau mano eka, i raro i te mauri o tēnā rangatira, nā, ka wāhia e mātou, ā, tētahi wāhi hei mahi tia, mahi pāmu, mahi hipi, wērā atu āhua mea katoa.
+126 136
+	Nohohia, ka kōrerohia e Ngāti Tū-whare-toa i te Hikuwai i raro i te mana o tō rātou rangatira i a Te Heuheu, hei whakatikatika haere i ngā whenua e pā ana ki a mātou, kātahi ka whakanohohia e mātou ngā [four, three, eight] nei [trust] e kōrerohia nei, e ngā whare kōti.
+126 136
+	Nā, ka kuhu mai ki roto i te tāone o Taupō, nā, ka hokona haere e mātou ngā whenua o tauiwi, ka whakatū haere he kāinga mō mātou pēnei e kōrero nei ko te Ō-pepe Kōkiri [Centre], koina tētahi o ngā toanga, anā, kei raro tēnei i te mana o Ō-pepe Pāmu e whakahaere ana, nā, tuarua atu i tērā, ko te ingoa kei te mau ki rāia, nā, ko [Ō-pepe Court], engari, ko Rāwiri [Court] kei reira, [but], ko Ō-pepe tērā e whakamaumahara ana ki ngā rangatira nō rātou te whenua, anā, koinei wō koutou taonga e takoto nei.
+128 118
+	Ā, kei te kaingākau tonu mai te Pākehā kia mōhio rātou he aha ngā kōrero, engari ko te reo te mea nui, ka, ka ekena e te reo ētahi o ngā taumata e pā ana ki a tāua, ki te Māori, ā, kāore e eketia i, i roto i te reo Pākehā, nō reira ko te, ko te taha ā ngākau kei te puta ki a tāua ki te iwi Māori kāore e kitea ana i roto i ngā kaupapa Pākehā.
+129 39
+	Nō te tau ono tekau mā tahi, ka whakatūria e te [first Battallion Royal New Zealand Infantry Regiment] te whare taua ki [Malaya].
+129 98
+	Ka whakatapua e tātou tēnei pou whakamaharatanga o tēnei tupuna whare i runga i te ingoa o te matua, o te tama, o te wairua tapu, ake, ake, ake, āmine.
+133 23
+	Engari, nō muri atu i tēnā, ka kimihia e mātou he whenua.
+133 23
+	Anā, ka kitea e mātou te, te wahine arā, i [Estelle (Rowe)], nē?
+133 29
+	Ka kitea e mātou te tangata nei.
+133 35
+	Anā, ka whakatūngia e mātou te komiti nei.
+133 35
+	Te ono marama e mahia ana, ka whakatūngia e mātou ngā moni, kua tae ki te rua me te hāwhe miriona, tāra.
+133 47
+	Engari, ā, anā, ka tīmatahia e mātou te, te mahi i runga i te whenua nei.
+135 139
+	Ka horaina e te Mihingare te rongopai ki ngā pito katoa o te motu.
+136 29
+	Ā, ka, ka wini i te paraihe a tēnā, a tēnā, a tēnā, ka tae mai ki te tōku, tōku nā, ka homaihia e te māhita he, ngā heihei, he wīra nei kei runga.
+138 5
+	Ka whakatakotohia e Te Rangi-hau te kōrero ki ngā kaumātua o Ngāi Tūhoe kia kimihia mai he ingoa mō te marae nei.
+138 5
+	Ko tana mahara kia poto noa iho te ingoa, kia taea ka tuatahi ai e te Pākehā te whakahua tika i te ingoa.
+139 115
+	Ā, i kī mai ia, ngā mahi ka mahia e koe ināianei, he pai tēnā ki a mātou.
+142 43
+	I, i takea mai i taua whakaaro hōhonu, tiakina ka mate te pāpā, otirā, ka tīkina te, te teina ka whakatipunga e te, te mea e kīia nei e tātou he [uncle].
+142 55
+	Ka hangaia e tērā te whare karakia ki reira, ka hangaia tō rātou marae, me tō rātou whare.
+142 55
+	Kātahi ka tukua e ia tēnei wāhi.
+143 15
+	I te haerenga mai ki konei, ki te tomo i te whare nei, ka kōrerongia e ia ngā kōrero tangata, ngā kōrero a te kikokiko.
+143 15
+	Nā, i tua atu i tērā, ka kōrerongia e ia te kōrero o ngā kōrero tapu o tēnei whare.
+143 15
+	Nā, i muri mai i tērā, ka tāpiringia atu anō e ia he kōrero i tua atu, kei roto i a, i a Heremaia.
+143 29
+	Nā, i konei, nā te moenga, ka moe anō te koroua rā, a Rangi-ka-wehea, ka moengia e ia tētahi o ngā, ngā, te tuahine.
+143 38
+	Heoi anō, ka whoatuhia e ia tāna ingoa, i a Rangi-moe-iho, e ki rā ahau, ko te tamāhine a Ō-rua-taupare.
+146 4
+	Ka whakaaehia e ia tēnei kōrero.
+146 47
+	Engari, anā, i reira tērā kōrero tērā, i reira ka kōrerohia e ia tētehi kōrero, he tamaiti nei kei muri ake nei, māna ōku hapa katoa hei, hei horo, hei, hei whakatutuki.
+146 59
+	Ka kīia e ngā iwi, ā, he rūkahu noa iho nā wēnei tāngata.
+146 110
+	Ā, ka tukuna ai e rātou tērā whenua.
+147 26
+	Ā, nāna i whakaaro mai, ā, ka tiki e ia ngā, ngā haki, ngā, ngā tohutohu o ia whenua, ia whenua o tāwāhi, pērā i ngā, ngā Kōtimana, ko te Kōtimana tonu kei roto i ngā, kei te tū i ngā, i roto i ngā toko, poutokomanawa rā.
+149 173
+	Ka taea e ia te whakatikatika te reo Māori me te reo Ingarihi.
+150 134
+	Ā, kia mōhio atu ki ngā rangatahi, ā, he aha tōna mahi, ō, he aha ai ka, ka mahia e mātou tēnei, te mea, te mea, te rā maumahara mō, mō Tā Māui, kia mōhio ai, ā, he aha ai ka, ka hui te, te iwi Māori i reira.
+150 140
+	Ko tōna tūmanako, ka taea e mātou te kawe, kia whakanui nō ngā rā, kia kore rawa mātou e wareware i ngā mahi i mahia nei e Tā Māui Pōmare, Apirana mā, Ngata, aua momo tāngata katoa, nō te mea, āe, kei te tū tautoko i ngā mahi kua oti nei i a rātou.
+151 5
+	Ā, i ū mai ērā o ō tāua waka, ā, ki te Kōpua-ā-Kuku, otirā, ko te takapū o te whenua i tārewarewatia rātou ki reira, ka karangahia e ō mātou mātua tīpuna, ā, ko te Kōpua-ā-Kuku.
+151 5
+	Ka whakatūhia e ia tōna pā tūwatawata ki reira, ā, e kīia nei e te kōrero o ō mātou tīpuna, ko Mata-rehua.
+151 5
+	Ka whakatūngia e rātou he whare waka mōna, mō Te Arawa waka, ā, nō muri tata mai i te ūnga ki reira, nā tērā o ngā rangatira, a Raumati, o te waka o Tainui, i tukuna atu ai te mura o te ahi o Mahuika, wera tonu atu te waka.
+151 12
+	Ka nānātia e ia tōna koroua i a Rongo-te-ahu, i a Piri.
+152 284
+	Tērā pea ka taea e rātou te homai o tētahi wāhi, he koha nei, hei āwhina i te pūtea mō ā tātou tamariki.
+152 303
+	Ka karangatia e mātou he hui hei whakatuwhera taonga i roto i ngā whare taonga, pērā i te [City Gallery], mō te whakaatu pikitia, ka tae mai ko [Anne Delamere] ki te hui whakatuwheratanga, ki te tautoko i te kaupapa, nā te mea, he Māori ēnei tohunga tā pikitia.
+152 306
+	Nā, ko taku tūmanako ka haere whakamua tonu, me taku mōhio ka, ka taea e rātou ngā taumata.
+153 19
+	Ka mahia e rātou ā rātou reti, hei pana haere i ngā (rawa), eke ki runga, ki te wāhi e titirotia ai, anā, ki reira whakatikatika.
+156 46
+	Ā, kia pai ai hoki, nē, ngā pō, ka moe, ā, ka haere atu ia, ka hiwingia atu e ia ngā paraikete o, o runga o ngā waewae o, o Rongo-mai-wahine rāua ko Tama-takutai.
+156 55
+	Kotahi tonu te taha, ka taea e te tangata te, te piki.
+156 83
+	I reira ka whakatūngia e te kuia nei tētahi whare, wharepuni, mō rātou i reira, ko te ingoa ko Te Āti Hau, i te taha o te wai rere o Marama-hātea.
+157 88
+	Ka herea e koe tēnei kaupapa, ki te Kauhanga-nui?
+159 15
+	Arā, ka hangangia nei e rātou tō rātou marae ki raro rā.
+159 15
+	Nō tērā, nō tērā wā, ā, ka moe māua, anā, ka hangangia e au he whare mō māua.
+159 27
+	Ka kitea i reira, ā, ka kitea i reira te hinu, ā, ka mahia e rātou ā rātou mīhini i reira hei kari i roto i te whenua, anā rā mō te hinu, kia kite ake, kia puta ake ki waho.
+159 42
+	Ka taea e koe te whakamārama mai ki a au te take e kīia ai ko Wai-paoa?
+159 53
+	Anei ki roto i tana moemoeā, ka kitea e ia he maunga, ā, i runga i te maunga nei e tipu ana te rākau.
+159 53
+	Heoi anō i tērā wā ka puta mai a Te Kumi, ka whakakite mai a Te Kumi i a ia ki a rātou me tana kōrero anō, kia waimarie, anei rā, i te ata, ka kitea e koutou te maunga nei, kia whiti mai te rā, whiti mai ana te rā, ka kite atu i te maunga.
+159 55
+	Ka whakahautia e ia he tangata kia haramai ki te whenua nei, anā rā, ki te rūri haere i te whenua o Manga-tū, kia kīhia e ia anei te rohe o Manga-tū, anei te whenua o Manga-tū.
+159 67
+	Ka wāhia e ia te ārai hei oranga mō te iwi, nui atu.
+159 79
+	Ka tuhihia e ia ngā pukapuka, ngā pukapuka anei rā e pā ana ki ngā, ki ngā karakia a Te Kooti.
+160 77
+	Ka whakanohoia e ia ngā tamariki a tana tuakana, a, a Rangi-hau-heri, nā te mea i mate mai kē a Rangi-hau-heri i, i Matatā, tērā takiwā.
+160 101
+	Nā, ka hangangia e ō mātou mātua tūpuna, ā, kia, kia karingia ngā, ngā wheua o ō mātou mātua tūpuna, kia wātea ai te wāhi nei nā hei mahi tākaro mō ā mātou tamariki, mokopuna, i tērā wā.
+160 101
+	Ā, ka, ka tupu haere ake te karapu, ka hangangia e ō mātou mātua tūpuna anō, ā, kia wātea ai te marae kia nukungia ake te karapu ki runga nei nā.
+162 171
+	Āe, ka homaihia e rātou ētahi o ngā pūtea o reira, engari ki te whakatō i wērā, wērā kūmara.
+162 277
+	Ka taea e mātou te kī, pēnei te tokomaha, anei te tokomaha o ngā tāngata e mōhio ana ki te kōrero Māori, e matatau ana ki te reo Māori.
+164 49
+	He nui hoki ngā taonga ka whakahokia mai e te tangata, ā, ā, me tōna whānau hoki, mai i tana koroua i a Tā Māui, he nui ngā taonga i tukuna atu e te iwi, ā, e Ngāti Raukawa, e Te Āti Awa, ā, e Ngāti Toa, ā ki tana koroua, kua riro māna hei tiaki.
+164 63
+	Ētahi o ngā, i taku nei kite, ā, titiro, ētahi o ngā kaihautū o ngā tari Kāwanatanga kei te haere ki tēnā Māori, ki tēnā Māori ki te kohikohi i ngā whakaaro, ā, mō tētahi kaupapa pea, anā, ka kitea e ngā kaihautū ngā kōrero e pai ana ki a rātou, ehara i te mea he, ngā kōrero tika, ā, ngā kōrero [um] whakatutuki i te kaupapa, engari kei te, me kī, ā, me kī pēnei, kei te [shopping] mō te [selective Māori advice], nē rā?
+166 509
+	Engari, i konā, ki te tukuna ki ngā, ngā kura arā ngā [day schools], tēnā, kei te kite anō koe i te haere o, o tāu tamaiti, ā, ka taea hoki e koe te whakatikatika i ētahi wāhanga
+166 539
+	Engari ki a mātou o konei, koina tā mātou hiahia, koina tā mātou manako, ā, he whāngai atu kei tēnā, kei tēnā, mēnā ka hopukina ka pupurihia, ka poipoia e tōna whatumanawa, ā, hei taonga anō mōna ā tōna wā.
+167 26
+	Tino, tino aroha rātou, ka whakaputangia e mātou ō mātou tangi ki a rātou.
+167 56
+	Nā, nā reira, kei te, kei tāu pātai, ngā, ngā wawata, ngā āwangawanga i roto i a rātou, nā te mea i tae rātou ki taua hui, ka taea e rātou te kōrerorero tahi ki a rātou anō, te whakawhitiwhiti ki a rātou anō, te rapu, ā, oranga, te rapu whakautu i a rātou anō, nā reira i anga ea ai tērā wawata o rātou kia whakatikatikangia.
+169 13
+	Ā, nō reira, e pēhea tōu whakaaro e kore te Kāwana Tianara e tae atu, a [Jim Bolger] rānei, engari ka whakatūria anō e rātou tētahi huihuinga mō rātou ki hea rainei o Pōneke.
+169 34
+	Ē, ka mauria e rātou ēnei kōrero ki ō rātou kāinga, ki roto i ā rātou, ō rātou whare, ki roto i ō rātou whare hei whakatikatika i ngā kōrero nei, kā tahi ka hurihuri rātou i ētahi o ngā kupu nei i runga i te kupu Pākehā kia tika ki a rātou ki te iwi whānui, mōhio ake te tino tapu o te kaupapa i mauria atu nei e rātou, e tukuna atu e koe, te kaikōrero, ki a rātou.
+172 42
+	Nā, i runga i tērā āhuatanga, ka hangaia anō e rātou ētahi kaupapa atu, kaua e pā noa iho ki te, ki te tākaro i runga i te moana.
+172 42
+	Nā ka mahia e rātou he, he maramataka kia eke ai ki te ingoa o tō rātou, tō rātou waka e karangahia nei, koina te, te waka kōrero, mō tō rātou waka ama.
+172 42
+	Nā, ka tīmatahia mai e au, te whakapapa o tō rātou waka.
+172 91
+	Engari, mehemea ka taea atu e rātou te waea atu ki konā, ka pai noa iho pea te homai i tētahi paku nama, ākene ka waea tonu atu ki a koe.
+175 98
+	Anā, ki te haere i runga i ērā whakaaro, ā, ki te whakatakeo i te taringa mei kore e whakarongo mai, ka waihangatia ake e mātou ētahi mahi, ā, mēnā kei te tika tonu tēnei, ka rongohia ake ērā, ā, me te aha?
+176 148
+178 576
+	Ka haria mai e rātou ērā, ērā, te, tō, te reo, ā, me ērā atu.
+179 20
+	Āe, he tika tēnā, nō te mea hoki, inei, inei tau ai koe i runga i te rangimārie ka, ka taea e rātou te āwhina.
+179 62
+	Ko wai, ā, te kaihautū, nā, ko reira kua mōhio tonu koe, he haere ana te kaupapa ki hea, engari ka tukua e koe, he pakeke tēnei mahi, nō te mea, ko au te hau, kei te kaihautū i tēnei tau, engari, ki taka ki runga i taku kura, e rua ngā, ngā wāhanga i taka i tēnei tau.
+179 80
+	Mai i ērā āhuatanga ka taea e te tauira rā te hāpai i te kaupapa.
+180 5
+	Heoi anō rā, i tēnei wā, i rongo ake rā koutou tērā ka tukuna atu e au ētahi kōrero, he kaupapa mā Te Upoko-o-te-ika ki roto ki ō koutou whare.
+180 5
+	Ā, nō te pō o te Hārarei, ā, ka heke iho a Rongo-whakaata, ka moengia e rātou tō rātou whare, Te Hau o Tūranga.
+180 9
+	Ā, kāti, ka tīmatahia mai e mātou ngā kōrero, ngā kōrero mō te kaupapa e haramai nei ki roto i te {unclear word(s)}.
+180 15
+	Ka hoatuhia e ia rā te utu o te whare rā ki a wai, ā, kāore mātou i te mōhio.
+180 15
+	Ā, ka kitea e ia te, te whare nei, i reira, ngā taonga nei i roto i taua whare, ā, i te whare taonga tawhito.
+180 15
+	He nui anō ngā kōrero, kei te nui, kei taku tuakana nā, kei a, kei a Rota Waipara ētahi o ngā kōrero e kōrero nei, i kimihia ai, i kimihia ai i roto i ngā pukapuka me ngā tuhituhinga, ā, ka kitekitehia e ia ngā kōrero.
+180 21
+	Ā, ka whakahokia rā e ia te, te pātai, ā, he whare tūwatawata e tū ana ki te pae.
+180 36
+	Nā, ka moengia e rātou, ā, tō rātou whare.
+180 36
+	Nā, nō te pō ka moengia e rātou tō rātou whare.
+181 9
+	Tēnā ka tirohia e tātou, he aha ai i pēnei ai tātou?
+181 22
+	Ka tāwai pēneitia e tātou ō tātou iwi ake, ka kore rātou e whakaaro mai.
+183 26
+	Ka whakahāereeretia e ia te kākahu nei i mua i ngā iwi i roto i te whare.
+183 29
+	Ka whakapiringia atu e tātou tērā whakamārama ki ngā hura kōhatu nei, kua rite tonu.
+187 34
+	Nā, ka tirohia e koe, he karakia anō, mō te, mō, mō te mihimihi, he karakia anō mō te uru atu ki roto i te tapu o te rā, he karakia anō i te atapō, ā, he karakia anō, ā, mō te hākari, he karakia mō ngā mea katoa.
+188 39
+	Heoi anō e ngā rau rangatira, hei whakamārama atu rā tēnei ki a koutou e whakarongo mai nei, hei ngā Rātapu whakapaunga o tēnei marama ka rongohia anō e koutou ngā āhuatanga whakahere i mahia pakarihia arā, i te hui Ahurei a Ngāi Tūhoe.
+190 84
+	Nā, ko te waiata nei, ko te wāhanga i te, te matenga o Arihia, ka tuhia e te koroua nei te, te waiata rā.
+191 15
+	Ā, ka titirongia e te motu, ā, ka whakaarangia ake, ā, te ingoa o tēnei kuia mai i roto i ngā kohu i ngā ngahere, ā, ki te wā kāinga, ā, ka, ka kōrerotia, kaua noa iho e whakaputangia tēnei tūranga kia, kia taupatupatungia mai ētahi o ngā wāhine o te motu, o Aotearoa.
+191 15
+	Ā, kātahi ka kōrero mai, ā, tēnā, ā, mehemea koe ka pīrangi i tēnei mahi, ka homaingia, ka hoatungia e mātou tēnei, tēnei, tēnei āhua, tēnei āhua.
+192 22
+	Ā, kātahi ka whakaemingia mai e māua ā māua kai, ā, ka tono atu māua, he huihui tā tātou kei te kāinga, anā, kei te kai tātou.
+198 182
+	Ā, pēhea ki te, te, te whānau e noho nei i runga i ō rātou waka, ā, ka ahatia rātou ka pāngia e te mate, he tākuta haere kē atu ai ki a rātou, ō, kāhakina ki te hōhipera?
+199 5
+	I roto o te rohe o Poutini ka kitea e ia tētahi painga ki te karikari mai i ngā otaota e kīia nei e tauiwi [sphagnum moss].
+199 10
+	Ka hoatuhia e au he mahi.
+199 124
+	Whai anō e te iwi, ā, ko te hua kei roto i tēnei e kōrero ake nei a Tiki-rau, hei whakaaro pea mā ngā kaunihera a ia rohe mehemea ka taea e rātou te, te whakapaipai haere i ngā kāri i roto i te tāone tonu, ā, i hea ake, i raro rānei i te tari o Te Papa Atawhai, tērā te maha o te wai kua kore e tere pau ki te whakamākūkū i te māra kāri, wērā tū momo mea, ā katoa.
+201 76
+	Ā, i roto i ngā kōrero o te karaipiture, nā te aroha anō o te atua ki tāna i hanga ai, ka homai e ia tāna tama kotahi hei hoko i ō tāua hara, hei whakatika i ā tāua haere.
+202 22
+	Ā, ka taea e koe te rongo, te, ki ngā taonga, ngā taonga nei.
+202 54
+	Ā, ko te taonga tuatahi pea, ā, mō tātou, ā, ā, nā te mea e kaha ana a Tāwhiri-matea i tēnei wā ki te mahi i tāna mahi, ā, me tīmata i te pūrerehua, ā, nā te mea, ā, ko tōna reo he rite ki ngā, ki te hau, ā, ā, ko, ko te pūrerehua nei, ka kitea hoki e koe, ā, te waha a Tāwhiri-matea tēnei, me ōna hau.
+202 90
+	Koinei te hau ka rongohia ai, ka mahia e koe te porotiti nei ki runga i te, i te mātenga o te, o te tamaiti e takoto rā.
+206 68
+	Ā, ka titiro atu au ki te hōiho, kātahi ka whakakāti atu au i te rama, ka neke haeretia atu au ki te taha i te tera, ka tiro atu au i te tera, e hoa, ka pau e au tētahi pīkiwhara kata nei.
+207 17
+	Ka (peka) tinihangatia e Māui, ka tinihangatia e Māui, ka tinihangatia, e Māui, tana whaea, tana matua wahine, Ka katia e ia ngā pihanga me ngā whatitoka o te whare.
+207 17
+	Ka whakakikītia ai e ia ngā whāruarua, ngā, ngā, ngā, ngā putanga o te whare ki te karukaru kākahu, kia kore ai e kitea te whitinga mai o te rā.
+	Ka Ka whakakikītia ai e ia ngā whāruarua, me ngā putanga o te whare kia kore ai e kitea e Taranga te whitinga mai o te rā.
+207 17
+	Ka whakakikītia ai e ia ngā whāruarua, ngā, ngā, ngā, ngā putanga o te whare ki te karukaru kākahu, kia kore ai e kitea te whitinga mai o te rā.
+	Ka Ka whakakikītia ai e ia ngā whāruarua, me ngā putanga o te whare kia kore ai e kitea e Taranga te whitinga mai o te rā.
+207 17
+	Ka hoatu e te kuia rā tōna kauae ki tana mokopuna, hei kawe i ngā āhuatanga e puta ai te ora, te māramatanga, ki te ao whānui.
+207 19
+	Kātahi ka mahia e rātou ngā taura.
+207 24
+	Ka hoatu e te kuia te ahi ki tana, tana mokopuna.
+207 24
+	Ka kāwhakina e ia te ahi, ka tineia ki roto i te wai.
+207 24
+	Ka hoatu e Mahuika te ahi ki tana mokopuna, ka kāwhakina e ia te ahi, ka tineia ki roto i te wai.
+207 24
+	Homai anō te ahi ki a au i roto i ō maikuku" Ka kōwhakina e te kuia rā, te ahi i roto i ōna maikuku, ka kōwhakina e ia, ka hoatu ki a Māui, ka mauria e Māui, ka tineia ki te wai.
+207 24
+	Ka kōwhakina e te kuia rā tana, tana maikuku, hoatu te ahi ki tana mokopuna, kāwhakina e ia, ka tineia ki te wai.
+210 67
+	Ā, tērā pea, ā, ko ngā rīpene o roto i tēnei kāinga ka taea e tātou te, te whakamau i runga i ngā rīpene hei hoatu ki ngā tamariki, arā, ā, ā, i roto i ngā kura whānui o te motu nei, e ako ana i te reo, kia kite rātou, kia whakarongo rātou ā, ki ēnei tauira kōrero mai rā anō, ngā mea, ngā kōrero, ngā whaikōrero o ngā pakeke, rātou mā kāore i te ora i tēnei rā.
+210 97
+	Ā, tua atu i tēnā, me kī, ko ngā kōrero katoa kei te whakatā i roto i ngā pukapuka, ā, ka utungia e mātou ngā kaituhi, ā, nā tērā pea he, he kai mō ngā tāngata, kei te whakaaro rātou ā, ki te tuhi.
+210 103
+	Ahakoa he aha, ā, te huarahi, ka taea e tātou te te whakamahi
+211 14
+	Nā te minita i whakapuare ā, i roto i ōna kōrero, ka kōrerotia e a ia ngā mahi kei te mahi, kei te whakaotia e te Kāwanatanga mō ā tātou āhuatanga e pā ana ki te mātauranga.
+212 15
+	Otirā, ki te titiro ki te whakamutu i ngā rīhi mō ake tonu, ki te āta titiro anō i te wāhanga rua tekau mā tahi tau, ka tirohia te wāriu mō ngā rēti ka utua e ngā kaitango, ngā kaitango rīhi, me ngā āhuatanga e pā ana ki ngā tangata whenua nō rātou ngā whenua rāhui nei, ā, kia oti pai te whakarerekē i ngā ture e tū ana, e takoto ana, ināianei.
+214 52
+	I te tīmatanga o te wiki ka tukuna whakatuwherangia e te Minita ā, tētahi pukapuka.
+215 54
+	Engari, i roto i ngā kōrero a [Shuki Turner], ka whakapuakitia e ia te honotanga o tā te tangata whenua titiro ki te whenua, me ōna āhuatanga katoa.
+215 56
+	Ā, kātahi ka kōrerotia atu e au te mahi takatakahi a Te Papa Atawhai i a Tūhoe i runga anō i ōna whenua.
+216 82
+	Ē, ngā kaha kei roto i a tātou, mēnā, ā, ka whakatāngia e tātou ō tātou ingoa ki runga i te, ā, te pōti hoki, te pōti, ā, e heke mai nei.
+217 53
+	Nā, te, te wāhanga ki te Kōti Pīra, nā te Kōti Pīra i hanga, i tūwehe tāua, ka hangaia anō e rātou he Māori anō.
+217 158
+	Heoi anō, ki tā [Gordon] Mātenga, mā te kanohi Māori i roto i ēnei tūranga, tērā pea ka taea e ia te whakamāmā i ngā mahi pēnei, ka mate ana he uri.
+218 5
+	Otirā, e ai ki wāna whakamāramatanga mai, ahakoa tērā te roa o te tikanga, o te rapu i tēnei tohu, e karanga ana ia, ko tana tūmanako kē ka taea e ia te whakarāpopoto, kia tutuki pai ai tēnei tohu e whāia nei e ia.
+218 62
+	E ai ki ngā kōrero, ko te tūmanako ka kitea mai ai e te ao, he tino hē o ngā whakapae, arā, he tangata nanakia a Te Kooti.
+218 71
+	I ōna mauheretanga i reira, ā, i reira, ka, ka kimihia e ia tētahi hua, e whakaarotia ana e ia, kia huri pēhea ngā āhuatanga o, o Ngāi Tāua te tangata o roto i tōna rohe, ā, i ngā rohe katoa o ētahi.
+218 71
+	Engari mōna, ka haramai, ka (pikia e ia), ka iria e ia te, te whakapono o te hāhi i kitea ai e ia.
+219 35
+	Otirā, ki ngā mahi hokohoko taonga ki reira, ki konei, ki ngā mahi rānei ka taea e te tangata ki konei, ka taea anō e ia te mahi ki roto o Poihākena.
+221 62
+	Tērā pea ka taea e mātou te mau ētahi o ēnei kaupapa.
+225 9
+	Mō ngā wiki e toru, ka tirohia e tātou ngā kaipākihi Māori e ono, kia wherawhera i ngā take kia eke ai rātou ki ngā taumata o ēnei mahi.
+225 87
+	Nā roto i tēnei whakaaro tōtika, ka tīmatahia e te Pūkenga Waka, he wāhanga pākihi mō rātou ake.
+230 13
+	Me hoko rā anō rātou i taua whare i mua i te haritanga ki, ki Waihanga, āhua haunga noa kia kī te kāwanatanga, ō, nā rātou kē te hē, nō reira, ka utua e rātou te, tēnei Pākehā e hia rau tāra, e hia rau pāuna, ā, kia taea anō te, te hari i tēnei whare ki Waihanga.
+230 209
+	Ka meatia e ngā Pākehā, ē, me huihui mai koutou ki konei, mā mātou koutou e āwhina, nē?
+230 272
+	Ka titiro ake au, tēnei tangata e hoa, ka mahia e ia ngā mahi.
+231 114
+	Ka whakarerea e ia tana toki, mō te pene.
+232 50
+	I tēnei wiki, ka rukea e ā tātou kaitaupatupatu ngā huarahi pāhekeheke o te taumau kua pūmau, me te rapu i te whakautu ki te pātai nei, he anō rānei tō te reo Māori.
+232 88
+	Ka whakanuia e tātou ngā kōrero o ngā mātua tūpuna, i te mea nei ngaki te whenua, me mahi ngā ngahere, me whakarite ērā mea katoa, heoi, nā anō te mea, hei whai atu mā tātou, hei oranga mā tātou.
+234 85
+	Nā reira i mōhio ai, āe, anei ngā mea ka taea e te māhita nei, ā, mō te reo Māori ki roto i ngā kura.
+234 140
+	He mea pai tēnā, nā te mea ki te homai ngā, ngā, ngā waru nei, ngā waka e waru nei e kīia nei i roto i tērā rohe, i roto o tērā rohe, nā, ka tohia ai e rātou, tētahi, ā, tētahi kaikōrero anake rā mā tātou katoa, hei haere ki te kōkiri, ki te wānanga (i) ngā, ngā pūtaketake ki te kāwana.
+235 93
+	Mai i tēnā, e tautoko ana i tēnā whakaaro, engari, e mea ana au, pēnā ka ritea e te kāwanatanga kia āwhinatia, ā, te, hohoi, arā te i ngā whakarite a te rōpū mahi ai tā rātou mahi, ā me tētahi, ā, kia whakaaetia te kāwanatanga, i muri i te pōti ka haere ake nei, ka tīmatahia e te kāwanatanga ngā mahi e haere nei te iwi nei, a te rōpū nei ki Rānana, e mea ana au, tēnā pea i roto i tēnā, me whakakāhoretia tērā haere.
+239 14
+	Nā rātou i pōhiri a mātou i te rā o te Hātarei, ka mauria e mātou ngā, ngā taonga nei ki roto i tō rātou, kāore i roto i tō rātou wharenui, engari, ki roto i tō rātou, ā, wāhi tākaro o rātou.
+240 33
+	Ā, ko te mea nui i whāia e au, ko te mea, ko te puta o tētahi wairua kōrero i te tuatahi, nō muri i tērā, kātahi anō ka whāia atu e au te tika o te takoto mai o te reo.
+240 97
+	Ki ōku nei whakaaro, ka taea tonu e te kāwana te whakaheahea i ngā whakaaro a ētahi Māori i roto i ēnei rā, ā, i roto hoki i tēnei ao hurihuri.
+241 50
+	I tētahi wiki rā, ka whakaputahia e rātou tētahi pukapuka e kīia ana He Pūkenga Kōrero.
+241 76
+	Nā, e haere tonu nei, e haere tonu nei, ā, heoi anō, ka whakaarotia e taku rangatira waiho noa iho mai tēnā kia whakamanatia ngā hiahia o te rua tekau mā waru i runga i te, te poupou kia tāngia ki a ia, kia whakatūngia ki roto i tōna tupuna ake, i a Tūmatauenga.
+248 9
+	Nā i konei, ā, ka taea pea e tātou te titiro i tētahi huarahi hei whakatatū, ā, i ērā momo whenua, mehemea kāore he huarahi kē atu e kitea ana e tatū pai ai.
+250 19
+	Ko te whakahokinga mai, ā, o te tangata i roto i tana pōuritanga, ki waenganui o te hunga ora, ā, ka hākaritia e rātou, ā, te hākari a te hunga ora.
+250 30
+	Ki tōku whakaaro ake hoki, ā, ko ngā mea i whai i te reo Pākehā, ā tērā, kei te taea ai e rātou, ā, te whakaora tonu i a rātou i tēnei wā, nā te mea, kei te kitea he kōrero e rātou hei kuhukuhu atu, ā, i te mea hoki, kei te pānuitia te nuinga o ngā kōrero i roto i te reo Pākehā, ngā mea e kīia nei he [advertising], ā, koira rā hoki te huarahi mai o te moni, ā, ka kuhuna atu e ngā Pākehā ā rātou mea ki roto i ērā o ngā pepa.
+252 8
+	Ka whiua e te ture ērā tāngata, ka whiua anō hoki ngā tamariki e kuhu nei ki roto i aua pāparakāuta rā e te ture, ka whiua hoki ō rātou mātua, ā, ki tērā āhuatanga anō.
+258 38
+	Nā, kei te tahi karaka, ka tukuna atu e mātou tētahi kaupapa, ētahi o ngā kohikohinga kōrero a Te Upoko-o-te-ika, ā, ka rongo ake koutou a te tahi karaka.
+259 38
+	Engari, ko te mea nui, kei te kōrerorerohia atu te reo ia, ia rā, ahakoa, i ētahi tāima ka huri atu ki tētahi taha, ā, kua hoki mai anō ki te reo rangatira.
+259 43
+	Nā te mea, ka tukua atu ēnei mahi ki a koutou, ā, mai rā i te reo rangatira ka kōrerorerohia atu e ahau i ngā wā katoa, arā, i te nuinga o te rā, ka kōrero haerehia atu e ahau, ā, kāre e roa, ka huri atu ki te reo koretake, ā, ka hoki mai anō ki te reo rangatira.
+260 326
+	Tēnā ka tirohia e tātou he aha i pēnei ai tātou.
+262 5
+	I tēnei wā, kei te whai tātou i a Hine-wehi, i tana hokinga ki Pakipaki, ka tirohia e ia ētahi āhuatanga o te whāngai.
+263 554
+	Ā, ka pānuihia e mātou ngā huihuinga Māori o te motu, kātahi ka kōrero a Moko ki tāna manuhiri.
+263 573
+	Kātahi ka pānuihia e mātou ngā huihuinga Māori o te motu.
+263 632
+	Whai ake i ēnei, ka pānuihia e mātou ngā huihuinga Māori o te motu.
+263 658
+	Ā muri mai i tēnei, ka pānuihia e mātou ngā huihuinga Māori o te motu.
+265 64
+	Ā, nā reira, ā, ka taea tonu e au te, te haere ki ngā kura tuarua, te kōrero ki ngā tamariki, ngā mokopuna, tae noa hoki ki a koutou mā.
+265 252
+	Ka taea e koutou te piki mai ki tō mātou whare, i te tiriti o Haupapa, te nama ono tekau mā rua.
+265 285
+	Pai kē atu mēnā ka taea e koutou te kōrero Māori mai i ngā wā katoa
+266 44
+	Mā ngā kōrero nei, ka kitea e ngā hunga ētahi o ngā aronga kei roto i te [MMP] e pā ana ki ngā whenua Māori me te tino rangatiratanga.
+266 88
+	Ia Rātapu ka pānuitia e mātou ētahi hui huri noa i te motu.
+266 201
+	Ā te kotahi karaka a te tekau mā ono o tēnei marama, ka tīmata ngā whakahaere mō ā tātou mahi pākihi, ā, ki te titiro ki ngā huarahi ka taea ai e tātou te hīkoi.
+267 33
+	Ki ngā whakamārama, ka taea e tātou te whakarongo me pēhea nei te haere o te waka ki runga i ngā reo irirangi Māori huri noa i te motu.
+268 46
+	I muri iho, ka hoki mai anō a [Pop], kātahi ka pānuihia e mātou ngā huihuinga Māori o te motu.
+268 61
+	Kātahi ka pānuihia e mātou ngā huihuinga Māori o te motu.
+268 101
+	Kātahi ka pānuihia e mātou ngā huihuinga Māori o te motu.
+268 120
+	Kātahi ka pānuihia e mātou ngā huihuinga Māori o te motu.
+268 136
+	Ā muri mai i tēnei ka pānuihia e mātou ngā huihuinga Māori o te motu.
+269 75
+	Ka kitea e māua te hōiho e kai otaota ana i te taha o te huarahi.
+270 18
+	Ka kitea e māua te hōiho e kai otaota ana i te taha o te huarahi.
+270 38
+	Ka kumea kōtaha e rātou ngā waka papa ki te tūāpapa kaoa o te ākau, e pākia ana e te ngaru.
+270 38
+	Ka mōhio tonu mātou ka pēhea mehemea ka tahia e ngā ngaru nunui ngā waka papa ki runga i te ākau, me ngā waewae kore hū.
+270 39
+	I te wā ka tapatapahia e ngā kaimahi ngā taura e here ana ki tērā atu waka papa, ka pakaru, ka totohu.
+271 28
+	Ki te tere tātou, ka taea e au te whakarahi ake i te moni.
+271 378
+	Ki te tere tātou, ka taea e au te whakarahi ake i te moni.
+271 418
+	Ia wiki, ka tirohia anō e tātou he taru mea nā roto mai o ngā whakaaturanga a te Waka Huia.
+272 196
+	Ko ētahi ka kīia e rātou he tūmatakahukī, titiro whakarunga ngā mata, āe.
+273 102
+	Kātahi anō a Rehua ka tahuri ake i te taha o te whare, ka unuhia mai e ia te rākau ka kī atu ki a Pou, "Inā ia tāua e mau atu, ko te rākau nei, hei tiki atu i tōna whakawai.
+273 110
+	Kātahi ka hangangia e ia ngā ika, ngā tāmore, tāmoremore, ngā āhuatanga katoa o ngā ika, mororiki.
+273 119
+	Ā, ka mahia e koe, ā, tonoa ētahi whakaahua e whā pea.
+273 121
+	[Um], engari mehemea koe e hiahia ana te haere ki Hawaii, ki Amerika rānei, koe, ka taea e koe te tono atu mō tētahi [visa], ki taku whakaaro, ko te haere rōpū te mea tino pai.
+004 13
+	Ā, kei te pā pōuri tonu rā tēnei o ō tātou kaumātua, nā te mea, kāhore he Māori e eke atu ki ngā tūranga taumata, otirā [CEO], kua taea nei e te kāwanatanga te atawhai ēnei āhuatanga ki ngā wāhine kua tae ki reira.
+006 31
+	I te hoatuhanga o te mahi nei ki a ia, tere tonu tana hopu mai, ā, me tana mōhio anō hoki he mahi tēnei e pā ana ki wā tātou tamariki, tāne, wāhine, ā, kua pāngia e ngā raruraru, ā, ki te ture, ā, ki ngā tāngata hoki.
+010 23
+	Katoa anō mātou e haere atu ki a ia inanahi nei, kua kitea e ia, ā, kei Te Ika Whenua, ā, te mātauranga mō tēnei mahi, arā, e kī ana ia i tēnei wā, me mahi tahi mātou me ngā, wana āpiha, ā, kia tarai a mātou ki te whakatakoto me pēhea te whakahaere o ā mātou, ā, kairangahau.
+011 11
+	Kua tuhia e te iwi nei wā rātou kōrero i roto i te reo Pākehā, engari, kei te kite tonu atu au i roto i te rurenga mai o wā rātou kupu, kei te taka te mana whakahaere i ō tātou whenua ki a rātou.
+012 23
+	Nō reira, e karanga ana a Ngāi Tahu, ā, kua tukuna atu e rātou tētahi tono ki te Rōpū Whakamana i te Tiriti, tino maha tonu, tino nui tonu ā rātou āwangawanga kia tae atu ki waenganui i te aroaro, kia kōkirihia i runga i ngā whakarite a te Poari o Ngāi Tahu.
+016 10
+	Nā reira, kua whakamāramahia atu e rātou ngā kaiwhakahaere o Wīwī mō tērā takiwā e pēhiatia ana e rātou te haere o ā rātou mahi porotehe.
+017 12
+	I te wāhanga kua whakawāteahia e te kāwana ētahi o ngā paraka whenua, ā, kei raro i a rātou hei hoko, arā, i raro anō i ngā ture i hangahia i te tau iwa tekau mā toru, kotahi mano, kotahi rau rua tekau ngā whenua kua whakawāteahia e rātou, e kīia ana, kāre te karauna i te hiahia.
+018 58
+	Nā reira, kua katia e rātou ngā wāhi muia nei e te tūruhi ki te mareti haere i te taha o Rua-pehu, arā, ko Whakapapa, ko Tūroa me Tūkino me ngā rā e toru.
+019 76
+	Kua whakaputahia e tētahi tākuta mai Ingarangi ōna whakaaro, kei te mate kē ā tātou taonga pēnei i te korowai nei ki te pirau i ētahi wāhi.
+020 6
+	Tēnā koutou i runga i ngā whakanekeneke kua poipoihia e koutou, ā, mō tēnei rā.
+024 58
+	Whai anō, ki tōna tikanga, ka whiwhia ana he tauira i tēnei tohu i te mutunga, kua taea e ia te whakairo he waka, he tipuna whare rānei.
+024 97
+	Kua tae mai te pānui a te Kaunihera Whutupaoro o Aotearoa kua karangahia e rātou he hui ohorere ki Te Whanga-nui-ā-Tara kia pai ai te takahuri i ētahi o ngā, ō ā rātou ture whakahaere e pā ana ki te kōti, ki te pōti ngā mema mō tēnei poari, ā, kia hia rātou, ā, i runga i te komiti matua, ko wai ka āhei ki te pōti.
+025 8
+	E ai ki ngā tirohanga, hei tōna wā, kua takahurihia e rātou tēnei hōhipera hei whare wānanga mō ngā mahi hākinakina.
+026 185
+	E ai ki ngā kōrero, kua tukuna e te tīma rīki Māori he tono ki te [ARL] kia purua he tīma ki te [Winfield Cup].
+027 72
+	I te kāinga nei, kua whakatūria e te Tari Ahu Moana he rōpū hei wherawhera he aha nei kei te matemate ngā mano, tini ika i ō tātou takutai.
+027 84
+	Kua tohua e ngā [Springbok] tā rātou kaihere i te tāpui hei nama waru.
+029 16
+	Kua hāmenetia e ngā pirihimana tētahi tamāhine, tekau mā whā noa iho ōna tau, mō te turaki i tētahi pēpi.
+029 51
+	I te kāinga nei, kua pāhitia e te kāwanatanga te ture utu tāke penehīni.
+030 8
+	Kua tōroahia e te kāwanatanga te pire e whakamana ana i te ture tango whakapapa kia āhei te Rūnanga Whakamana i te Tiriti ki te titiro i ngā tono a te iwi Māori.
+031 11
+	Heoi anō, kua rongohia, kua kitea anō e te iwi Māori taua mahi kino, ā, nā tēnei ka huihui te tini maha o ngā rōpū Māori ki te pane o Maunga-kiekie.
+032 29
+	Kua tārewahia e te Taraipiunara Whakarite Kaupapa Whenua, te tono raihana a te kaunihera ā rohe o te Tai Tokerau e whai nei kia tukuna he paru ki roto i te whanga o te Uru-tī.
+032 127
+	Ā tēnei Rāhoroi, kua tukua e te Mana Tohu Mātauranga ngā wehenga hou whā tekau mā rua.
+036 10
+	Kua rīpoatahia e te Rongo Mana Māori te maha o ngā wāhi tawhito kua tīraria ahakoa anō ngā ture e meinga ana kei te tiaki i aua wāhi.
+037 94
+	Kua hopukinatia e te tari Pirihimana te tangata e whakapaetia ana i pāwhera ai ngā wāhine me ngā kōtiro i te Tonga o Tāmaki.
+039 92
+	Arā, ko taua pānui e kī ana kua whakaritea e te karauna he huarahi whakatōpū i ngā toenga whenua, ā, i tōna wā, ka whakahokia ki te iwi.
+041 203
+	Kua waihangatia e tētahi rōpū ētahi taonga, ki tā rātou hei arataki i te hunga kei te ako i te reo rangatira.
+043 78
+	Ā, ko ētahi hoki, kāre kau he tika ngā tau, engari, kua hikitia e rātou ō rātou tau kia haere.
+045 104
+	Ko te tūmanako, kia whāia te huarahi, kua oti kē e ēnei hunga te whakatauira i roto i ngā mahi kaipākihi, manaaki manuhiri.
+047 27
+	Ahakoa te wairua mārie i whakarerea iho ai ēnei whenua tapu e rātou mā, i te rā nei kua tūkinohia e te hunga he moni kē ō rātou atua.
+047 93
+	Kua kitea e mātou ehara te whakairo rākau i te mahi a te Māori anake, engari, kua huri tahi mai tētahi Hainamana ki te raweke i ēnei mahi.
+048 180
+	He kai rangatira kua roa e kainga ana e te ao Māori, engari, ināianei , kua kitea e te Pākehā tētahi atu huarahi hei mahi moni.
+052 70
+	Tētahi atu hua anō i puta mai kua aukatihia e te karauna te hoko o aua whenua ki te hunga rāwaho.
+052 221
+	Kua tuhia e te Tari Tatau tēnei pukapuka ki roto i te reo rangatira me te reo tuarua.
+055 176
+	Koia tēnei ko te pukapuka kua oti kē nei te whakarārangi i ngā whenua katoa, arā, kua mīharo tuatahitia e ēnei mema wētahi o ngā rūnanga ā iwi o te Tai Tokerau.
+058 75
+	Kua tapaia e tētahi tangata whenua tētahi ingoa Māori mō te tari hauora ā rohe o Te Upoko-o-te-ika.
+058 188
+	I runga anō i te kaupapa e tautohetia ana, ahakoa kua whakawāteahia e tēnei kaunihera matua te Kaunihera o [Franklin].
+059 152
+	Kua whakaaetia e te hauora ā rohe mō te Tonga o Tāmaki, kia whakaterehia e Tainui ētahi hōhipera iti hei oranga mō te iwi.
+061 18
+	Ahakoa kua waimarie te noho o Taka-hue ināianei, i muri o ngā pōreareatanga i konei, ā te hokinga mai o ēnei whenua kua tangohia anō e te karauna tētahi utu mai i te pūtea kamupeneheihana kei mua i te Rōpū Whakamana i te Tiriti o Wai-tangi hei utu i ngā raruraru i tau ki runga i tēnei whenua.
+063 109
+	Engari kua whakaaetia e te Kaunihera ā rohe o Tūranga-nui kia whakaritea hei whenua hanga whare.
+063 115
+	Ko te tino nawe o ngā tangata whenua nei ko tēnei, kei te whakahē rātou ki ngā mahi a te kaunihera kua tukuna, kua tukuna e rātou, ā, kia hanga whare i runga i tēnei pā tawhito o te tangata whenua nei.
+067 111
+	Kua whakatiwhiketetia e te rōpū Hotu Manawa Māori ngā ākonga tuatahi mō te kai o te hauora.
+067 257
+	Koira te mea nui rā rā, kua, kua homai e rātou te kākano ki a tātou.
+068 12
+	Kua tohua e te Kōti Whenua Māori he huarahi e riro ai mā te Komiti Kaitiaki Whānau o Ngāti Paoa e whakahaere i ngā take e pā ana ki te iwi o Hauraki me tōna iwi ki te tonga o taua takiwā.
+069 54
+	Kua tukuna e mātou ki mua i te aroaro o tana rōia, ā, kua mahia e ia tētahi whakautu mō te whakaaro, ā, ā ngā kaihautū a te Whare Whara nei.
+069 194
+	Kua whakaritea e ngā kaunihera ā rohe o Wai-taha me Ngāi Tahu he rā whakanui i te tīmatanga o te tahi rau, rima tekau tau.
+070 72
+	I Ō-tautahi kua tohua e te Rōpū Nāhinara tā rātou māngai mō te Tai Tonga a [Cliff Bedwell] mō ngā pōti o te motu e tū mai nei.
+071 48
+	Ahakoa kāhore i te wātea tētahi o ngā āpiha o te Tari Arotake Mātauranga, kua tukuna mai e rātou tētahi o ngā rīpoata nei mā te iwi nui tonu e pānui.
+073 151
+	Kāre a [Douglas] Pirini i te tawhiti i te pae o āna tūmanako, kua taea e ia te whitu mano, waru rau, ono tekau mā whā.
+077 69
+	Kua whakamanahia e te Tari Hauora tētahi rōpū Māori i te tonga o Tāmaki hei āwhina i ngā kaupapa mō te hunga wairangi.
+077 178
+	I tēnei wā kua whakatūria e te kāwanatanga tētahi komiti hei rangahau e pēhea ana te taumaha o te patu a te rauhea i te hauora tangata.
+078 150
+	Kua whakatakotohia ai e te kaunihera tētehi kaupapa i mua i te aroaro o te iwi.
+084 87
+	Ko tētahi atu o ngā rōpū, Te Huinga Waka o Poihākena, ko te tuarima tēnei o ngā whakataetae kua takahia e rātou te atamira pakanga.
+088 15
+	Kua tau e ngā rangatira nei he waea karanga tāne mō te motu katoa.
+089 24
+	Ka pēhea rā tō tāua reo ināianei kua hokona nei e te karauna te teihana Irirangi Matua o te Motu?
+092 50
+	Kua kitea ai e rātou te iwi Māori me ō tātou āhuatanga, me ō tātou taonga, kua mīharo kē.
+092 53
+	Nā, ko tētehi, ko tētehi atu o ngā āhuatanga o ngā tauiwi, ko tētehi i Tāmaki-makau-rau i tana hōtēra kua tapangia e ia te ingoa o tā tātou waka Tainui ki runga i tana hōtēra.
+093 74
+	Whakaaro ake au ka hokihoki mai ki konei, ka mōmona ai i konei, ka hokihoki ngā manu rā, hoki atu tae atu ki [Russia] kua patua e ngā [Russians] piki tika ngā [Russians], mahi tika ana rātou.
+095 23
+	Ā, me te, te whakautu o te tangata nei, e tama, kua unuhia e au tō pūtu.
+096 134
+	Ā, ki taku mōhio kua whaka-, kua whakawehea mai e rātou tētahi pūtea, ā, mō ētahi waiata i roto tonu i tō tātou reo, i te mea, ā, ā, ko te kaute o te, o ā rātou nei, ā, nama, me kī mō te āhua o ngā kaupapa, te rahi o ngā kaupapa i runga i ngā reo irirangi Māori, kua eke atu i te rima, rima tekau paiheneti, ā, ngā waiata, ā, me kī o te, o ngā kaupapa katoa e whakapaohotia ana i runga i te reo irirangi Māori, engari kei whea ngā waiata?
+097 54
+	Kua tukuna e tōku whānau tērā taha, o, hei whaka-, o te wāhi o te urupā nei mō te katoa, mō ngā hāhi katoa, kua tukuna.
+099 55
+	I ētahi o ngā wānanga kua kitea nei, kua mahia nei e mātou, he āhua ohorere ngā tāngata ka tae mai ki ēnei hui, nā te mea, i te wā i a rātou i te kura kāore rātou i rongo i ngā kōrero mō te Tiriti o Wai-tangi, mō te, mō te [Declaration of Independence], mō ngā oati i mua noa atu i te taenga mai o tauiwi ki konei, mō ngā ture i whakatakotohia ai e tauiwi ki runga i a tātou, otirā, mō ngā kaupapa e putaputa mai ana i ēnei rā, pēnei i, i te kaupapa o Pākaitore.
+099 58
+	I tua atu i ērā huarahi kua, kua kōrerongia mai e koe, he aha ētahi atu huarahi e taea atu ai tāua te Māori ki te hopu, ki te mau ēnei momo mātauranga?
+100 104
+	Nō reira, i runga i tērā āhua, he tino uaua, me taku hōhā atu anō, i ētahi wā kua hurihia e au, ngā kōrero, ki tāku ka whai māramatanga.
+100 122
+	I, i iāianei nā kua tuhituhia e tātou, ā muri atu kua wekuhia, kua panga ki waho, kua tāhuna.
+103 156
+	Karanga atu au koinei te taha kei te, kei te pōuri au, kei haere koutou ki reira, koinei te āhua ka pā ki a koutou, engari, kua kōrerongia e au ngā kōrero, ka kore koutou e whakarongo, kei a koutou tēnā.
+104 429
+	I te taetanga mai o ngā Pākehā, kua, kua kitea e rātou he moni kei roto i ēnei tū momo kai, kua puta ake ō rātou kaipuke, ō rātou waka kaitā ki waho rā, kua tīmata tā rātou, ā, hiki.
+105 97
+	Kua kaketia e ia ngā maunga teitei katoa, ā, kua taea e ia, kua mau ki tana ringa, ā, ngā taitara katoa, ngā, ā, ngā whakakakenga o tēnei ao.
+107 68
+	I tōna wā, kua huri te, kua hangaia e te whē he whare mōna, nē, he whare.
+117 119
+	Ā, kua, kua meingia e rātou tēnei hōnore ki a au hei, hei kaumātua mō rātou, nō te mea, kei au ko te reo hei kōrero ki, ki ngā iwi.
+118 9
+	Kua rāhuitia e rātou te moutere nei o Motu-ngangara hei punanga mō tētahi kararehe e tūturu nei ngā hāwere a te Māori o mua, te kiore.
+120 170
+	Ā, ko ngā mahi kua, kua mahia e au, ā, kāre e kaha tata atu ki tēnei mahi.
+121 8
+	Kua takahia e ia ngā tōpito o te ao.
+123 144
+	Nō te mea, kua haere rātou ki ngā kura, kua kitea e rātou te āhuatanga hei painga mō rātou, mō, mō ngā rā (kei a tāua) kei te haramai, me ka pēnei tou te āhua, kāre e kite ake i te māramatanga.
+126 11
+	Engari, ā, i runga i tēnei hui e hui nei mātou, ā, kua whakatakototia e rātou ō rātou whakaaro, ngā mea e mahi ana e rātou, ā, i roto i tā rātou, i roto i tō whare hōtēra, kua, kua whakawāteatia e rātou tētehi wāhi i reira hei, hei homai ki a mātou ki ngā Māori, hei mahi hokohoko taonga pea, ā, hei mahi ā ringa a tāua a te Māori rānei, ngā mahi ā ringa haka, ērā mea ki te, ki te tūruhi rā, nē, ki a rātou.
+126 11
+	Engari, ā, i runga i tēnei hui e hui nei mātou, ā, kua whakatakototia e rātou ō rātou whakaaro, ngā mea e mahi ana e rātou, ā, i roto i tā rātou, i roto i tō whare hōtēra, kua, kua whakawāteatia e rātou tētehi wāhi i reira hei, hei homai ki a mātou ki ngā Māori, hei mahi hokohoko taonga pea, ā, hei mahi ā ringa a tāua a te Māori rānei, ngā mahi ā ringa haka, ērā mea ki te, ki te tūruhi rā, nē, ki a rātou.
+126 11
+	Ā, kua homai e rātou tētehi wāhi o te, o tō rātou whare, ā, ki a mātou mō ērā mahi.
+126 115
+	I te mea ko ngā Hingapō i te tutuki tētehi kaupapa, ā, i roto i ngā wānanga kōrero kua kōrerotia e koutou, ā ka pēhea i te, i te wāhi ki a rātou?
+127 24
+	Ahakoa i taua wā, ā, kua kōrerotia pēhea e taku tuahine, ā, kātahi ka hoki anō ki ngā wāhanga o te, kāore anō i tae mai te Pākehā, e kīia ana hoki tēnei iwi o Tama-oho, kātahi ka huri atu ki tēnā whaitua o tātou i roto o tērā wāhanga o konei, he mea nui e kōrerotia ana, ko Mara-kawa.
+133 23
+	Ā, kei konā e whakaae mai ana, ō, te pai hoki, kua kitea e koutou tēnā mea, kua kitea e koutou ngā (tau kia kōrerongia ai).
+133 23
+	Ā, kei konā e whakaae mai ana, ō, te pai hoki, kua kitea e koutou tēnā mea, kua kitea e koutou ngā (tau kia kōrerongia ai).
+133 23
+	Kua kitea hoki e mātou te whenua rā.
+135 213
+	I ngā tohu kua whakaaengia e te pīhopatanga, ā, me te Tari o te Mātauranga, ā, koinei he kaupapa hei whāinga mā, mā koutou.
+149 16
+	Kua hīkoitia e rāua te motu, e mahi ana ā rāua mahi.
+150 119
+	Te kaupapa o ōna nei kupu, kua tangohia e te pirimia, te whenua.
+153 19
+	Me nāianei, ā, kua homai e te Pākehā he rēwara.
+153 28
+	Ka whakaarongia e au taku mahi i roto tonu i a au, ka hoki au ki te kāinga, ka whakaaro, kua kitengia e au pēhea ana tana āhua.
+157 22
+	Kāore he rerekētanga o ā tātou tikanga, inā, ko te mahi tuatahi ko te tuku whakamoemiti mō te huarahi kua takahia nei e ngā ope tūārangi, he whakatau hoki mā te pōhiri.
+158 119
+	Kua mahia e ia ngā mahi katoa o te pāmu.
+164 8
+	Henare kua homai kē e koe tēnei wāhi ki a au hei tuku nei.
+165 281
+	Nā, kua kī mai hoki e ō mātou whaea, ō, he nui rawa, he nui rawa ngā, ngā tori nei, nē?
+165 368
+	Kua herea e mātou te pēke
+169 16
+	Ā, pēnā kua tae ki te, te rau tau, neke atu ki te rau tau, ō rātou (tao nā), ō rātou ka, ka pēnei au ki a rātou, ā, kua nukuhia e rātou te taha o tērā rā ki a rātou, kia tika ki a rātou, kua mōhio tātou te iwi Māori, tēnā pea.
+179 26
+	Kua taea e rātou te whai i tērā tikanga.
+179 26
+	Kua taea hoki e rātou te, ngā, ngā, te rangatahi, ehara hoki, ki a tātou o Ngā Puhi, ngā taitama, kua taea e rātou te hāpai i te kaupapa nei.
+179 26
+	Kua taea hoki e rātou te, ngā, ngā, te rangatahi, ehara hoki, ki a tātou o Ngā Puhi, ngā taitama, kua taea e rātou te hāpai i te kaupapa nei.
+180 12
+	Kua taea e koe te whakamārama mai ki te Upoko-o-te-ika te āhua, ko te kotahi o tō whānau, o Rongo-whakaata, i roto i tēnei i haere mai ai a rātou, mai i te wā kāinga kia tae mai rātou ki te awhi i te kaupapa aroha, arā, i te kaupapa whakahirahira, e whakahaerengia nei mai i te Paraire kia tae noa ki tēnei rangi.
+181 22
+	Nā, kua kitea e tātou ngā mahi a Piki, rangahau ia i ēnei āhuatanga.
+183 26
+	I te pānuitanga kua whakatikatikangia e te kaiwhāriki ngā kākahu nei.
+184 618
+	Nā, ko tētehi hoki, ā, {short interruption in recording} (rongo) au i tēnei kōrero, i te mea kua kitea e au, kua nohongia e au ngā marae o Te Whanga-nui-ā-Tara nei.
+184 636
+	Āe, ka, ka puru au i taku kakī ki runga i te, i te raina, hei, hei tapahitanga mā tētehi, i te mea, kua kite au, kua nohongia e au ngā paepae o Te Whanga-nui-ā-Tara nei.
+187 15
+	Ā, whakatikatikangia ngā, ngā mea kua kitea e ia, ā, mai i reira hei whakaatu ki te whakaminenga ā te Hānuere o te tau, ā, iwa tekau mā rima, e, kei mua nei i a tātou i tēnei rā.
+191 9
+	Ka mīharo au ki a rātou, nā te mea, kua kitea kēngia e rātou te āhua o te māramatanga o te mātauranga, nā te mea, ko ngā taonga i roto kē i te reo.
+191 41
+	Engari ēnei, kua whakatakotongia e koe tō, tō kāhiti i runga i ō, i ō taonga whakapikipiki i a koe, kua titiro rātou, ā, he nanakia tēnei kuia, he āhua mōhio ki tēnei, ki tēnei, ki tēnei, ki tēnei.
+195 95
+	Ana, kua tīkina atu e ia, ā, ko te kaupapa kei te whiriwhirihia e rātou me whakatū he whare pupuri taonga a Tūhoe ki runga i te, te tekau eka.
+195 98
+	Kua homai e koe, kua whakatakotohia, kua whakaaea e ēnei, ēnei ngoringori e noho nei.
+195 151
+	Engari, hei te Rātapu e haere mai nei, kua rongohia e koutou, ā, i pēhea te tīma toa, ā, i aha ai rātou i toa ai.
+197 26
+	Kua, kua whakarerea ake e ngā koroua (a rāua) ngā hōiho e kōrero nā koe.
+199 7
+	Anā, ko tēnei pāmu, ā, e noho nei tāua, he pāmu kua hauhakehia mai e koe, ā, ki te rapu mahi kē, te tuatahi mā wā tātou, ā, mate hunga kore mahi.
+199 10
+	Anā, i roto tonu i tērā ngā, ngā kaimahi kua kohi e māua, he rawa kore katoa.
+199 28
+	Anā, kua kōrerohia e te hunga nānā te pāmu nei ki ētahi atu, tēnā i konei tirohia wā koutou taonga.
+199 67
+	Anā i konei i waenganui i wā rāua mahi kua tuhituhihia e rāua te kānataraka, ā, ki te pāmu nei nā, anā ko ngā mahi e puta ake ana ki te kohikohi i ngā [moss] nei nā, ka hoko.
+199 145
+	E rima hāora rātou e mahi ana, anā, kua kohia e rātou toru tekau ngā pēke nei, nē?
+202 14
+	Ā, kua kitea e koe, ā te whakatangihia mai o te, o te pūtātara o, mō ngā waka, ā, i te tau, ā kotahi mano, e iwa rau, iwa tekau.
+202 14
+	Ā, ka whakatangihia te taonga nei, ā, i ētahi wā mō te tamaiti kua pāngia e te rewharewha, ā, nā te mea, ā, ā, he aha te kupu, ngā kupu Pākehā he [ultrasonic sound], ā, koira tōna mahi.
+210 88
+	I roto i tēnei mahi kua poipoihia nei e koe, ā, e hia koutou kei te rapu i tēnei mahi?
+212 43
+	Kāti tēnei wā, kua tukuna e ia he reta, ki ngā rōpū e whai wāhi ana ki ngā mahi hī ika.
+212 47
+	Kāti, kua whakaorangia e te kaitiaki Māori tēnei kaupapa, kia ora mai anō, ā, ki te whakataha i ētahi moni hei āwhina i taua kaupapa.
+212 67
+	Kei roto i ngā marama kei mua nei hoki, e whitu ngā mema i tēnā taraipiunara ā, ka heke mai, ā, tērā pea ka whakahokia, engari, kei te titiro te Minita, i ngā tāngata kua tukuna e a ia ōna tono ki ngā iwi e whai wāhi ana ki ēnei āhuatanga kia tukuna mai ā rātou whakaaro, ko wai ā rātou whakaaro, kia tū ki runga i te Rōpū Whakamana i te Tiriti, otirā, te taraipiunara.
+214 52
+	Kāti, kua whakatuwherangia e te Minita tēnei pukapuka, a muri iho, ka tū ngā hui tekau mā toru ā, i Aotearoa tonu nei, ā, ki te whakapā atu ki ngā poari, ki ngā kaitiaki o ngā poari, ā, ki ngā tāngata hoki e whai pānga ana ki ngā poari, me pēhea te tuhituhi i te ture hou e pā ana ki ō tātou Poari Kaitiaki Māori?
+218 62
+	Otirā, tērā te pukapuka Mihaia, ā, Ngā Mōrehu, anā, kua whaiwhaihia ake e ia tēnei pukapuka e pā ana ki ngā hītori, arā, mō Te Kooti.
+219 29
+	Ko [Lewis] Moeau tēnei, e kōrero atu nei ki a koutou i tēnei ahiahi, ā, mō ngā haerenga me ngā kaupapa māherehere kua oti e te Minita Māori, ā, te Hōnore [John Luxton].
+219 77
+	Tēnā koutou katoa, ko [Lewis] Moeau tēnei, ā, e pānui atu ana i ngā kōrero hei whai wāhi ki tēnei o ō tātou kaupapa a Mauri, ā, ki te pānui i ngā kaupapa māherehere, ngā haerenga, ngā take, me ngā mahi rānei kua oti e te Minita Māori, te Hōnore [John Luxton], ā, mō tēnei wiki.
+220 16
+	Ka tika hoki e mauria ana e Huia [Publishers] te ara hei whakanui i te reo, otirā, mau tonu ana ki ngā rārangi whakahaere o tēnei tau, kua whakaritea e rātou ngā tohu pakiwaitara a Huia.
+220 25
+	Ehara i ngā kōrero tuku iho o mua, kua kōrerohia rānei e tētahi, ā, anō, ā, kua tuhia rānei e tētehi ko ngā kōrero tawhito, ā koira tētehi, hei whakaaro mā ngā kaituhi, kia tuhi i ngā kōrero nā rātou anō i hanga.
+222 77
+	Kua kōhūhū e rātou he whakaaro ko te [education for ... century], ko te tino kaupapa he huarahi pai mā te iwi Māori ki raro i te mahi whai mātauranga.
+231 212
+	Mai i te kaihauhake rīwai, ki te kaiwhakatō mātauranga, kua parauhia e Te Haumihiata [Mason] ēnei huarahi.
+231 264
+	Mō te kaupapa neki, mehemea ko te tino rangatiratanga he hōiho, kua utaina kē e ngā Māori ō rātou moemoeā ki runga ki te tuarā.
+232 69
+	Kua taea e koe te mamae o te tuarā, kāre rānei?
+232 69
+	Kua taea e rātou te māngere.
+	Kua taea e rātou te māngere.
+232 69
+	Kua taea e rātou te māngere.
+	Kua taea e rātou te māngere.
+234 26
+	Ā, kāre anō kia oti mai he whare i roto o Te Arawa hei pupuri i ngā taonga pēnei, engari, kua kōrerohia e mātou, ngā kuia, ngā koroua o Te Arawa, ā, kia mahia mai e mātou tētehi whare anō hei pupuri i wēnei taonga.
+235 21
+	Ā, mōhio tonu, ā, tātou, i wētahi wā, ā, kua kitea e te kaiako ētahi, ā, tamariki e whara haere ana i runga, i waenganui i tēnei momo mahi, i te pānui, i te tuhi rānei.
+237 16
+	Ngā rōpū e tū mai rā, kua whakatūhia kēhia e mātou he rōpū Māori mō ngā kaunihera o ngā nēhi o Aotearoa i tēnei motu.
+238 49
+	Engari, kua kitea e ia wētehi tāngata pai ana ki te mahi, [um], ā, ngā, ōna anō mahi, ōna anō mahi, ōna anō mahi, ko tērā te poari.
+241 15
+	Ā, kua kitea e tātou he tauira, arā rā, i ō tātou whanaunga i te Tai Tokerau, ā, ki a rātou, ki te kore te kāwanatanga e rata mai ki ō rātou hiahia, ā, kia whakahokia mai te taonga ki a rātou, ka tahunatia.
+243 29
+	Tuatahi, ā, ko te ngākaunui tonu o ngā kaimahi kua kohikohitia ai e ia, ā, i runga i te mea, ā, kua whakaemihia e ia ngā hoa mahi, ā, i nā rātou (i) pīkau a Te Karere i ngā tau kua pahure ake.
+243 29
+	Tuatahi, ā, ko te ngākaunui tonu o ngā kaimahi kua kohikohitia ai e ia, ā, i runga i te mea, ā, kua whakaemihia e ia ngā hoa mahi, ā, i nā rātou (i) pīkau a Te Karere i ngā tau kua pahure ake.
+246 39
+	Ka rua, ā, kua amuamu ētahi o ngā ākonga i te mea kua utua e rātou ā rātou moni kia haere mai kia akona rātou ki ngā kaupapa, ā, a te Tari Māori, te reo, me ōna tikanga, me ētahi atu āhuatanga e pā ana ki te tōrangapū, ki te hitōria, ērā, ā, kaupapa, ā, kei raro i te maru o te Whare Wānanga, o te Tari Māori o te Whare Wānanga o Wai-kato.
+247 9
+	Otirā, i roto i tēnei tau kua whakaputaina e rātou ētahi pane kuini, ā, mō ā tātou reta e tukutuku nei tātou, ā, e whakamahara ana i te tau o te reo Māori.
+248 17
+	Nā reira e te iwi, kia whakarongo ake rā tātou ki ngā pūrongo kōrero o tēnei wiki kua tuhituhihia e te Whare-huia [Milroy], te toi huarewa o te Whare Wānanga o Wai-kato.
+248 31
+	Ā, ko te pātai kē ki a koutou, āe rānei kua āta whakaarohia ake e koutou tēnei kaupapa a te tangata i tono nei kia haria atu tana, tana tamaiti ki raro i te tikanga Māori whakawā ai?
+249 20
+	Ki te titiro ake tātou ki ētahi o ngā tāngata kei roto i ngā tari kāwanatanga e mahi ana, ngā tāngata Māori, kua kite atu e tātou he tāngata ēnei i puta mai i roto i ērā momo mahi, kua taunga ki aua āhuatanga rā, kua mōhio ki te whakatakoto mahere mā taua kaupapa, mō taua kaupapa, ā, mā te hunga e mahi ana i roto i te taua kaupapa rā.
+251 14
+	Ā, kua kitea e tātou he tauira, arara i ō tātou whanaunga i Te Tai Tokerau, ā, ki a rātou, ki te kore te kāwanatanga a rata mai ki ō rātou hiahia, ā, kia whakahokia mai te taonga ki a rātou, ka tahunatia.
+251 59
+	Nā, ehara i te mea e pai ana, nō te mea, ka pakaru ngā, ngā, ngā raruraru nei, ā, kua kitea mai e te iwi whānui te āhua o te mate i waenganui i o rātou katoa.
+252 30
+	Engari, ko au tētahi, ā, e tautoko ana i te āhua o te huarahi kua whāia e koutou, ā, i tēnei wā hei whakaohooho, hei whakatahuri mai i te kāwanatanga kia titiro mai, ā, ki ngā iwi o roto o Mātaatua, ki ngā raupatu, ā, ki ngā whenua i riro noa iho i runga i te ringa kapo o te kāwanatanga, ā, kāre anō kia āta whakatatūtia e rātou me pēhea te whakahoki mai o aua whenua rā.
+253 5
+	Kia whakarongo ake tātou iāianei ki ngā pūrongo kōrero o tēnei wiki kua tuhituhihia e Te Whare-huia [Milroy], te toi huarewa o te Whare Wānanga o Wai-kato.
+261 279
+	Kua whakaritea e te hauora Ora-Toa tētahi hui ki te whakamārama i ētahi āhuatanga e pā ana ki te mate huangō.
+264 102
+	Mō ana mahi ātaahua, kua utaina e te Karauna ana tohu hōnore ki runga i a ia.
+265 85
+	Nō reira tēnei te mihi atu ki a koutou ngā mea mātua, i runga hoki i te mōhiotanga ko tēnei hoki te mea wā hararei, ā me kī, me pēnei te kōrero, waimarie koutou kei, ā, tā koutou taha i tēnei wā ā koutou tamariki, mokopuna e hararei ana, ā, engari ā, heoi anō, ā, me pēnei te kōrero ināianei, [um] he wā paku whakamārama noa iho ki a koutou mā, ā, kua whakaarongia e mātou ngā mea māhita Māori o ngā kura tuarua o te motu me hui kotahi mātou ā, ki te whai huarahi hei painga mō tō tātou reo Māori me ngā tikanga, .
+266 32
+	Kua whakaritea e te kāwanatanga tētahi pūtea hei titiro ake ki ngā āhuatanga o ngā mahi pākihi o tāua te Māori.
+273 119
+	E toru wiki noa iho mehemea kua whakakī tōtikatia e koe, ā, ngā pepa o te [Internal Affairs].

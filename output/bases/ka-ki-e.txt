@@ -1,0 +1,6 @@
+None,1,mihi,koutou,iwi
+None,2,huri,koe,matua
+None,3,pai,tātou,hau
+None,4,mihi,koe,iwi
+None,5,huri,koe,minita
+None,6,mutu,tapahia,rātou

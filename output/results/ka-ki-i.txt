@@ -1,0 +1,81 @@
+mbc005 32 ka hoki rā anō ki tōna tūrangawaewae, i te kawetangahia mai
+mbc022 63 ka tāti tonu atu ki ngā, i te tātinga,
+mbc023 38 ka tau atu ki te whakatuwhera i tēnei hui.
+mbc024 33 ka taea ki te whakahōhonu i te āhuatanga
+mbc032 109 ka tū ki te tūranga ako i te tīma
+mbc035 106 ka tae ki te whiri i tēnei take
+mbc038 62 ka hoatu ki te tangata kaingākau i ngā kaupapa Māori.
+mbc041 255 ka huri ki te mahi i tana [masters].
+mbc042 134 ka pūrere anō ki te huarahi, i te mutunga mai,
+mbc056 211 ka maumahara tonu ki a rātou i ngā wā katoa
+mbc072 96 ka haere ki te patu i ngā tamariki.
+mbc073 100 ka āhei ki te whakatinana i tōna tino rangatiratanga
+mbc073 130 ka māia ki te whai i ngā taumata,
+mbc075 39 ka taea ki te whakamātautau i ā mātou tamariki
+mbc078 224 ka tae mai ki te mātakitaki i ā rātou tamariki,
+mbc083 209 ka pā mai ki te whakanui i tēnei kaupapa
+mbc085 182 ka kitea mai ki te tākaro i te ao.
+mbc095 82 ka haere ki te whakatakoto i ngā,
+mbc099 61 ka huri ki te whai i tētahi huarahi,
+mbc100 74 ka haere tonu mai ki a mātou i te tuatahi,
+mbc103 150 ka hoki rā ki te wā i a Pōmare.
+mbc109 50 ka haere ki te ruku i ngā wāhi
+mbc111 29 ka kī mai ki a au, i te mea kātahi anō
+mbc111 58 ka haere mai ki a au i ngā tau
+mbc112 56 ka tohutohu ki rātou i te putanga ake
+mbc114 13 ka hoki atu ki te wā i ō tātou mātua,
+mbc117 146 ka haere anō ki te tiki anō i ētahi
+mbc119 80 ka whakatūhia ki te taki i te reo karanga
+mbc128 121 Ka haere tōtika tonu ki te whai i te kaupapa naka.
+mbc134 94 ka huri ki te taha i te ekenga
+mbc135 163 ka haramai ki te whakaako i a rātou
+mbc139 117 ka haramai hoki ki te noho i Te Ata-tū.
+mbc143 9 ka haere ki te kimi i ngā huarahi
+mbc143 15 Ka tae atu hoki ki te whare nei, i te wā
+mbc149 137 ka tahuri ki te whakaemi i ērā momo pukapuka.
+mbc149 161 ka karangahia mai ahau ki te mahi i tēnei
+mbc150 47 ka puta mai ki te kohi i ngā,
+mbc159 15 ka haere ki te [nursery] i tērā tāima.
+mbc159 53 ka haramai hoki ki te whai haere i ngā tapuwae
+mbc159 79 Ka hoki mai anō anei rā ki te whai haere i te hāhi,
+mbc161 8 ka haere atu nei ki te taha i a rātou,
+mbc165 443 ka haere ki te hopu i ngā hōiho,
+mbc177 45 ka pā mai ki ngā tamariki i ngā āhuatanga
+mbc177 122 ka tīmata anō ki te ako i te reo.
+mbc177 122 ka hoki ki te kāinga, i te hokitanga ake,
+mbc187 27 ka waimarie ki te turaki haere i ngā ture
+mbc191 15 ka heke mai ki te titiro i te,
+mbc191 23 Ka haere ki te kura, i ngā kura tuarua
+mbc192 43 Ka haere ki te āwhina i ētahi
+mbc193 16 Ka aroha atu anō ki tō tātou tupuna i a Tāwhiao,
+mbc196 36 ka whakarongo mai ki te iwi i te wā
+mbc199 67 ka haramai ki te kohikohi i wēnei mahi?
+mbc205 40 Ka aroha ake rā ki a koe, i te hokitanga
+mbc210 32 ka tīmata ki te tuhi i ngā paerewa.
+mbc211 10 ka tirohia ki te whakahou i ngā moni utu,
+mbc216 20 ka tīmata ki te whakatikatika i ngā nawe,
+mbc217 12 ka tau mai ki te whaiwhai i tēnā kaupapa?
+mbc224 67 ka haere ki te whakapakari i a rātou anō.
+mbc224 126 ka tūtaki ki tērā momo whakatakoto i te kupu.
+mbc231 215 ka whakamātau ki te whai i tana iwi,
+mbc231 247 ka mārō ahau ki te whakautu i aku mōkete.
+mbc233 27 ka haere ki te tākaro i te ao.
+mbc234 137 ka haere ki te kōrero i ngā auē
+mbc240 91 ka haere ahau ki te pātai i tōku koroua
+mbc240 103 ka tīmata ahau ki te pānui i ētahi pukapuka.
+mbc243 32 Ka tae ki te wā whakatā i ētahi,
+None 99 ka pā atu ki te hoko i te hōhipera
+mbc247 20 ka hoatu ki te Tari Mātauranga i ōna rā.
+mbc249 9 ka taka ki te raruraru, i te mea,
+mbc251 5 ka tau mai ana ki te poro i ēnei rākau.
+mbc253 30 ka hiahia ki te mahi i ētahi kaupapa,
+mbc257 8 ka whakawhiti nei ki Te Puni Kōkiri mai i tōna,
+mbc258 8 ka huri ake ki te tuku ake i ngā poroporoaki ake
+mbc260 6 ka mihi whānui atu nei ki a koutou i te mea,
+mbc262 367 Ka aroha hoki ki tō tātou tīma i te atapō nei.
+mbc266 12 ka tae atu ki te tautoko i te kaupapa
+mbc267 58 ka oho ake ki te mātakitaki mai i a mātou,
+mbc269 66 Ka huri hoki ki te hāuaua i te ahiahi nei.
+mbc270 60 Ka kōrero atu ahau ki a koutou i tētahi kōrero
+mbc273 106 ka taurite ki te mekemeke i ngā mātua.
+mbc273 114 ka tau ki te pokapoka i ngā one.

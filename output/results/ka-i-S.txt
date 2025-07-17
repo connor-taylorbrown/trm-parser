@@ -1,0 +1,161 @@
+mbc001 50 ka mātakitaki anō i ngā taonga, ētahi,
+mbc008 42 ka whai wāhi mai i tēnei pūtea, ā,
+mbc008 63 ka mau i a ia te reo.
+mbc008 69 ka mau i a mātou te reo,
+mbc011 8 ka puta i te Papa Atawhai ētahi pānui,
+mbc018 80 ka riro ai i tēnā, ā,
+mbc029 115 ka wikitōria i te Rōpū [Alliance], te kōwhiringa pōti,
+mbc029 115 ka riro i a rātou te kāwanatanga,
+mbc031 49 ka riro i a ia te taitara [age-group]
+mbc031 73 ka purei i te kēmu whakamātautau, ā,
+mbc031 100 ka rītaia mai i te rīki ā muri mai
+mbc033 120 ka pānuitia i te kēmu kirikiti ā tēnei rā
+mbc036 70 ka puta i tēnei mea te [tai-chi].
+mbc037 110 ka purei i te [Bledisloe-Cup] ā te Rāhoroi nei.
+mbc041 39 ka mau i a mātou ngā whakaaro
+mbc041 152 ka mau atu i a Hirini Henare ēnei whakamārama.
+mbc042 159 ka mau i a ia ngā mātauranga whakairo,
+mbc043 138 ka raru i te whakapae, he tokomaha atu
+mbc044 48 ka wehi i te, ā,
+mbc044 200 ka mau i a mātou tēnei kaupoai.
+mbc047 188 ka mau atu i a mātou ngā whakairo nei
+mbc050 116 ka riro i a wai rā te taumata
+mbc050 128 ka wini i a rātou te kēmu pea.
+mbc058 173 ka kite i ngā mea hē, ngā mea hē
+mbc061 69 ka mau atu i a [Dan] Hiramana-rua te tini
+mbc062 60 ka mau atu i a Hirini Henare te tuwheratanga
+mbc066 182 ka mau tonu i a tāua te Māori
+mbc067 33 ka mau atu i a mātou ngā whakarite
+mbc071 51 ka whakawā i te kura, ā,
+mbc073 151 ka pakaru i a ia te taumata kaute,
+mbc074 15 ka wini i a ia ngā,
+mbc075 126 ka puta mai i ngā kōhanga reo tae atu ā te wā
+mbc076 80 ka mau atu i a Hirini Henare ēnei whakamārama.
+mbc076 196 ka mau i a Rau Kapa ēnei whakahaere.
+mbc076 220 ka oti i te marae, te mea kē
+mbc078 24 ka whakawhāiti i ngā whakaaro, he whakakore
+mbc079 117 ka mau atu i a mātou tēnei taitama.
+mbc080 188 ka mau atu i a mātou tētahi rōpū
+mbc081 191 ka haere nei i ōna haere, ā,
+mbc084 12 ka mutu i te mahi tēnei whare,
+mbc089 160 ka keri ake i ngā, ngā,
+mbc091 32 ka karanga i te hui, ā,
+mbc096 83 Ka tīmata mai i te tīmatatanga, ā,
+mbc097 304 ka miraka i ngā kau, ēnā āhuatanga hoki.
+mbc098 30 ka moe ana i a ia te wahine tokotoru,
+mbc099 55 ka riro pēnei i ngā, ngā kōrero
+mbc099 97 ka whiu haere nei i te, te tiriti nei,
+mbc100 44 ka tīmata mai i tā, tē,
+mbc102 41 Ka tū i a ia te Poari
+mbc104 60 Ka kai i ngā, ngā pewa
+mbc104 250 ka pau i a koe te kai,
+mbc104 432 ka muru i ngā kai moana, ngā mātaitai,
+mbc104 433 ka apu i te kai, ā,
+mbc108 61 ka whānako i ngā hōiho nei, he aha
+mbc108 82 Ka mahi i tana hōiho, ā,
+mbc108 82 ka wini i a ia te,
+mbc109 68 ka mau i a ia ngā,
+mbc109 86 ka pēnei i a au nei [ah-well] he [welfare-officer]
+mbc109 104 ka mahue i a ia te [airforce],
+mbc110 45 ka haere tahi kē mai i a Te Arawa, ā,
+mbc110 51 ka mau i a au ngā kōrero
+mbc111 58 ka whakakore i te tohunga, ā,
+mbc112 34 ka puta mai i tēnā mea āna nei kōrero,
+mbc112 43 ka kite i tēnei āhuatanga, ā,
+mbc114 43 Ka tau i a rātou, ā
+mbc118 12 ka kai i ngā, ngā hua
+mbc118 33 ka pahure mai i tēnei, ā,
+mbc118 69 Ka whakaoho i ngā, ngā kuaka.
+mbc119 95 Ka haere i te patu haere ia
+mbc120 211 ka mātakitaki atu ana i tāku whakaaro, ē!
+mbc125 87 ka puta mai i te kura, ā,
+mbc125 99 ka riro mai i a Wai-pā-reira tēnei,
+mbc125 197 ka hokona mai mai i ngā pūtea, ā,
+mbc128 88 ka whai i te moni, te hari
+mbc130 36 ka riro i a au te tūnga
+mbc131 46 ka kite tonu i te, tō hoariri,
+mbc133 29 Ka mau mai nei i a mātou tēnei whenua.
+mbc133 29 ka kīia nei i te rākau, he whiro,
+mbc133 29 Ka eke i a ia te toru mano,
+mbc134 88 ka moe i a Manaaki-ao, te uri whakaheke
+mbc138 23 ka oti i a ia te mahi
+mbc139 11 ka whai haere i ngā, ngā manaaki
+mbc139 57 ka tipu ake i ērā, ērā mātauranga
+mbc140 23 ka whakakorea i tērā tau, ā,
+mbc144 13 ka kite i te manu, ā,
+mbc145 21 ka whai i tana hoa, ā,
+mbc145 114 ka titiro i ngā rākau nei, ā,
+mbc146 65 ka hē ana i a au tētahi mea,
+mbc147 56 ka rere atu i te, ngā [pumps].
+mbc147 68 Ka pērā rā i wērā āhua tāone, ngā mea patu mīti rā,
+mbc151 12 Ka riro katoa i a ia ngā kete
+mbc151 14 Ka riro i a Umu-tahi ngā taonga katoa
+mbc152 157 Ka noho i te kāinga, ā,
+mbc152 219 ka whakahoki i te pātai ā ngā (kaumātua),
+mbc152 225 Ka tīmata i taku tāima te,
+mbc152 257 ka mea atu ai i a rātou, ā,
+mbc154 118 ka kite atu i a ia hoki, ā,
+mbc155 49 ka tonohia atu i a rātou, ā,
+mbc155 49 ka ngaki i a rātou te,
+mbc155 49 ka riro i a rātou taua wāhi whenua rā, ā,
+mbc157 79 ka mutu ai i te, te wāhanga
+mbc159 15 Ka moe tou i a rātou, te whānaunautanga,
+mbc159 53 ka whakariterite i a rātou, ngā mea
+mbc159 53 Ka oti i a rātou te waka,
+mbc159 55 ka haere i tērā wā, ā,
+mbc159 55 ka riro i a rātou te mātauranga
+mbc159 67 Ka whakamau i a rātou te mea
+mbc161 8 ka tono mai i a au, tēnei
+mbc162 277 ka puta i tēnei rangahau he rangahau,
+mbc163 910 ka haramai i a wai, he aha rānei?
+mbc164 32 ka haere i te (rārangi-atu-o) tēnei mea
+mbc165 796 ka mau i a koe te paoro,
+mbc166 103 ka ngaro haere i ngā tāone nunui, ngā whare teitei
+mbc167 206 Ka tautoko i ō mihi, ā,
+mbc168 40 ka mahi i ō tātou whenua, ā,
+mbc169 40 ka kite i wēnei tohu, ā
+mbc172 42 ka āhua kite atu i te, te pito
+mbc173 89 ka hua i te hua pai, ā,
+mbc174 78 ka tūtaki i tēnei whānau, ngā Pīhema,
+mbc174 81 ka moe i tō mātou ā,
+mbc177 55 Ka mau katoa i a ia ngā kōrero
+mbc180 15 ka kitea i te wā, ē,
+mbc181 22 Ka moe i a Mere-waiti Te Wehenga,
+mbc183 26 Ka whakahoki atu i te mea he wae
+mbc187 12 ka puta i a ia te kōrero
+mbc190 10 ka riro mai i a ia te tohu tiketike rawa
+mbc190 20 ka riro anō i a ia te tūnga nuinga rawa atu
+mbc190 26 ka mau i a au te reo
+mbc190 60 ka mau i a ia te,
+mbc195 14 ka whakahaerehia i tēnei pō, ā,
+mbc195 20 Ka tiki atu i tētahi rākau, ā,
+mbc195 24 ka hinga i a koe ērā
+mbc195 122 ka whanaunga nei i a tātou, he aha ai?
+mbc196 45 ka haramai mai i Te Wai-mana, ā,
+mbc206 34 ka riro i a rātou te whakataetae whakamutunga
+mbc206 44 ka makere mai i te Koporeihana Whakapaoho, ā,
+mbc209 71 ka tutuki i a koutou te pikitia nei,
+mbc209 143 ka oti ai pea i te tau tahi, ā,
+mbc210 64 ka oti ana i a ia te whiriwhiri
+mbc210 112 ka oti i a koutou te poipoi
+mbc213 52 ka oti i a ia te kirimini
+mbc214 34 ka puta mai i te Minita, tētahi pukapuka,
+mbc221 20 ka riro mai i ēnā, ēnā mea.
+mbc228 21 ka wini mai i ētahi, ā,
+mbc229 181 ka riro i a rātou te mana
+mbc229 181 ka (rukea) ana i a rātou te mana
+mbc230 263 ka puta i a ia wētahi
+mbc231 209 ka mau i te, te herehere,
+mbc232 81 Ka oti i a ia te mahi,
+mbc232 81 ka ora i a ia te whānau.
+mbc236 31 ka tīmata atu mai i te whakaruruhau, te whānau whakaruruhau
+mbc241 9 ka puta mai i tērā āhuatanga, te nuinga
+mbc249 23 ka tautoko atu i ēnā whakaaro āu
+mbc251 8 ka puta mai i tērā hokotanga, te nuinga
+mbc256 12 ka riro i a koe te tīkiti
+mbc256 16 ka riro i a koe te tīkiti
+mbc256 16 ka riro i a koe te tīkiti,
+mbc256 20 ka riro i a koe te tīkiti
+mbc264 210 ka riro i te Māori te tūnga motuhake
+mbc271 6 ka mau atu i a tātou te whānau
+mbc273 30 ka oti i tēnei tau, ā,
