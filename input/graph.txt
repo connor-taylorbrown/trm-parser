@@ -1,0 +1,99 @@
+# Pronouns
+n au 1s
+n koe 2s
+n ia 3s
+n tā 1n
+n mā 1
+n ko 2
+n kou 2
+n rā 3
+n ua -d
+n rua -d
+n tou -p
+
+e $ au items
+e $ koe items
+e $ ia items
+e $ ua suffixes
+e $ rua suffixes
+e $ tou suffixes
+e ua tā items
+e ua mā items
+e rua ko items
+e ua rā items
+e tou tā items
+e tou mā items
+e tou kou items
+e tou rā items
+
+# Demonstratives
+n a dem.r
+n ā dem.p.a-
+n ō dem.p.o-
+n ku 1s
+n u 2s
+n na 3s
+
+e $ a items
+e $ ā items prefixes
+e $ ō items prefixes
+e ā ku items
+e ā u items
+e ā na items
+e ō ku items
+e ō u items
+e ō na items
+
+n t dem.s- dem.p.
+e $ t prefixes
+e t ā items prefixes
+e t ō items prefixes
+
+# Particles
+n a a.poss
+e $ a items
+
+n m irr- dem.p.
+n n r- dem.p.
+
+e $ m prefixes
+e $ n prefixes
+e m ā prefixes items
+e m ō prefixes items
+e n ā prefixes items
+e n ō prefixes items
+
+# Articles
+n te def.s
+n ngā def.p
+n aua def.p.excl
+n a def.p-
+n ō def.p.2s
+
+e $ te items
+e $ ngā items
+e $ aua items
+e $ a prefixes
+e a ku items
+e $ ō items
+e a na items
+
+n t def.s- def.p- def.p.
+e $ t prefixes
+e t aua items
+e t a prefixes
+e t ō items
+
+ā
+tā
+aua
+taua
+tāua
+a
+aku
+taku
+ō
+tō
+mā
+māku
+mātou
