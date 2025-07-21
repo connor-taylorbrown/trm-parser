@@ -1,29 +1,38 @@
+from abc import ABC, abstractmethod
 from dataclasses import dataclass
 import logging
 import re
-import sys
-import argparse
-
-from structure.morphology import MorphologyBuilder, MorphologyGraph
 
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger()
 
 
 @dataclass
-class Node:
+class Node(ABC):
     gloss: str
+
+    @abstractmethod
+    def count(self):
+        pass
 
 
 @dataclass
 class Terminal(Node):
     text: str
 
+    def count(self):
+        return 1
+
 
 @dataclass
 class NonTerminal(Node):
     left: Node
     right: Node
+
+    def count(self):
+        left = self.left.count() if self.left else 0
+        right = self.right.count() if self.right else 0
+        return left + right
 
 
 def _split(token):
@@ -35,6 +44,9 @@ class Ranking:
         self.ranks = ranks
     
     def outranks(self, antecedent, token):
+        if antecedent == '$':
+            return True
+        
         outranks = {j for i in _split(antecedent) for j in self.ranks.get(i, {})}
         return any(outranks.intersection(_split(token)))
 
@@ -43,6 +55,9 @@ class Mapper:
         self.sums = sums
 
     def add(self, antecedent, token):
+        if antecedent == '$':
+            return
+        
         bag = _split(antecedent).union(_split(token))
         for sum, result in self.sums:
             if not sum - bag:
@@ -75,7 +90,7 @@ class Sentence:
         head = self.peek()
         result = self.mapper.add(head.gloss, antecedent.gloss)
         if not result:
-            logger.info('Unable to merge: no rule for %s + %s', head.gloss, antecedent.gloss)
+            logger.info('Unable to merge before %s: no rule for %s + %s', next.gloss, head.gloss, antecedent.gloss)
             return None
         
         logger.info('Given %s + %s before %s, got %s', head.gloss, antecedent.gloss, next.gloss, result)
@@ -83,7 +98,7 @@ class Sentence:
         
     def promote(self, antecedent):
         if antecedent.gloss == '$':
-            raise KeyError('Unable to promote')
+            raise KeyError('Unable to promote', self.nodes)
         
         logger.info('Promoted %s', antecedent.gloss)
         return self.push(NonTerminal('$', antecedent, None))
@@ -99,6 +114,7 @@ class Sentence:
         return self.resolve(next)
     
     def read(self, gloss, text):
+        logger.info('Read %s/%s', text, gloss)
         terminal = Terminal(gloss, text)
         if not len(self.nodes):
             return self.push(terminal)
@@ -107,6 +123,20 @@ class Sentence:
             return self.push(terminal)
     
         return self.resolve(terminal)
+    
+    def flush(self):
+        nodes = self.nodes
+        self.nodes = []
+        return nodes
+    
+    def clone(self):
+        s = Sentence(
+            ranking=self.ranking,
+            mapper=self.mapper
+        )
+
+        s.nodes = self.nodes.copy()
+        return s
     
 
 class SyntaxBuilder:
@@ -133,35 +163,3 @@ class SyntaxBuilder:
         return Sentence(
             ranking=Ranking(self.ranks),
             mapper=Mapper(self.sums))
-
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="Process linguistic input file.")
-    parser.add_argument("input", help="Input file path")
-    args = parser.parse_args()
-
-    morphology = MorphologyGraph()
-    syntax_builder = SyntaxBuilder()
-    morphology_builder = MorphologyBuilder(morphology)
-    with open(args.input, 'r') as f:
-        for line in f.readlines():
-            line = syntax_builder.parse(line)
-            if not line:
-                continue
-
-            morphology_builder.parse(line)            
-    
-    syntax = syntax_builder.build()
-    for line in sys.stdin:
-        for word in line.split():
-            gloss = morphology.gloss_affixes(word)
-            if not gloss:
-                gloss = '*'
-            if len(gloss) > 1:
-                print(f'Multiple glosses for {word}: not supported')
-                continue
-            
-            gloss, = gloss
-            syntax.read(gloss, word)
-            print(syntax.nodes)
-
-    print(syntax.nodes)

@@ -1,16 +1,3 @@
-# Syntax
-r $ def ref
-r def *
-r * *
-r part part pron
-
-s $ r pron
-s $ irr pron
-
-s def dem pron
-
-s ref def *
-
 # Pronouns
 n au pron.1s
 n koe pron.2s
@@ -80,8 +67,19 @@ e ē hea items
 e ē tahi items
 
 # Particles
-n a a.poss
+n a part.a
+n o part.o
+n he part
+n i part
+
+n kē mod
+
 e $ a items
+e $ o items
+e $ he items
+e $ i items
+
+e $ kē items
 
 n m irr.part- dem.part.p.
 n n r.part- dem.part.p.
@@ -114,26 +112,26 @@ e t aua items
 e t a prefixes
 e t ō items
 
-ā
-tā
-tāku
-aua
-taua
-tāua
-a
-aku
-taku
-ō
-tō
 mā
-māku
-mātou
+tā
+tātou
+te
+iwi
+māori
 
-ēnei
-tēnei
-tēhea
-tētahi
+# Syntax
+r part part pron *
+r def *
+r * * mod
+r pron mod
 
-nā
-rātou
-au
+s def dem pron
+s $ part *
+s $ part pron
+s $ part ref
+s $ part desc
+
+s ref def desc
+s ref def *
+s desc * *
+s pron pron mod

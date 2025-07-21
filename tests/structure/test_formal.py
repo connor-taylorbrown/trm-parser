@@ -79,7 +79,8 @@ def test_read():
         (Sentence(ranking, mapper).read(na.gloss, na.text).read(tatou.gloss, tatou.text), te.gloss, te.text, [NonTerminal('$', na, tatou), te], 'Antecedent phrases should be resolved'),
         (Sentence(ranking, mapper).read(na.gloss, na.text).read(ta.gloss, ta.text).read(tatou.gloss, tatou.text), whare.gloss, whare.text, [na, NonTerminal('def', ta, tatou), whare], 'Partial resolution should be supported'),
         (Sentence(ranking, mapper).read(na.gloss, na.text).read(tatou.gloss, tatou.text).read(te.gloss, te.text).read(whare.gloss, whare.text), i.gloss, i.text, [NonTerminal('$', na, tatou), NonTerminal('$', NonTerminal('ref', te, whare), None), i], 'Promotion should be supported'),
-        (Sentence(ranking, mapper).read(na.gloss, na.text).read(tatou.gloss, tatou.text).read(te.gloss, te.text).read(whare.gloss, whare.text), '#', '', [NonTerminal('$', na, tatou), NonTerminal('$', NonTerminal('ref', te, whare), None)], 'Stop token should be supported')
+        (Sentence(ranking, mapper).read(na.gloss, na.text).read(tatou.gloss, tatou.text).read(te.gloss, te.text).read(whare.gloss, whare.text), '#', '', [NonTerminal('$', na, tatou), NonTerminal('$', NonTerminal('ref', te, whare), None)], 'Stop token should be supported'),
+        (Sentence(ranking, mapper).read(na.gloss, na.text).read(tatou.gloss, tatou.text).read(na.gloss, na.text).read(tatou.gloss, tatou.text), '#', '', [NonTerminal('$', na, tatou), NonTerminal('$', na, tatou)], 'Repetition should be supported')
     ]
 
     for sentence, gloss, text, expected, message in cases:
