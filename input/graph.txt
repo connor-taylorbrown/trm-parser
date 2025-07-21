@@ -1,12 +1,25 @@
+# Syntax
+r $ def ref
+r def *
+r * *
+r part part pron
+
+s $ r pron
+s $ irr pron
+
+s def dem pron
+
+s ref def *
+
 # Pronouns
-n au 1s
-n koe 2s
-n ia 3s
-n tā 1n
-n mā 1
-n ko 2
-n kou 2
-n rā 3
+n au pron.1s
+n koe pron.2s
+n ia pron.3s
+n tā pron.1n
+n mā pron.1
+n ko pron.2
+n kou pron.2
+n rā pron.3
 n ua -d
 n rua -d
 n tou -p
@@ -27,12 +40,12 @@ e tou kou items
 e tou rā items
 
 # Demonstratives
-n a dem.r
-n ā dem.p.a-
-n ō dem.p.o-
-n ku 1s
-n u 2s
-n na 3s
+n a dem.part.r
+n ā dem.part.p.a-
+n ō dem.part.p.o-
+n ku 1s .part
+n u 2s .part
+n na 3s .part
 
 e $ a items
 e $ ā items prefixes
@@ -44,17 +57,34 @@ e ō ku items
 e ō u items
 e ō na items
 
-n t dem.s- dem.p.
+n t dem.part.s- dem.part.p. dem.part.p- dem.part.p
 e $ t prefixes
 e t ā items prefixes
 e t ō items prefixes
+
+n ē dem.part.p- mod. loc.
+n nei mod.prox .part
+n nā mod.med .part
+n rā mod.dist .part
+n hea loc.int .part
+n tahi excl .part
+e $ ē prefixes
+e t ē prefixes
+e $ nei items
+e $ nā items
+e $ rā items
+e ē nei items
+e ē nā items
+e ē rā items
+e ē hea items
+e ē tahi items
 
 # Particles
 n a a.poss
 e $ a items
 
-n m irr- dem.p.
-n n r- dem.p.
+n m irr.part- dem.part.p.
+n n r.part- dem.part.p.
 
 e $ m prefixes
 e $ n prefixes
@@ -86,6 +116,7 @@ e t ō items
 
 ā
 tā
+tāku
 aua
 taua
 tāua
@@ -97,3 +128,12 @@ tō
 mā
 māku
 mātou
+
+ēnei
+tēnei
+tēhea
+tētahi
+
+nā
+rātou
+au

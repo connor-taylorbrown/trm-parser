@@ -29,8 +29,8 @@ class MorphologyNode:
     def split_word(self, text, i):
         return text[:i], text[i:]
     
-    def apply_gloss(self, gloss: str, prefix):
-        for override in self.overrides:
+    def apply_gloss(self, gloss: str, prefix: bool, *overrides: str):
+        for override in self.overrides + overrides:
             gloss = gloss.replace(override, '')
 
         if prefix:
@@ -38,10 +38,10 @@ class MorphologyNode:
         
         return gloss + self.gloss
     
-    def get_item(self, text):
+    def get_item(self, text, prefix):
         item = self.items.get(text)
         if item:
-            return self.apply_gloss(item.gloss, prefix)
+            return self.apply_gloss(item.gloss, prefix), item.overrides
 
     def gloss_affixes(self, text, prefix):
         homonyms = self.prefixes.get('$')
@@ -50,7 +50,7 @@ class MorphologyNode:
                 yield gloss
 
         affixes = self.prefixes if prefix else self.suffixes
-        item = self.get_item(text)
+        item = self.get_item(text, prefix)
         if item:
             yield item
 
@@ -64,8 +64,8 @@ class MorphologyNode:
             if not next:
                 continue
 
-            for gloss in next.gloss_affixes(stem, prefix):
-                yield self.apply_gloss(gloss, prefix)
+            for gloss, overrides in next.gloss_affixes(stem, prefix):
+                yield self.apply_gloss(gloss, prefix, *overrides), overrides
 
 
 class MorphologyGraph:
@@ -89,12 +89,13 @@ class MorphologyGraph:
     def add_edge(self, source, target, label):
         self.nodes[source].add_node(label, target, self.nodes[target])
 
-    def gloss_affixes(self, text, prefix):
-        return [gloss.strip("-.") for gloss in self.get_root().gloss_affixes(text, prefix)]
+    def gloss_affixes(self, text):
+        return {gloss.strip("-.") for prefix in [True, False] for gloss, _ in self.get_root().gloss_affixes(text, prefix)}
     
 
 class GraphWriter:
-    def __init__(self):
+    def __init__(self, verbose):
+        self.verbose = verbose
         self.ids = {}
         self.visited = set()
         self.nodes: dict[str, dict] = {}
@@ -134,17 +135,25 @@ class GraphWriter:
 
                 continue
 
-            self.add_affix(prefix, next.gloss)
+            id = self.add_affix(prefix, next.gloss)
+            if self.verbose:
+                print(id, prefix)
+            
             yield next, prefix, True
         
         for suffix in node.suffixes:
             next = node.suffixes[suffix]
-            self.add_affix(suffix, next.gloss)
+            id = self.add_affix(suffix, next.gloss)
+            if self.verbose:
+                print(id, suffix)
+            
             yield next, suffix, False
 
         for item in node.items:
             next = node.items[item]
-            self.add_item(item, next.gloss)
+            id = self.add_item(item, next.gloss)
+            if self.verbose:
+                print(id, item)
     
     def add_edge(self, current, child, prefix):
         if prefix:
@@ -155,7 +164,7 @@ class GraphWriter:
         self.edges.append(edge)
     
     def visit(self, node: MorphologyNode, text: str, prefix: bool):
-        current = self.ids[text + node.gloss]
+        current = self.ids[text + node.gloss]        
         for item in node.items:
             next = node.items[item]
             edge = (text + node.gloss, next.gloss) 
@@ -202,6 +211,36 @@ class GraphWriter:
         yield '}'
 
 
+class MorphologyBuilder:
+    def __init__(self, graph: MorphologyGraph, verbose: bool=False, test: bool=False):
+        self.graph = graph
+        self.verbose = verbose
+        self.test = test
+
+    def parse(self, line: str):
+        line = line.strip()
+        if not line:
+            return
+        
+        command = line.split()
+        if command[0] == '#':
+            pass
+        elif command[0] == 'n':
+            _, key, gloss, *overrides = command
+            self.graph.add_node(key, gloss, *overrides)
+        elif command[0] == 'e':
+            _, source, target, *label = command
+            for label in label:
+                self.graph.add_edge(source, target, label)
+
+            if self.verbose:
+                print(self.graph)
+        elif self.test:
+            command, = command
+            for gloss in self.graph.gloss_affixes(command):
+                print(f'{command}: {gloss}')
+
+
 def generate(node: MorphologyNode):
     for item in node.items:
         yield item, node.items[item].gloss
@@ -230,38 +269,13 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     graph = MorphologyGraph()
-    for line in sys.stdin:
-        line = line.strip()
-        if not line:
-            continue
-        
-        command = line.split()
-        if command[0] == '#':
-            pass
-        elif command[0] == 'n':
-            _, key, gloss, *overrides = command
-            graph.add_node(key, gloss, *overrides)
-        elif command[0] == 'e':
-            _, source, target, *label = command
-            for label in label:
-                graph.add_edge(source, target, label)
-
-            if args.verbose:
-                print(graph)
-        elif args.test:
-            command, = command
-            glosses = set()
-            for prefix in [True, False]:
-                for gloss in graph.gloss_affixes(command, prefix):
-                    if gloss in glosses:
-                        continue
-                    
-                    print(f'{command}: prefix={prefix},{gloss}')
-                    glosses.add(gloss)
+    builder = MorphologyBuilder(graph, args.verbose, args.test)
+    for line in sys.stdin:        
+        builder.parse(line)
 
     if args.output:
-        w = GraphWriter()
-        for component, text, prefix in w.find_components(graph.get_root()):
+        w = GraphWriter(args.verbose)
+        for component, text, prefix in list(w.find_components(graph.get_root())):
             w.visit(component, text, prefix)
 
         with open(args.output, 'w') as f:
