@@ -8,7 +8,7 @@ logger = logging.getLogger()
 
 
 @dataclass
-class Node(ABC):
+class SyntaxNode(ABC):
     gloss: str
 
     @abstractmethod
@@ -17,7 +17,7 @@ class Node(ABC):
 
 
 @dataclass
-class Terminal(Node):
+class Terminal(SyntaxNode):
     text: str
 
     def count(self):
@@ -25,9 +25,9 @@ class Terminal(Node):
 
 
 @dataclass
-class NonTerminal(Node):
-    left: Node
-    right: Node
+class NonTerminal(SyntaxNode):
+    left: SyntaxNode
+    right: SyntaxNode
 
     def count(self):
         left = self.left.count() if self.left else 0
@@ -64,9 +64,9 @@ class Mapper:
                 return result
     
 
-class Sentence:
+class Utterance:
     def __init__(self, ranking: Ranking, mapper: Mapper):
-        self.nodes: list[Node] = []
+        self.nodes: list[SyntaxNode] = []
         self.ranking = ranking
         self.mapper = mapper
 
@@ -82,39 +82,39 @@ class Sentence:
     def pop(self):
         return self.nodes.pop()
     
-    def merge(self, antecedent, next):
+    def merge(self, antecedent, next, context):
         if not self.peek():
-            logger.info('Unable to merge %s before %s: stack empty', antecedent.gloss, next.gloss)
+            logger.info('Unable to merge %s before %s: stack empty', antecedent.gloss, next.gloss, extra=context)
             return None
 
         head = self.peek()
         result = self.mapper.add(head.gloss, antecedent.gloss)
         if not result:
-            logger.info('Unable to merge before %s: no rule for %s + %s', next.gloss, head.gloss, antecedent.gloss)
+            logger.info('Unable to merge before %s: no rule for %s + %s', next.gloss, head.gloss, antecedent.gloss, extra=context)
             return None
         
-        logger.info('Given %s + %s before %s, got %s', head.gloss, antecedent.gloss, next.gloss, result)
+        logger.info('Given %s + %s before %s, got %s', head.gloss, antecedent.gloss, next.gloss, result, extra=context)
         return self.push(NonTerminal(result, self.pop(), antecedent))
         
-    def promote(self, antecedent):
+    def promote(self, antecedent, context):
         if antecedent.gloss == '$':
             raise KeyError('Unable to promote', self.nodes)
         
-        logger.info('Promoted %s', antecedent.gloss)
+        logger.info('Promoted %s', antecedent.gloss, extra=context)
         return self.push(NonTerminal('$', antecedent, None))
     
-    def resolve(self, next: Node):
+    def resolve(self, next: SyntaxNode, context):
         antecedent = self.pop()
-        if not self.merge(antecedent, next):
-            self.promote(antecedent)
+        if not self.merge(antecedent, next, context):
+            self.promote(antecedent, context)
 
         if self.ranking.outranks(self.peek().gloss, next.gloss):
             return self.push(next)
         
-        return self.resolve(next)
+        return self.resolve(next, context)
     
-    def read(self, gloss, text):
-        logger.info('Read %s/%s', text, gloss)
+    def extend(self, gloss, text, **context):
+        logger.info('Read %s/%s', text, gloss, extra=context)
         terminal = Terminal(gloss, text)
         if not len(self.nodes):
             return self.push(terminal)
@@ -122,15 +122,10 @@ class Sentence:
         if self.ranking.outranks(self.peek().gloss, terminal.gloss):
             return self.push(terminal)
     
-        return self.resolve(terminal)
-    
-    def flush(self):
-        nodes = self.nodes
-        self.nodes = []
-        return nodes
+        return self.resolve(terminal, context)
     
     def clone(self):
-        s = Sentence(
+        s = Utterance(
             ranking=self.ranking,
             mapper=self.mapper
         )
@@ -160,6 +155,6 @@ class SyntaxBuilder:
             return line
     
     def build(self):
-        return Sentence(
+        return Utterance(
             ranking=Ranking(self.ranks),
             mapper=Mapper(self.sums))

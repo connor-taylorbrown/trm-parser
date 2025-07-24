@@ -27,14 +27,12 @@ e tou kou items
 e tou rā items
 
 # Demonstratives
-n a dem.part.r
 n ā dem.part.p.a-
 n ō dem.part.p.o-
 n ku 1s .part
 n u 2s .part
 n na 3s .part
 
-e $ a items
 e $ ā items prefixes
 e $ ō items prefixes
 e ā ku items
@@ -73,6 +71,8 @@ n he part
 n i part
 
 n kē mod
+n mā mod
+n ana mod
 
 e $ a items
 e $ o items
@@ -80,6 +80,8 @@ e $ he items
 e $ i items
 
 e $ kē items
+e $ mā items
+e $ ana items
 
 n m irr.part- dem.part.p.
 n n r.part- dem.part.p.
@@ -112,16 +114,26 @@ e t aua items
 e t a prefixes
 e t ō items
 
+# Overrides
+n ana *
+n mā *
+n tō *
+
+e $ ana items
+e $ mā items
+e $ tō items
+
 # Tests
+a
+ana
+tō
+nā
 mā
-tā
-tātou
-te
-iwi
-māori
+tāna
+anā
 
 # Syntax
-r part part pron *
+r part part def pron *
 r def *
 r * * mod
 r pron mod

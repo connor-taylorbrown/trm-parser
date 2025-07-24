@@ -28,7 +28,7 @@ def show_lines(formatter: ConversationFormatter, conversations: list[Conversatio
         for turn in conversation.turns:
             for line in turn.text:
                 n, text = line
-                print(conversation.document, n, formatter.format_date(conversation), turn.speaker, formatter.print_text(text))
+                yield (conversation.document, n, formatter.format_date(conversation), turn.speaker, formatter.print_text(text))
 
 
 def run(args, query: TextQuery):
@@ -65,7 +65,12 @@ def display(args, conversations, formatter: ConversationFormatter):
     if args.summary:
         summary.show()
     else:
-        show_lines(formatter, conversations)
+        for line in show_lines(formatter, conversations):
+            doc, line, date, speaker, (type, value) = line
+            if args.text:
+                print(doc, line, value)
+            else:
+                print(doc, line, date, speaker, (type, value))
 
 
 if __name__ == '__main__':
@@ -75,6 +80,7 @@ if __name__ == '__main__':
     parser.add_argument('-b', '--buffer')
     parser.add_argument('-w', '--word', action=argparse.BooleanOptionalAction)
     parser.add_argument('-x', '--exclude', action=argparse.BooleanOptionalAction)
+    parser.add_argument('-T', '--text', action=argparse.BooleanOptionalAction)
     parser.add_argument('-e', '--end', type=int, default=0)
     
     args = parser.parse_args()
