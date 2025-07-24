@@ -3,7 +3,7 @@ import argparse
 from dataclasses import dataclass
 import logging
 import sys
-from structure.formal import SyntaxNode, NonTerminal, Utterance, SyntaxBuilder, Terminal
+from structure.formal import SyntaxNode, NonTerminal, Fragment, SyntaxBuilder, Terminal
 from structure.morphology import MorphologyBuilder, MorphologyGraph
 
 
@@ -29,9 +29,9 @@ class Organiser(InterpretationNode):
 
 
 class Interpreter(InterpretationNode):
-    def __init__(self, id: int, utterance: Utterance, context):
+    def __init__(self, id: int, fragment: Fragment, context):
         self.id = id
-        self.utterance = utterance
+        self.fragment = fragment
         self.context = context
 
     def extend(self, text, *glosses):
@@ -39,11 +39,11 @@ class Interpreter(InterpretationNode):
         if alternatives:
             return Organiser(
                 id=self.id,
-                left=Interpreter(id=2 * self.id, utterance=self.utterance.clone(), context=self.context).extend(text, gloss),
-                right=Interpreter(id=2 * self.id + 1, utterance=self.utterance.clone(), context=self.context).extend(text, *alternatives),
+                left=Interpreter(id=2 * self.id, fragment=self.fragment.clone(), context=self.context).extend(text, gloss),
+                right=Interpreter(id=2 * self.id + 1, fragment=self.fragment.clone(), context=self.context).extend(text, *alternatives),
             )
         
-        self.utterance.extend(gloss, text, id=self.id, **self.context)
+        self.fragment.extend(gloss, text, id=self.id, **self.context)
         return self
 
 
@@ -53,7 +53,7 @@ class Reviewer:
         self.syntax = syntax
 
     def read(self, text: str, **context):
-        interpreter = Interpreter(id=0, utterance=self.syntax.build(), context=context)
+        interpreter = Interpreter(id=0, fragment=self.syntax.build(), context=context)
         for word in text.split():
             glosses = morphology.gloss_affixes(word.lower())
             if not glosses:
@@ -84,7 +84,7 @@ class InterpretationWriter:
     def traverse(self, node: InterpretationNode, level: int):
         if isinstance(node, Interpreter):
             id = f's{node.id}'
-            for phrase in node.utterance.nodes:
+            for phrase in node.fragment.nodes:
                 self.lines.append(f' {id} -> {self.syntax_writer.traverse(phrase)}')
 
             return id

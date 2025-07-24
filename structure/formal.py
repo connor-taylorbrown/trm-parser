@@ -64,7 +64,7 @@ class Mapper:
                 return result
     
 
-class Utterance:
+class Fragment:
     def __init__(self, ranking: Ranking, mapper: Mapper):
         self.nodes: list[SyntaxNode] = []
         self.ranking = ranking
@@ -125,7 +125,7 @@ class Utterance:
         return self.resolve(terminal, context)
     
     def clone(self):
-        s = Utterance(
+        s = Fragment(
             ranking=self.ranking,
             mapper=self.mapper
         )
@@ -155,6 +155,6 @@ class SyntaxBuilder:
             return line
     
     def build(self):
-        return Utterance(
+        return Fragment(
             ranking=Ranking(self.ranks),
             mapper=Mapper(self.sums))

@@ -1,4 +1,4 @@
-from structure.formal import NonTerminal, Ranking, Mapper, Utterance, Terminal
+from structure.formal import NonTerminal, Ranking, Mapper, Fragment, Terminal
 
 
 def test_outranks():
@@ -74,16 +74,16 @@ def test_read():
     i = Terminal('part.r', 'i')
 
     cases = [
-        (Utterance(ranking, mapper), naku.gloss, naku.text, [naku], 'First token should be pushed'),
-        (Utterance(ranking, mapper).extend(naku.gloss, naku.text), te.gloss, te.text, [NonTerminal('$', naku, None), te], 'Antecedent phrasal words should be resolved'),
-        (Utterance(ranking, mapper).extend(na.gloss, na.text).extend(tatou.gloss, tatou.text), te.gloss, te.text, [NonTerminal('$', na, tatou), te], 'Antecedent phrases should be resolved'),
-        (Utterance(ranking, mapper).extend(na.gloss, na.text).extend(ta.gloss, ta.text).extend(tatou.gloss, tatou.text), whare.gloss, whare.text, [na, NonTerminal('def', ta, tatou), whare], 'Partial resolution should be supported'),
-        (Utterance(ranking, mapper).extend(na.gloss, na.text).extend(tatou.gloss, tatou.text).extend(te.gloss, te.text).extend(whare.gloss, whare.text), i.gloss, i.text, [NonTerminal('$', na, tatou), NonTerminal('$', NonTerminal('ref', te, whare), None), i], 'Promotion should be supported'),
-        (Utterance(ranking, mapper).extend(na.gloss, na.text).extend(tatou.gloss, tatou.text).extend(te.gloss, te.text).extend(whare.gloss, whare.text), '#', '', [NonTerminal('$', na, tatou), NonTerminal('$', NonTerminal('ref', te, whare), None)], 'Stop token should be supported'),
-        (Utterance(ranking, mapper).extend(na.gloss, na.text).extend(tatou.gloss, tatou.text).extend(na.gloss, na.text).extend(tatou.gloss, tatou.text), '#', '', [NonTerminal('$', na, tatou), NonTerminal('$', na, tatou)], 'Repetition should be supported')
+        (Fragment(ranking, mapper), naku.gloss, naku.text, [naku], 'First token should be pushed'),
+        (Fragment(ranking, mapper).extend(naku.gloss, naku.text), te.gloss, te.text, [NonTerminal('$', naku, None), te], 'Antecedent phrasal words should be resolved'),
+        (Fragment(ranking, mapper).extend(na.gloss, na.text).extend(tatou.gloss, tatou.text), te.gloss, te.text, [NonTerminal('$', na, tatou), te], 'Antecedent phrases should be resolved'),
+        (Fragment(ranking, mapper).extend(na.gloss, na.text).extend(ta.gloss, ta.text).extend(tatou.gloss, tatou.text), whare.gloss, whare.text, [na, NonTerminal('def', ta, tatou), whare], 'Partial resolution should be supported'),
+        (Fragment(ranking, mapper).extend(na.gloss, na.text).extend(tatou.gloss, tatou.text).extend(te.gloss, te.text).extend(whare.gloss, whare.text), i.gloss, i.text, [NonTerminal('$', na, tatou), NonTerminal('$', NonTerminal('ref', te, whare), None), i], 'Promotion should be supported'),
+        (Fragment(ranking, mapper).extend(na.gloss, na.text).extend(tatou.gloss, tatou.text).extend(te.gloss, te.text).extend(whare.gloss, whare.text), '#', '', [NonTerminal('$', na, tatou), NonTerminal('$', NonTerminal('ref', te, whare), None)], 'Stop token should be supported'),
+        (Fragment(ranking, mapper).extend(na.gloss, na.text).extend(tatou.gloss, tatou.text).extend(na.gloss, na.text).extend(tatou.gloss, tatou.text), '#', '', [NonTerminal('$', na, tatou), NonTerminal('$', na, tatou)], 'Repetition should be supported')
     ]
 
-    for utterance, gloss, text, expected, message in cases:
-        result = utterance.extend(gloss, text)
+    for fragment, gloss, text, expected, message in cases:
+        result = fragment.extend(gloss, text)
 
         assert result.nodes == expected, message
