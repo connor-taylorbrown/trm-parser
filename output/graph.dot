@@ -1,45 +1,45 @@
 digraph S0 {
  s0 -> n0
+ s0 -> n7
  s0 -> n9
  s0 -> n14
  s0 -> n19
  s0 -> n22
  s0 -> n27
  s0 -> n30
+ s0 -> n31
+ s0 -> n33
  s0 -> n35
  1 -> s0
  s1 -> n42
+ s1 -> n49
  s1 -> n51
  s1 -> n56
  s1 -> n61
  s1 -> n64
  s1 -> n69
  s1 -> n72
- s1 -> n73
- s1 -> n75
  s1 -> n77
  1 -> s1
  0 -> 1
  s4 -> n84
- s4 -> n91
  s4 -> n93
  s4 -> n98
  s4 -> n103
  s4 -> n106
  s4 -> n111
  s4 -> n114
+ s4 -> n115
+ s4 -> n117
  s4 -> n119
  5 -> s4
  s5 -> n126
- s5 -> n133
  s5 -> n135
  s5 -> n140
  s5 -> n145
  s5 -> n148
  s5 -> n153
  s5 -> n156
- s5 -> n157
- s5 -> n159
  s5 -> n161
  5 -> s5
  2 -> 5
@@ -51,6 +51,8 @@ digraph S0 {
  s6 -> n190
  s6 -> n195
  s6 -> n198
+ s6 -> n199
+ s6 -> n201
  s6 -> n203
  6 -> s6
  s7 -> n210
@@ -61,8 +63,6 @@ digraph S0 {
  s7 -> n232
  s7 -> n237
  s7 -> n240
- s7 -> n241
- s7 -> n243
  s7 -> n245
  6 -> s7
  2 -> 6
@@ -76,14 +76,13 @@ digraph S0 {
  n4 [label="mod"];
  n5 [label=<<u>noa/mod</u>>];
  n4 -> n5;
- n6 [label="mod"];
- n7 [label=<<u>ake/mod</u>>];
- n6 -> n7;
- n8 [label=<<u>ana/mod</u>>];
- n6 -> n8;
+ n6 [label=<<u>ake/mod</u>>];
  n4 -> n6;
  n2 -> n4;
  n0 -> n2;
+ n7 [label="$"];
+ n8 [label=<<u>ana/def.p-3s</u>>];
+ n7 -> n8;
  n9 [label="$"];
  n10 [label=<<u>i/part</u>>];
  n9 -> n10;
@@ -121,15 +120,13 @@ digraph S0 {
  n27 -> n28;
  n29 [label=<<u>roto/*</u>>];
  n27 -> n29;
- n30 [label="$"];
- n31 [label=<<u>i/part</u>>];
- n30 -> n31;
- n32 [label="ref"];
- n33 [label=<<u>ngā/def.p</u>>];
- n32 -> n33;
- n34 [label=<<u>rā/*</u>>];
- n32 -> n34;
- n30 -> n32;
+ n30 [label=<<u>i/part</u>>];
+ n31 [label="$"];
+ n32 [label=<<u>ngā/def.p</u>>];
+ n31 -> n32;
+ n33 [label="$"];
+ n34 [label=<<u>rā/mod.dist</u>>];
+ n33 -> n34;
  n35 [label="$"];
  n36 [label=<<u>ka/part</u>>];
  n35 -> n36;
@@ -152,14 +149,13 @@ digraph S0 {
  n46 [label="mod"];
  n47 [label=<<u>noa/mod</u>>];
  n46 -> n47;
- n48 [label="mod"];
- n49 [label=<<u>ake/mod</u>>];
- n48 -> n49;
- n50 [label=<<u>ana/mod</u>>];
- n48 -> n50;
+ n48 [label=<<u>ake/mod</u>>];
  n46 -> n48;
  n44 -> n46;
  n42 -> n44;
+ n49 [label="$"];
+ n50 [label=<<u>ana/def.p-3s</u>>];
+ n49 -> n50;
  n51 [label="$"];
  n52 [label=<<u>i/part</u>>];
  n51 -> n52;
@@ -197,13 +193,15 @@ digraph S0 {
  n69 -> n70;
  n71 [label=<<u>roto/*</u>>];
  n69 -> n71;
- n72 [label=<<u>i/part</u>>];
- n73 [label="$"];
- n74 [label=<<u>ngā/def.p</u>>];
- n73 -> n74;
- n75 [label="$"];
- n76 [label=<<u>rā/mod.dist</u>>];
- n75 -> n76;
+ n72 [label="$"];
+ n73 [label=<<u>i/part</u>>];
+ n72 -> n73;
+ n74 [label="ref"];
+ n75 [label=<<u>ngā/def.p</u>>];
+ n74 -> n75;
+ n76 [label=<<u>rā/*</u>>];
+ n74 -> n76;
+ n72 -> n74;
  n77 [label="$"];
  n78 [label=<<u>ka/part</u>>];
  n77 -> n78;
@@ -226,13 +224,14 @@ digraph S0 {
  n88 [label="mod"];
  n89 [label=<<u>noa/mod</u>>];
  n88 -> n89;
- n90 [label=<<u>ake/mod</u>>];
+ n90 [label="mod"];
+ n91 [label=<<u>ake/mod</u>>];
+ n90 -> n91;
+ n92 [label=<<u>ana/mod</u>>];
+ n90 -> n92;
  n88 -> n90;
  n86 -> n88;
  n84 -> n86;
- n91 [label="$"];
- n92 [label=<<u>ana/*</u>>];
- n91 -> n92;
  n93 [label="$"];
  n94 [label=<<u>i/part</u>>];
  n93 -> n94;
@@ -270,15 +269,13 @@ digraph S0 {
  n111 -> n112;
  n113 [label=<<u>roto/*</u>>];
  n111 -> n113;
- n114 [label="$"];
- n115 [label=<<u>i/part</u>>];
- n114 -> n115;
- n116 [label="ref"];
- n117 [label=<<u>ngā/def.p</u>>];
- n116 -> n117;
- n118 [label=<<u>rā/*</u>>];
- n116 -> n118;
- n114 -> n116;
+ n114 [label=<<u>i/part</u>>];
+ n115 [label="$"];
+ n116 [label=<<u>ngā/def.p</u>>];
+ n115 -> n116;
+ n117 [label="$"];
+ n118 [label=<<u>rā/mod.dist</u>>];
+ n117 -> n118;
  n119 [label="$"];
  n120 [label=<<u>ka/part</u>>];
  n119 -> n120;
@@ -301,13 +298,14 @@ digraph S0 {
  n130 [label="mod"];
  n131 [label=<<u>noa/mod</u>>];
  n130 -> n131;
- n132 [label=<<u>ake/mod</u>>];
+ n132 [label="mod"];
+ n133 [label=<<u>ake/mod</u>>];
+ n132 -> n133;
+ n134 [label=<<u>ana/mod</u>>];
+ n132 -> n134;
  n130 -> n132;
  n128 -> n130;
  n126 -> n128;
- n133 [label="$"];
- n134 [label=<<u>ana/*</u>>];
- n133 -> n134;
  n135 [label="$"];
  n136 [label=<<u>i/part</u>>];
  n135 -> n136;
@@ -345,13 +343,15 @@ digraph S0 {
  n153 -> n154;
  n155 [label=<<u>roto/*</u>>];
  n153 -> n155;
- n156 [label=<<u>i/part</u>>];
- n157 [label="$"];
- n158 [label=<<u>ngā/def.p</u>>];
- n157 -> n158;
- n159 [label="$"];
- n160 [label=<<u>rā/mod.dist</u>>];
- n159 -> n160;
+ n156 [label="$"];
+ n157 [label=<<u>i/part</u>>];
+ n156 -> n157;
+ n158 [label="ref"];
+ n159 [label=<<u>ngā/def.p</u>>];
+ n158 -> n159;
+ n160 [label=<<u>rā/*</u>>];
+ n158 -> n160;
+ n156 -> n158;
  n161 [label="$"];
  n162 [label=<<u>ka/part</u>>];
  n161 -> n162;
@@ -379,7 +379,7 @@ digraph S0 {
  n170 -> n172;
  n168 -> n170;
  n175 [label="$"];
- n176 [label=<<u>ana/def.p-3s</u>>];
+ n176 [label=<<u>ana/*</u>>];
  n175 -> n176;
  n177 [label="$"];
  n178 [label=<<u>i/part</u>>];
@@ -418,15 +418,13 @@ digraph S0 {
  n195 -> n196;
  n197 [label=<<u>roto/*</u>>];
  n195 -> n197;
- n198 [label="$"];
- n199 [label=<<u>i/part</u>>];
- n198 -> n199;
- n200 [label="ref"];
- n201 [label=<<u>ngā/def.p</u>>];
- n200 -> n201;
- n202 [label=<<u>rā/*</u>>];
- n200 -> n202;
- n198 -> n200;
+ n198 [label=<<u>i/part</u>>];
+ n199 [label="$"];
+ n200 [label=<<u>ngā/def.p</u>>];
+ n199 -> n200;
+ n201 [label="$"];
+ n202 [label=<<u>rā/mod.dist</u>>];
+ n201 -> n202;
  n203 [label="$"];
  n204 [label=<<u>ka/part</u>>];
  n203 -> n204;
@@ -454,7 +452,7 @@ digraph S0 {
  n212 -> n214;
  n210 -> n212;
  n217 [label="$"];
- n218 [label=<<u>ana/def.p-3s</u>>];
+ n218 [label=<<u>ana/*</u>>];
  n217 -> n218;
  n219 [label="$"];
  n220 [label=<<u>i/part</u>>];
@@ -493,13 +491,15 @@ digraph S0 {
  n237 -> n238;
  n239 [label=<<u>roto/*</u>>];
  n237 -> n239;
- n240 [label=<<u>i/part</u>>];
- n241 [label="$"];
- n242 [label=<<u>ngā/def.p</u>>];
- n241 -> n242;
- n243 [label="$"];
- n244 [label=<<u>rā/mod.dist</u>>];
- n243 -> n244;
+ n240 [label="$"];
+ n241 [label=<<u>i/part</u>>];
+ n240 -> n241;
+ n242 [label="ref"];
+ n243 [label=<<u>ngā/def.p</u>>];
+ n242 -> n243;
+ n244 [label=<<u>rā/*</u>>];
+ n242 -> n244;
+ n240 -> n242;
  n245 [label="$"];
  n246 [label=<<u>ka/part</u>>];
  n245 -> n246;

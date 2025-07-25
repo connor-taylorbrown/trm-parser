@@ -3,15 +3,19 @@ import argparse
 from dataclasses import dataclass
 import logging
 import sys
-from structure.formal import SyntaxNode, NonTerminal, Utterance, SyntaxBuilder, Terminal
+from structure.formal import Logger, SyntaxNode, NonTerminal, Utterance, SyntaxBuilder, Terminal
 from structure.morphology import MorphologyBuilder, MorphologyGraph
 
 
 logger = logging.getLogger()
 
 
-def log(message, *args, **kwargs):
-    logger.info(message, *args, extra=kwargs)
+class FunctionalLogger(Logger):
+    def __init__(self, **context):
+        self.context = context
+    
+    def info(self, message, *args):
+        logger.info(message, *args, extra=self.context)
 
 
 class InterpretationNode(ABC):
@@ -37,11 +41,12 @@ class Interpreter(InterpretationNode):
         self.id = id
         self.utterance = utterance
         self.context = context
+        self.logger = FunctionalLogger(id=self.id, **self.context)
 
     def extend(self, text, *glosses):
         gloss, *alternatives = glosses
         if alternatives:
-            log('Branching interpretations on ambiguous token %s', text, id=self.id, **self.context)
+            self.logger.info('Branching interpretations on ambiguous token %s', text)
             return Organiser(
                 id=self.id,
                 left=self.branch(2 * self.id).extend(text, gloss),
@@ -52,11 +57,13 @@ class Interpreter(InterpretationNode):
         return self
     
     def branch(self, id):
-        return Interpreter(id, utterance=self.utterance.clone(id=id, **self.context), context=self.context)
+        logger = FunctionalLogger(id=id, **self.context)
+        return Interpreter(id, utterance=self.utterance.clone(logger), context=self.context)
     
     @staticmethod
     def create(builder: SyntaxBuilder, **context):
-        return Interpreter(id=0, utterance=builder.build(id=0, **context), context=context)
+        logger = FunctionalLogger(id=0, **context)
+        return Interpreter(id=0, utterance=builder.build(logger), context=context)
 
 
 class Reviewer:

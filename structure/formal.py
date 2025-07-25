@@ -1,10 +1,6 @@
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
-import logging
 import re
-
-
-logger = logging.getLogger()
 
 
 @dataclass
@@ -64,12 +60,10 @@ class Mapper:
                 return result
             
 
-class Logger:
-    def __init__(self, **context):
-        self.context = context
-    
+class Logger(ABC):
+    @abstractmethod
     def info(self, message, *args):
-        logger.info(message, *args, extra=self.context)
+        pass
 
 class Utterance:
     def __init__(self, ranking: Ranking, mapper: Mapper, logger: Logger):
@@ -132,11 +126,11 @@ class Utterance:
     
         return self.resolve(terminal)
     
-    def clone(self, **context):
+    def clone(self, logger):
         s = Utterance(
             ranking=self.ranking,
             mapper=self.mapper,
-            logger=Logger(**context)
+            logger=logger
         )
 
         s.nodes = self.nodes.copy()
@@ -163,8 +157,8 @@ class SyntaxBuilder:
         else:
             return line
     
-    def build(self, id, **context):
+    def build(self, logger):
         return Utterance(
             ranking=Ranking(self.ranks),
             mapper=Mapper(self.sums),
-            logger=Logger(id=id, **context))
+            logger=logger)
