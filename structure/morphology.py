@@ -236,9 +236,12 @@ class MorphologyBuilder:
             if self.verbose:
                 print(self.graph)
         elif self.test:
-            command, = command
-            for gloss in self.graph.gloss_affixes(command):
-                print(f'{command}: {gloss}')
+            try:
+                command, = command
+                for gloss in self.graph.gloss_affixes(command):
+                    print(f'{command}: {gloss}')
+            except:
+                pass
 
 
 def generate(node: MorphologyNode):

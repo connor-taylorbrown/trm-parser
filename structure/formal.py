@@ -62,13 +62,21 @@ class Mapper:
         for sum, result in self.sums:
             if not sum - bag:
                 return result
-    
+            
 
-class Fragment:
-    def __init__(self, ranking: Ranking, mapper: Mapper):
+class Logger:
+    def __init__(self, **context):
+        self.context = context
+    
+    def info(self, message, *args):
+        logger.info(message, *args, extra=self.context)
+
+class Utterance:
+    def __init__(self, ranking: Ranking, mapper: Mapper, logger: Logger):
         self.nodes: list[SyntaxNode] = []
         self.ranking = ranking
         self.mapper = mapper
+        self.logger = logger
 
     def push(self, node):
         if node.gloss != '#':
@@ -82,39 +90,39 @@ class Fragment:
     def pop(self):
         return self.nodes.pop()
     
-    def merge(self, antecedent, next, context):
+    def merge(self, antecedent, next):
         if not self.peek():
-            logger.info('Unable to merge %s before %s: stack empty', antecedent.gloss, next.gloss, extra=context)
+            self.logger.info('Unable to merge %s before %s: stack empty', antecedent.gloss, next.gloss)
             return None
 
         head = self.peek()
         result = self.mapper.add(head.gloss, antecedent.gloss)
         if not result:
-            logger.info('Unable to merge before %s: no rule for %s + %s', next.gloss, head.gloss, antecedent.gloss, extra=context)
+            self.logger.info('Unable to merge before %s: no rule for %s + %s', next.gloss, head.gloss, antecedent.gloss)
             return None
         
-        logger.info('Given %s + %s before %s, got %s', head.gloss, antecedent.gloss, next.gloss, result, extra=context)
+        self.logger.info('Given %s + %s before %s, got %s', head.gloss, antecedent.gloss, next.gloss, result)
         return self.push(NonTerminal(result, self.pop(), antecedent))
         
-    def promote(self, antecedent, context):
+    def promote(self, antecedent):
         if antecedent.gloss == '$':
             raise KeyError('Unable to promote', self.nodes)
         
-        logger.info('Promoted %s', antecedent.gloss, extra=context)
+        self.logger.info('Promoted %s', antecedent.gloss)
         return self.push(NonTerminal('$', antecedent, None))
     
-    def resolve(self, next: SyntaxNode, context):
+    def resolve(self, next: SyntaxNode):
         antecedent = self.pop()
-        if not self.merge(antecedent, next, context):
-            self.promote(antecedent, context)
+        if not self.merge(antecedent, next):
+            self.promote(antecedent)
 
         if self.ranking.outranks(self.peek().gloss, next.gloss):
             return self.push(next)
         
-        return self.resolve(next, context)
+        return self.resolve(next)
     
-    def extend(self, gloss, text, **context):
-        logger.info('Read %s/%s', text, gloss, extra=context)
+    def extend(self, gloss, text):
+        self.logger.info('Read %s/%s', text, gloss)
         terminal = Terminal(gloss, text)
         if not len(self.nodes):
             return self.push(terminal)
@@ -122,12 +130,13 @@ class Fragment:
         if self.ranking.outranks(self.peek().gloss, terminal.gloss):
             return self.push(terminal)
     
-        return self.resolve(terminal, context)
+        return self.resolve(terminal)
     
-    def clone(self):
-        s = Fragment(
+    def clone(self, **context):
+        s = Utterance(
             ranking=self.ranking,
-            mapper=self.mapper
+            mapper=self.mapper,
+            logger=Logger(**context)
         )
 
         s.nodes = self.nodes.copy()
@@ -154,7 +163,8 @@ class SyntaxBuilder:
         else:
             return line
     
-    def build(self):
-        return Fragment(
+    def build(self, id, **context):
+        return Utterance(
             ranking=Ranking(self.ranks),
-            mapper=Mapper(self.sums))
+            mapper=Mapper(self.sums),
+            logger=Logger(id=id, **context))

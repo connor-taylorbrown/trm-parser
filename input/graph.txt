@@ -27,33 +27,48 @@ e tou kou items
 e tou rā items
 
 # Demonstratives
-n ā dem.part.p.a-
-n ō dem.part.p.o-
-n ku 1s .part
-n u 2s .part
-n na 3s .part
+n ā anc.p.a-
+n ō anc.p.o-
+n wā anc.p.o-
+n wō anc.p.o-
+n ku dem.pron.1s anc. part.
+n u dem.pron.2s anc. part.
+n na dem.pron.3s anc. part.
 
 e $ ā items prefixes
 e $ ō items prefixes
+e $ wā items prefixes
+e $ wō items prefixes
 e ā ku items
 e ā u items
 e ā na items
 e ō ku items
 e ō u items
 e ō na items
+e wā ku items
+e wā u items
+e wā na items
+e wō ku items
+e wō u items
+e wō na items
 
-n t dem.part.s- dem.part.p. dem.part.p- dem.part.p
+n t anc.s- anc.p. anc.p- anc.p
 e $ t prefixes
 e t ā items prefixes
 e t ō items prefixes
 
-n ē dem.part.p- mod. loc.
-n nei mod.prox .part
-n nā mod.med .part
-n rā mod.dist .part
-n hea loc.int .part
-n tahi excl .part
+n t dem.s- dem.p-
+n ē dem.p- mod. desc.
+n wē dem.p- mod. desc.
+n nei mod.prox
+n nā mod.med
+n rā mod.dist
+n hea desc.int
+n tahi excl
+n tehi excl
+e $ t prefixes
 e $ ē prefixes
+e $ wē prefixes
 e t ē prefixes
 e $ nei items
 e $ nā items
@@ -63,28 +78,77 @@ e ē nā items
 e ē rā items
 e ē hea items
 e ē tahi items
+e ē tehi items
+e wē nei items
+e wē nā items
+e wē rā items
+e wē hea items
+e wē tahi items
+e wē tehi items
 
 # Particles
-n a part.a
-n o part.o
-n he part
+n me part.me
+n a part.poss.a
+n o part.poss.o
 n i part
+n ki part
+n kei part
+n ka part
+n kua part
+n kia part
+n he part
+n ko part
+n hei part
+n e part
 
 n kē mod
 n mā mod
 n ana mod
+n tonu mod
+n rawa mod
+n noa mod
+n mai mod
+n atu mod
+n ake mod
+n iho mod
+n anō mod
+n pea mod
+n ai mod
 
+n ināianei interj
+
+e $ me items
 e $ a items
 e $ o items
-e $ he items
 e $ i items
+e $ ki items
+e $ kei items
+e $ ka items
+e $ kua items
+e $ kia items
+e $ he items
+e $ ko items
+e $ hei items
+e $ e items
 
 e $ kē items
 e $ mā items
 e $ ana items
+e $ tonu items
+e $ rawa items
+e $ noa items
+e $ mai items
+e $ atu items
+e $ iho items
+e $ ake items
+e $ anō items
+e $ pea items
+e $ ai items
 
-n m irr.part- dem.part.p.
-n n r.part- dem.part.p.
+e $ ināianei items
+
+n m part.irr- anc.p. dem.
+n n part.r- anc.p. dem.
 
 e $ m prefixes
 e $ n prefixes
@@ -97,7 +161,7 @@ e n ō prefixes items
 n te def.s
 n ngā def.p
 n aua def.p.excl
-n a def.p-
+n a def.p- dem.pron.
 n ō def.p.2s
 
 e $ te items
@@ -116,35 +180,89 @@ e t ō items
 
 # Overrides
 n ana *
+n taua *
+n tāua *
 n mā *
 n tō *
+n wā *
+n rā *
 
 e $ ana items
+e $ taua items
+e $ tāua items
 e $ mā items
 e $ tō items
+e $ wā items
+e $ rā items
 
 # Tests
-a
-ana
-tō
+ā
+tā
 nā
-mā
-tāna
-anā
+
+a
+aku
+ana
+
+ō
+tō
+
+āku
+tāku
+nāku
+
+tētahi
 
 # Syntax
-r part part def pron *
+r part part anc dem def pron *
+r anc dem def pron *
+r dem * mod
 r def *
 r * * mod
 r pron mod
+r mod mod
 
-s def dem pron
-s $ part *
-s $ part pron
-s $ part ref
-s $ part desc
-
-s ref def desc
-s ref def *
-s desc * *
+# Pronouns and demonstratives may have postposed modifiers
 s pron pron mod
+s dem dem mod
+
+# A demonstrative may be built with an anchor particle
+s dem anc *
+s dem anc desc
+s dem anc pron
+s dem anc ref
+s dem anc dem
+
+# A referring expression subsumes a determiner and a descriptive expression
+s ref def *
+s ref def desc
+s ref dem *
+s ref dem desc
+
+# A possessive expression subsumes a possessive particle and a referring or descriptive expression
+s poss poss pron
+s poss poss dem
+s poss poss ref
+s poss poss desc
+s poss poss *
+
+# "me" may behave generically in certain contexts
+s dem me dem
+s ref me ref
+s pron me pron
+
+# Other particles initiate phrases over possessive, referring, descriptive expressions
+s $ part poss
+s $ part dem
+s $ part ref
+s $ part pron
+s $ part desc
+s $ part *
+
+# Descriptors may consist of unclassified words with postposed modifiers
+s desc * mod
+s desc * *
+s desc * desc
+
+# Modifiers may be complex
+s mod mod mod
