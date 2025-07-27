@@ -113,6 +113,7 @@ n atu mod
 n ake mod
 n iho mod
 n anō mod
+n hoki mod
 n pea mod
 n ai mod
 
@@ -151,6 +152,7 @@ e $ atu items
 e $ iho items
 e $ ake items
 e $ anō items
+e $ hoki items
 e $ pea items
 e $ ai items
 
@@ -203,6 +205,7 @@ n mā *
 n tō *
 n wā *
 n rā *
+n hoki *
 
 e $ ana items
 e $ taua items
@@ -211,6 +214,7 @@ e $ mā items
 e $ tō items
 e $ wā items
 e $ rā items
+e $ hoki items
 
 # Tests
 ā

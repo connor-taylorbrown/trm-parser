@@ -25,6 +25,10 @@ class InterpretationNode(ABC):
         pass
 
     @abstractmethod
+    def score(self):
+        pass
+
+    @abstractmethod
     def prune(self):
         pass
 
@@ -48,12 +52,15 @@ class Organiser(InterpretationNode):
         self.right = self.right.extend(text, *glosses)
         return self
     
+    def score(self):
+        return min(self.left.score(), self.right.score()) + len(self)
+    
     def prune(self):
         self.left = self.left.prune()
         self.right = self.right.prune()
 
-        left, right = len(self.left), len(self.right)
-        self.logger.info('Pruning nodes: %s/%s children', left, right)
+        left, right = self.left.score(), self.right.score()
+        self.logger.info('Pruning nodes: %s-%s score', left, right)
         if left < right:
             return self.left
         if right < left:
@@ -91,6 +98,9 @@ class Interpreter(InterpretationNode):
         self.utterance.extend(gloss, text)
         return self
     
+    def score(self):
+        return sum(node.score() for node in self.utterance.nodes)
+    
     def prune(self):
         return self
     
@@ -99,7 +109,6 @@ class Interpreter(InterpretationNode):
         while construction.peek():
             component = construction.component()
             construction.append(component)
-            self.logger.info("Read component %s", component)
         
         return Interpreter(id=self.id, utterance=construction, context=self.context)
     

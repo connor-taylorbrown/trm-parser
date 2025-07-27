@@ -11,6 +11,10 @@ class SyntaxNode(ABC):
     def includes(self, gloss: set):
         pass
 
+    @abstractmethod
+    def score(self):
+        pass
+
 
 @dataclass
 class Terminal(SyntaxNode):
@@ -21,7 +25,12 @@ class Terminal(SyntaxNode):
 
     def includes(self, gloss):
         return _split(self.gloss).intersection(gloss)
-
+    
+    def score(self):
+        if self.gloss in {'*'}:
+            return 1
+        
+        return 0
 
 @dataclass
 class NonTerminal(SyntaxNode):
@@ -44,6 +53,18 @@ class NonTerminal(SyntaxNode):
         left = self.left.includes(gloss) if self.left else False
         right = self.right.includes(gloss) if self.right else False
         return left or right
+    
+    def score(self):
+        left = self.left.score() if self.left else 0
+        right = self.right.score() if self.right else 0
+        score = left + right
+        if self.gloss in {'desc', 'dem', '$'}:
+            score += 1
+        
+        if not self.includes({'*'}):
+            score += 1
+
+        return score
 
 
 def _split(token):

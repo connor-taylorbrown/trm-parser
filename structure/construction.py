@@ -53,6 +53,13 @@ class Construction:
         
         return NonTerminal(head.gloss, head, complement)
     
+    def gloss(self, gloss, node):
+        return NonTerminal(
+            gloss,
+            node.left,
+            node.right
+        )
+    
     def reference(self, head):
         """Match topic, anchor, or subgroup references by phrasal form"""
         topic = self.fetch(include={'ref', 'dem', 'pron'}, exclude={'part', 'poss'})
@@ -88,43 +95,42 @@ class Construction:
         
         self.logger.info("Read complement of counterfactual %s", complement)
         return NonTerminal(
-            complement.gloss,
+            'cf',
             head,
             complement
         )
-    
-    def subordinate(self, part: SyntaxNode):
-        phrase = self.peek()
-        if not isinstance(phrase, NonTerminal):
-            return None
-        
-        if part.includes({'r'}) and phrase.left.text != 'i':
-            return None
-        
-        if phrase.left.text not in {'hei', 'e'}:
-            return None
-        
-        return self.reference(self.dequeue())
     
     def causative(self, head: SyntaxNode):
         if not isinstance(head, NonTerminal):
             return None
         
         part = head.left
-        if not part.includes({'r', 'irr'}) or part.includes({'o'}):
+        if part.includes({'o'}):
+            return None
+        
+        past = part.includes({'r'})
+        fut = part.includes({'irr'})
+        if not past and not fut:
             return None
         
         actor = self.reference(head)
-        subordinate = self.subordinate(part)
-        if subordinate:
-            return NonTerminal(
-                'ae',
-                actor,
-                subordinate
-            )
+        subordinate = self.peek()
+        if not isinstance(subordinate, NonTerminal):
+            return self.gloss('caus', actor)
         
-        return actor
-    
+        self.logger.info('Reading possible subordinate %s of causative %s', subordinate.left, part)
+        if subordinate.left.text == 'i' and not past:
+            return self.gloss('caus', actor)
+        
+        if subordinate.left.text in {'hei', 'e'} and not fut:
+            return self.gloss('caus', actor)
+        
+        return NonTerminal(
+            'caus',
+            actor,
+            self.reference(self.dequeue())
+        )
+        
     def locative(self, head: SyntaxNode):
         if not isinstance(head, NonTerminal):
             return None
@@ -135,10 +141,10 @@ class Construction:
         location = self.reference(head)
         anchor = self.peek()
         if not isinstance(anchor, NonTerminal):
-            return location
+            return self.gloss('loc', location)
         
         if not anchor.left.text == 'i':
-            return location
+            return self.gloss('loc', location)
         
         return NonTerminal(
             'loc',
