@@ -3,6 +3,7 @@ import argparse
 from dataclasses import dataclass
 import logging
 import sys
+from structure.construction import Construction
 from structure.formal import Logger, SyntaxNode, NonTerminal, Utterance, SyntaxBuilder, Terminal
 from structure.morphology import MorphologyBuilder, MorphologyGraph
 
@@ -23,16 +24,46 @@ class InterpretationNode(ABC):
     def extend(self, text: str, *glosses: str):
         pass
 
+    @abstractmethod
+    def prune(self):
+        pass
+
+    @abstractmethod
+    def structure(self):
+        pass
+
 
 @dataclass
 class Organiser(InterpretationNode):
     id: int
     left: InterpretationNode
     right: InterpretationNode
+    logger: Logger
+
+    def __len__(self):
+        return min(len(self.left), len(self.right))
 
     def extend(self, text, *glosses):
         self.left = self.left.extend(text, *glosses)
         self.right = self.right.extend(text, *glosses)
+        return self
+    
+    def prune(self):
+        self.left = self.left.prune()
+        self.right = self.right.prune()
+
+        left, right = len(self.left), len(self.right)
+        self.logger.info('Pruning nodes: %s/%s children', left, right)
+        if left < right:
+            return self.left
+        if right < left:
+            return self.right
+        
+        return self
+    
+    def structure(self):
+        self.left = self.left.structure()
+        self.right = self.right.structure()
         return self
 
 
@@ -43,6 +74,9 @@ class Interpreter(InterpretationNode):
         self.context = context
         self.logger = FunctionalLogger(id=self.id, **self.context)
 
+    def __len__(self):
+        return len(self.utterance.nodes)
+
     def extend(self, text, *glosses):
         gloss, *alternatives = glosses
         if alternatives:
@@ -51,10 +85,23 @@ class Interpreter(InterpretationNode):
                 id=self.id,
                 left=self.branch(2 * self.id).extend(text, gloss),
                 right=self.branch(2 * self.id + 1).extend(text, *alternatives),
+                logger=self.logger
             )
         
         self.utterance.extend(gloss, text)
         return self
+    
+    def prune(self):
+        return self
+    
+    def structure(self):
+        construction = Construction(self.utterance.nodes, self.logger)
+        while construction.peek():
+            component = construction.component()
+            construction.append(component)
+            self.logger.info("Read component %s", component)
+        
+        return Interpreter(id=self.id, utterance=construction, context=self.context)
     
     def branch(self, id):
         logger = FunctionalLogger(id=id, **self.context)
@@ -67,9 +114,10 @@ class Interpreter(InterpretationNode):
 
 
 class Reviewer:
-    def __init__(self, morphology: MorphologyGraph, syntax: SyntaxBuilder):
+    def __init__(self, morphology: MorphologyGraph, syntax: SyntaxBuilder, structure: bool):
         self.morphology = morphology
         self.syntax = syntax
+        self.structure = structure
 
     def read(self, text: str, **context):
         interpreter = Interpreter.create(self.syntax, **context)
@@ -80,7 +128,11 @@ class Reviewer:
             else:
                 interpreter = interpreter.extend(word, *glosses)
         
-        return interpreter.extend('', '#')
+        interpreter = interpreter.extend('', '#')
+        if self.structure:
+            return interpreter.structure().prune()
+        
+        return interpreter
     
 
 class IdGenerator:
@@ -173,6 +225,7 @@ if __name__ == '__main__':
     parser.add_argument("input", help="Input file path")
     parser.add_argument('-t', '--test', action='store_true')
     parser.add_argument('-c', '--count', action='store_true')
+    parser.add_argument('-s', '--structure', action='store_true')
     parser.add_argument('-o', '--output')
     args = parser.parse_args()
 
@@ -188,7 +241,7 @@ if __name__ == '__main__':
             morphology_builder.parse(line)
     
     trees = []
-    reviewer = Reviewer(morphology, syntax_builder)
+    reviewer = Reviewer(morphology, syntax_builder, args.structure)
     for i, line in enumerate(sys.stdin):
         if args.count:
             print(' '.join(str(i) for i in count(morphology, line)))

@@ -1,5 +1,6 @@
 # Pronouns
 n au pron.1s
+n ahau pron.1s
 n koe pron.2s
 n ia pron.3s
 n tā pron.1n
@@ -88,8 +89,8 @@ e wē tehi items
 
 # Particles
 n me part.me
-n a part.poss.a
-n o part.poss.o
+n a poss.a
+n o poss.o
 n i part
 n ki part
 n kei part
@@ -114,6 +115,14 @@ n iho mod
 n anō mod
 n pea mod
 n ai mod
+
+n runga *.loc
+n raro *.loc
+n roto *.loc
+n waho *.loc
+n mua *.loc
+n muri *.loc
+n waenganui *.loc
 
 n ināianei interj
 
@@ -144,6 +153,14 @@ e $ ake items
 e $ anō items
 e $ pea items
 e $ ai items
+
+e $ runga items
+e $ raro items
+e $ roto items
+e $ waho items
+e $ mua items
+e $ muri items
+e $ waenganui items
 
 e $ ināianei items
 
@@ -214,7 +231,8 @@ nāku
 tētahi
 
 # Syntax
-r part part anc dem def pron *
+r part part poss anc dem def pron *
+r poss anc dem def pron *
 r anc dem def pron *
 r dem * mod
 r def *
@@ -245,11 +263,6 @@ s poss poss dem
 s poss poss ref
 s poss poss desc
 s poss poss *
-
-# "me" may behave generically in certain contexts
-s dem me dem
-s ref me ref
-s pron me pron
 
 # Other particles initiate phrases over possessive, referring, descriptive expressions
 s $ part poss

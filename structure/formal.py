@@ -8,7 +8,7 @@ class SyntaxNode(ABC):
     gloss: str
 
     @abstractmethod
-    def count(self):
+    def includes(self, gloss: set):
         pass
 
 
@@ -16,8 +16,11 @@ class SyntaxNode(ABC):
 class Terminal(SyntaxNode):
     text: str
 
-    def count(self):
-        return 1
+    def __str__(self):
+        return self.text
+
+    def includes(self, gloss):
+        return _split(self.gloss).intersection(gloss)
 
 
 @dataclass
@@ -25,10 +28,22 @@ class NonTerminal(SyntaxNode):
     left: SyntaxNode
     right: SyntaxNode
 
-    def count(self):
-        left = self.left.count() if self.left else 0
-        right = self.right.count() if self.right else 0
-        return left + right
+    def __str__(self):
+        result = []
+        if self.left:
+            result.append(str(self.left))
+        if self.right:
+            result.append(str(self.right))
+        
+        return ' '.join(result)
+
+    def includes(self, gloss):
+        if self.gloss in gloss:
+            return True
+        
+        left = self.left.includes(gloss) if self.left else False
+        right = self.right.includes(gloss) if self.right else False
+        return left or right
 
 
 def _split(token):
