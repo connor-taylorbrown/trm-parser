@@ -89,8 +89,8 @@ e wē tehi items
 
 # Particles
 n me part.me
-n a poss.a
-n o poss.o
+n a part.poss
+n o part.poss
 n i part
 n ki part
 n kei part
@@ -101,6 +101,12 @@ n he part
 n ko part
 n hei part
 n e part
+
+n kāore $
+n ehara $
+n ināianei $
+n engari $
+n mehemea $
 
 n kē mod
 n mā mod
@@ -116,6 +122,7 @@ n anō mod
 n hoki mod
 n pea mod
 n ai mod
+n rānei mod
 
 n runga *.loc
 n raro *.loc
@@ -124,8 +131,6 @@ n waho *.loc
 n mua *.loc
 n muri *.loc
 n waenganui *.loc
-
-n ināianei interj
 
 e $ me items
 e $ a items
@@ -141,6 +146,12 @@ e $ ko items
 e $ hei items
 e $ e items
 
+e $ kāore items
+e $ ehara items
+e $ ināianei items
+e $ engari items
+e $ mehemea items
+
 e $ kē items
 e $ mā items
 e $ ana items
@@ -155,6 +166,7 @@ e $ anō items
 e $ hoki items
 e $ pea items
 e $ ai items
+e $ rānei items
 
 e $ runga items
 e $ raro items
@@ -163,8 +175,6 @@ e $ waho items
 e $ mua items
 e $ muri items
 e $ waenganui items
-
-e $ ināianei items
 
 n m part.irr- anc.p. dem.
 n n part.r- anc.p. dem.
@@ -235,8 +245,7 @@ nāku
 tētahi
 
 # Syntax
-r part part poss anc dem def pron *
-r poss anc dem def pron *
+r part part anc dem def pron *
 r anc dem def pron *
 r dem * mod
 r def *
@@ -245,8 +254,8 @@ r pron mod
 r mod mod
 
 # Pronouns and demonstratives may have postposed modifiers
-s pron pron mod
 s dem dem mod
+s pron pron mod
 
 # A demonstrative may be built with an anchor particle
 s dem anc *
@@ -261,15 +270,7 @@ s ref def desc
 s ref dem *
 s ref dem desc
 
-# A possessive expression subsumes a possessive particle and a referring or descriptive expression
-s poss poss pron
-s poss poss dem
-s poss poss ref
-s poss poss desc
-s poss poss *
-
-# Other particles initiate phrases over possessive, referring, descriptive expressions
-s $ part poss
+# Other particles initiate phrases over referring or descriptive expressions
 s $ part dem
 s $ part ref
 s $ part pron

@@ -1,100 +1,102 @@
 digraph S0 {
- s10 -> n0
- s10 -> n4
- s10 -> n7
- s10 -> n14
- s10 -> n19
- s10 -> n28
- s10 -> n33
- s10 -> n38
+ s0 -> n0
+ s0 -> n5
+ s0 -> n12
+ s0 -> n15
+ s0 -> n17
+ s0 -> n18
+ s0 -> n21
+ s0 -> n26
+ s0 -> n29
+ s0 -> n34
+ s0 -> n39
+ s0 -> n42
+ s0 -> n43
+ s0 -> n48
  n0 [label="$"];
- n1 [label="dem"];
- n2 [label=<<u>tērā/dem.s-dist</u>>];
- n1 -> n2;
- n3 [label=<<u>pea/mod</u>>];
- n1 -> n3;
+ n1 [label=<<u>he/part</u>>];
  n0 -> n1;
- n4 [label="$"];
- n5 [label=<<u>ko/part</u>>];
- n4 -> n5;
- n6 [label=<<u>tātou/pron.1n-p</u>>];
- n4 -> n6;
- n7 [label="$"];
- n8 [label=<<u>ko/part</u>>];
+ n2 [label="desc"];
+ n3 [label=<<u>kōrero/*</u>>];
+ n2 -> n3;
+ n4 [label=<<u>anō/mod</u>>];
+ n2 -> n4;
+ n0 -> n2;
+ n5 [label="$"];
+ n6 [label=<<u>i/part</u>>];
+ n5 -> n6;
+ n7 [label="ref"];
+ n8 [label=<<u>te/def.s</u>>];
  n7 -> n8;
- n9 [label="ref"];
- n10 [label=<<u>te/def.s</u>>];
+ n9 [label="desc"];
+ n10 [label=<<u>kūmara/*</u>>];
  n9 -> n10;
- n11 [label="desc"];
- n12 [label=<<u>iwi/*</u>>];
- n11 -> n12;
- n13 [label=<<u>Māori/*</u>>];
- n11 -> n13;
+ n11 [label=<<u>./*</u>>];
  n9 -> n11;
  n7 -> n9;
- n14 [label="$"];
- n15 [label=<<u>e/part</u>>];
- n14 -> n15;
- n16 [label="desc"];
- n17 [label=<<u>mōhio/*</u>>];
- n16 -> n17;
- n18 [label=<<u>ana/mod</u>>];
- n16 -> n18;
- n14 -> n16;
- n19 [label="$"];
- n20 [label="$"];
- n21 [label=<<u>ki/part</u>>];
- n20 -> n21;
- n22 [label=<<u>ētahi/dem.p-excl</u>>];
- n20 -> n22;
- n19 -> n20;
- n23 [label="poss"];
- n24 [label=<<u>o/poss.o</u>>];
+ n5 -> n7;
+ n12 [label="$"];
+ n13 [label=<<u>ka/part</u>>];
+ n12 -> n13;
+ n14 [label=<<u>kōrero/*</u>>];
+ n12 -> n14;
+ n15 [label="$"];
+ n16 [label=<<u>au/pron.1s</u>>];
+ n15 -> n16;
+ n17 [label=<<u>ki/part</u>>];
+ n18 [label="$"];
+ n19 [label=<<u>a/part.poss</u>>];
+ n18 -> n19;
+ n20 [label=<<u>koe/pron.2s</u>>];
+ n18 -> n20;
+ n21 [label="$"];
+ n22 [label=<<u>i/part</u>>];
+ n21 -> n22;
+ n23 [label="desc"];
+ n24 [label=<<u>nāianei/*</u>>];
  n23 -> n24;
- n25 [label="ref"];
- n26 [label=<<u>ngā/def.p</u>>];
- n25 -> n26;
- n27 [label=<<u>kōrero/*</u>>];
- n25 -> n27;
+ n25 [label=<<u>./*</u>>];
  n23 -> n25;
- n19 -> n23;
- n28 [label="$"];
- n29 [label=<<u>e/part</u>>];
- n28 -> n29;
- n30 [label="desc"];
- n31 [label=<<u>pā/*</u>>];
- n30 -> n31;
- n32 [label=<<u>ana/mod</u>>];
- n30 -> n32;
- n28 -> n30;
- n33 [label="$"];
- n34 [label=<<u>ki/part</u>>];
- n33 -> n34;
- n35 [label="ref"];
- n36 [label=<<u>tērā/dem.s-dist</u>>];
- n35 -> n36;
- n37 [label=<<u>mea/*</u>>];
- n35 -> n37;
- n33 -> n35;
- n38 [label="$"];
+ n21 -> n23;
+ n26 [label="$"];
+ n27 [label=<<u>ko/part</u>>];
+ n26 -> n27;
+ n28 [label=<<u>mātou/pron.1-p</u>>];
+ n26 -> n28;
+ n29 [label="$"];
+ n30 [label=<<u>ko/part</u>>];
+ n29 -> n30;
+ n31 [label="ref"];
+ n32 [label=<<u>taku/def.s-1s</u>>];
+ n31 -> n32;
+ n33 [label=<<u>pāpā/*</u>>];
+ n31 -> n33;
+ n29 -> n31;
+ n34 [label="$"];
+ n35 [label=<<u>e/part</u>>];
+ n34 -> n35;
+ n36 [label="desc"];
+ n37 [label=<<u>noho/*</u>>];
+ n36 -> n37;
+ n38 [label=<<u>nei/mod.prox</u>>];
+ n36 -> n38;
+ n34 -> n36;
  n39 [label="$"];
- n40 [label=<<u>ko/part</u>>];
+ n40 [label=<<u>i/part</u>>];
  n39 -> n40;
- n41 [label="ref"];
- n42 [label=<<u>te/def.s</u>>];
- n41 -> n42;
- n43 [label=<<u>whakaputa/*</u>>];
- n41 -> n43;
+ n41 [label=<<u>muri/*.loc</u>>];
  n39 -> n41;
- n38 -> n39;
- n44 [label="poss"];
- n45 [label=<<u>o/poss.o</u>>];
- n44 -> n45;
- n46 [label="ref"];
- n47 [label=<<u>te/def.s</u>>];
- n46 -> n47;
- n48 [label=<<u>uri,/*</u>>];
- n46 -> n48;
- n44 -> n46;
- n38 -> n44;
+ n42 [label=<<u>i/part</u>>];
+ n43 [label="$"];
+ n44 [label=<<u>a/part.poss</u>>];
+ n43 -> n44;
+ n45 [label="pron"];
+ n46 [label=<<u>au/pron.1s</u>>];
+ n45 -> n46;
+ n47 [label=<<u>nei/mod.prox</u>>];
+ n45 -> n47;
+ n43 -> n45;
+ n48 [label="$"];
+ n49 [label=<<u>-/*</u>>];
+ n48 -> n49;
 }
