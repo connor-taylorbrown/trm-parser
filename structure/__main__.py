@@ -4,7 +4,7 @@ import sys
 from structure.formal import SyntaxBuilder
 from structure.functional import Reviewer, count
 from structure.morphology import MorphologyBuilder, MorphologyGraph
-from structure.writer import InterpretationWriter
+from structure.writer import DotWriter, InterpretationWriter
 
 
 def read_line():
@@ -35,7 +35,7 @@ if __name__ == '__main__':
 
             morphology_builder.parse(line)
     
-    trees = []
+    out = []
     reviewer = Reviewer(morphology, syntax_builder, args.structure, args.annotate)
     for document, speaker, id, line in read_line():
         if args.count:
@@ -44,8 +44,8 @@ if __name__ == '__main__':
             continue
         
         interpretation = reviewer.read(line, line=id)
-        trees += InterpretationWriter(id).write(interpretation)
+        out += InterpretationWriter(id, DotWriter()).write(interpretation)
 
     if args.output:
         with open(args.output, 'w') as f:
-            f.writelines(line + '\n' for line in trees)
+            f.writelines(line + '\n' for line in out)
