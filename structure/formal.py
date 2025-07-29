@@ -32,6 +32,7 @@ class Terminal(SyntaxNode):
         
         return 0
 
+
 @dataclass
 class NonTerminal(SyntaxNode):
     left: SyntaxNode
@@ -139,7 +140,7 @@ class Utterance:
             raise KeyError('Unable to promote', self.nodes)
         
         self.logger.info('Promoted %s', antecedent.gloss)
-        return self.push(NonTerminal('$', antecedent, None))
+        return self.push(NonTerminal('$', None, antecedent))
     
     def resolve(self, next: SyntaxNode):
         antecedent = self.pop()

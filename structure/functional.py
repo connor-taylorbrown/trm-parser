@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 import logging
+from structure.annotator import Annotator
 from structure.construction import Construction
 from structure.formal import Logger, Utterance, SyntaxBuilder
 from structure.morphology import MorphologyGraph
@@ -32,6 +33,10 @@ class InterpretationNode(ABC):
 
     @abstractmethod
     def structure(self):
+        pass
+
+    @abstractmethod
+    def annotate(self):
         pass
 
 
@@ -69,6 +74,11 @@ class Organiser(InterpretationNode):
     def structure(self):
         self.left = self.left.structure()
         self.right = self.right.structure()
+        return self
+    
+    def annotate(self):
+        self.left = self.left.annotate()
+        self.right = self.right.annotate()
         return self
 
 
@@ -110,6 +120,13 @@ class Interpreter(InterpretationNode):
         
         return Interpreter(id=self.id, utterance=construction, context=self.context)
     
+    def annotate(self):
+        for node in self.utterance.nodes:
+            annotator = Annotator.create(node, self.logger)
+            annotator.annotate()
+        
+        return self
+    
     def branch(self, id):
         logger = FunctionalLogger(id=id, **self.context)
         return Interpreter(id, utterance=self.utterance.clone(logger), context=self.context)
@@ -121,10 +138,11 @@ class Interpreter(InterpretationNode):
 
 
 class Reviewer:
-    def __init__(self, morphology: MorphologyGraph, syntax: SyntaxBuilder, structure: bool):
+    def __init__(self, morphology: MorphologyGraph, syntax: SyntaxBuilder, structure: bool, annotate: bool):
         self.morphology = morphology
         self.syntax = syntax
         self.structure = structure
+        self.annotate = annotate
 
     def read(self, text: str, **context):
         interpreter = Interpreter.create(self.syntax, **context)
@@ -139,12 +157,16 @@ class Reviewer:
         if self.structure:
             interpreter = interpreter.structure()
         
-        return interpreter.prune()
+        interpreter = interpreter.prune()
+        if self.annotate:
+            interpreter = interpreter.annotate()
+
+        return interpreter
     
 
-def count(morphology: MorphologyGraph, line: str):
+def count(morphology: MorphologyGraph, utterance: str):
     product = 1
-    doc, line, *words = line.split()
+    words = utterance.split()
     for word in words:
         glosses = morphology.gloss_affixes(word.lower().strip('.,?!"'))
         if not len(glosses):
@@ -152,4 +174,4 @@ def count(morphology: MorphologyGraph, line: str):
 
         product *= len(glosses)
     
-    return doc, line, product, ' '.join(words)
+    return product

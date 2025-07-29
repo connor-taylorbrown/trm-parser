@@ -11,8 +11,10 @@ n rā pron.3
 n ua -d
 n rua -d
 n tou -p
+n tau -p
 
 e $ au items
+e $ ahau items
 e $ koe items
 e $ ia items
 e $ ua suffixes
@@ -26,6 +28,9 @@ e tou tā items
 e tou mā items
 e tou kou items
 e tou rā items
+e tau tā items
+e tau mā items
+e tau rā items
 
 # Demonstratives
 n ā anc.p.a-
@@ -107,6 +112,9 @@ n ehara $
 n ināianei $
 n engari $
 n mehemea $
+n koinei $
+n koinā $
+n koirā $
 
 n kē mod
 n mā mod
@@ -151,6 +159,9 @@ e $ ehara items
 e $ ināianei items
 e $ engari items
 e $ mehemea items
+e $ koinei items
+e $ koinā items
+e $ koirā items
 
 e $ kē items
 e $ mā items
