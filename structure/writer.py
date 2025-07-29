@@ -63,13 +63,17 @@ class InterpretationWriter:
         return id
     
     def write(self, node: InterpretationNode):
-        yield self.writer.start(self.name)
+        start = self.writer.start(self.name)
+        if start:
+            yield start
         
         self.traverse(node, level=0)
         for line in self.writer.read():
             yield line
 
-        yield self.writer.end()
+        end = self.writer.end()
+        if end:
+            yield end
 
 
 class SyntaxVisitor:
@@ -115,10 +119,70 @@ class DotWriter(SyntaxWriter):
         self.lines.append(f' {source} -> {target};')
     
     def start(self, name):
-        return f'digraph "{name}" ' + '{'
+        return f'digraph "{name}" ' + '{' + '\n'
     
     def read(self):
-        return self.lines
+        return [line + '\n' for line in self.lines]
     
     def end(self):
-        return '}'
+        return '}' + '\n'
+    
+
+class GlossWriter(SyntaxWriter):
+    def __init__(self, document, speaker, id, line):
+        self.document = document
+        self.speaker = speaker
+        self.id = id
+        self.line = line
+        self.lines = []
+
+    def write_terminal(self, id, terminal):
+        self.lines.append(terminal.gloss)
+
+    def write_non_terminal(self, id, non_terminal):
+        return
+
+    def write_edge(self, source, target):
+        return
+
+    def start(self, name):
+        return
+
+    def read(self):
+        return [','.join([
+            self.document,
+            self.speaker,
+            self.id,
+            '/'.join(self.lines),
+            self.line
+        ])]
+
+    def end(self):
+        return
+    
+
+class WriterFactory(ABC):
+    @abstractmethod
+    def start(self) -> str:
+        pass
+
+    @abstractmethod
+    def create(self, utterance: str, *metadata: str) -> SyntaxWriter:
+        pass
+
+
+class DotWriterFactory(WriterFactory):
+    def start(self):
+        return []
+
+    def create(self, *metadata):
+        return DotWriter()
+    
+
+class GlossWriterFactory(WriterFactory):
+    def start(self):
+        return ["Document,Speaker,ID,Gloss,Utterance"]
+
+    def create(self, *metadata):
+        document, speaker, id, utterance = metadata
+        return GlossWriter(document, speaker, id, utterance)

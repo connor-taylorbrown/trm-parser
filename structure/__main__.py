@@ -4,7 +4,7 @@ import sys
 from structure.formal import SyntaxBuilder
 from structure.functional import Reviewer, count
 from structure.morphology import MorphologyBuilder, MorphologyGraph
-from structure.writer import DotWriter, InterpretationWriter
+from structure.writer import DotWriter, DotWriterFactory, GlossWriter, GlossWriterFactory, InterpretationWriter
 
 
 def read_line():
@@ -21,6 +21,7 @@ if __name__ == '__main__':
     parser.add_argument('-c', '--count', action='store_true')
     parser.add_argument('-s', '--structure', action='store_true')
     parser.add_argument('-a', '--annotate', action='store_true')
+    parser.add_argument('-G', '--gloss', action='store_true')
     parser.add_argument('-o', '--output')
     args = parser.parse_args()
 
@@ -37,6 +38,12 @@ if __name__ == '__main__':
     
     out = []
     reviewer = Reviewer(morphology, syntax_builder, args.structure, args.annotate)
+    if args.gloss:
+        writer = GlossWriterFactory()
+    else:
+        writer = DotWriterFactory()
+    
+    out += writer.start()
     for document, speaker, id, line in read_line():
         if args.count:
             product = count(morphology, line)
@@ -44,8 +51,8 @@ if __name__ == '__main__':
             continue
         
         interpretation = reviewer.read(line, line=id)
-        out += InterpretationWriter(id, DotWriter()).write(interpretation)
+        out += InterpretationWriter(id, writer.create(document, speaker, id, line)).write(interpretation)
 
     if args.output:
         with open(args.output, 'w') as f:
-            f.writelines(line + '\n' for line in out)
+            f.writelines(line for line in out)
