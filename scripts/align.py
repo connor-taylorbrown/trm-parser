@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 import sys
+import argparse
 
 
 @dataclass
@@ -20,28 +21,17 @@ def chunk(seq, n):
         yield seq[i:i+n]
 
 
-annotations = {}
+class Summary:
+    def __init__(self):
+        self.annotations = {}
 
-for i, line in enumerate(sys.stdin):
-    if not i:
-        continue
-
-    _, _, id, gloss, *utterance = line.split(',')
-    utterance = ','.join(utterance).split()
-    gloss = gloss.split('/')
-    for word in zip(utterance, zip(*chunk(gloss, len(utterance)))):
-        text, labels = word
+    def add_label(self, id, text: str, label):
         text = text.lower().strip('"?,.')
-        unique = set(labels)
-        if len(unique) > 1:
-            continue
-
-        label, = unique
-        annotation = annotations.get(text)
+        annotation = self.annotations.get(text)
         if not annotation:
             annotation = Annotation()
-            annotations[text] = annotation
-
+            self.annotations[text] = annotation
+        
         if label == 'N':
             annotation.noun += 1
         elif label == 'V':
@@ -55,6 +45,57 @@ for i, line in enumerate(sys.stdin):
         else:
             annotation.grammatical += 1
 
-print('Text', 'Noun', 'Verb', 'Adjective', 'Adverb', 'Grammatical', 'Unclear', sep=',')
-for key in annotations:
-    print(key, annotations[key], sep=',')    
+    def write(self):
+        print('Text', 'Noun', 'Verb', 'Adjective', 'Adverb', 'Grammatical', 'Unclear', sep=',')
+        for key in self.annotations:
+            print(key, self.annotations[key], sep=',')
+
+
+class Gloss:
+    def __init__(self):
+        self.lines = {}
+    
+    def add_label(self, id, text: str, label):
+        line = self.lines.get(id)
+        if not line:
+            line = []
+            self.lines[id] = line
+
+        content = text.strip('"?,.')
+        punctuation = text.replace(content, '')
+        line.append(f'{content}/{label}{punctuation}')
+
+    def write(self):
+        print('ID', 'Glossed', sep=',')
+        for key in self.lines:
+            print(key, ' '.join(self.lines[key]))
+
+
+parser = argparse.ArgumentParser(description="Align and summarize linguistic annotations.")
+parser.add_argument('-s', '--summary', action='store_true', help='Print summary of annotations')
+args = parser.parse_args()
+
+if args.summary:
+    result = Summary()
+else:
+    result = Gloss()
+
+for i, line in enumerate(sys.stdin):
+    if not i:
+        continue
+
+    _, _, id, gloss, *utterance = line.split(',')
+    utterance = ','.join(utterance).split()
+    gloss = gloss.split('/')
+    for word in zip(utterance, zip(*chunk(gloss, len(utterance)))):
+        text, labels = word
+
+        unique = set(labels)
+        if len(unique) > 1:
+            result.add_label(id, text, '*')
+            continue
+
+        label, = unique
+        result.add_label(id, text, label)
+
+result.write()

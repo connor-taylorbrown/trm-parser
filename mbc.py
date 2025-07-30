@@ -56,6 +56,23 @@ def run(args, query: TextQuery):
 
 
 def display(args, conversations, formatter: ConversationFormatter):
+    def quote(text: str):
+        if not text:
+            return ''
+        
+        return '"' + text.replace(',', '') + '"'
+    
+    def id(doc, line, date):
+        id = []
+        if doc:
+            id.append(doc)
+        if line:
+            id.append(str(line))
+        if date:
+            id.append(datetime.strftime(date, '%Y-%m-%d'))
+        
+        return '.'.join(id)
+    
     summary = Summary(
         formatter=formatter,
         conversations=conversations,
@@ -65,10 +82,12 @@ def display(args, conversations, formatter: ConversationFormatter):
     if args.summary:
         summary.show()
     else:
+        if args.text:
+            print('Document', 'Speaker', 'ID', 'Utterance', sep=',')
         for line in show_lines(formatter, conversations):
             doc, line, date, speaker, (type, value) = line
             if args.text:
-                print(doc, line, value)
+                print(doc, quote(speaker), id(doc, line, date), value, sep=',')
             else:
                 print(doc, line, date, speaker, (type, value))
 

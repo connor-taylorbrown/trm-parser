@@ -181,7 +181,7 @@ class DotWriterFactory(WriterFactory):
 
 class GlossWriterFactory(WriterFactory):
     def start(self):
-        return ["Document,Speaker,ID,Gloss,Utterance"]
+        return ["Document,Speaker,ID,Gloss,Utterance\n"]
 
     def create(self, *metadata):
         document, speaker, id, utterance = metadata

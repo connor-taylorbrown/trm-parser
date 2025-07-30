@@ -46,27 +46,32 @@ class TerminalAnnotator(Annotator):
         return self.node.text
 
     def match(self, text: str):
-        if text == self.text.lower():
+        if text == self.text:
             return text
 
     def classify(self, *modifier):
-        if self.text in {'e', 'me'} and 'te' in modifier:
+        if self.text.lower() in {'e', 'me'} and 'te' in modifier:
+            self.logger.info('Nominal usage selected by "te" for %s', self.text)
             return None, 'N'
         
-        if self.text in {'kei'} and 'te' in modifier:
+        if self.text.lower() in {'kei'} and 'te' in modifier:
+            self.logger.info('Verbal usage selected by "te" for %s', self.text)
             return None, 'V'
         
-        if self.text in {'a', 'o', 'ko', 'he'} or self.node.includes({'r', 'irr'}):
+        if self.text.lower() in {'a', 'o', 'ko', 'he'} or self.node.includes({'r', 'irr'}):
+            self.logger.info('Nominal interpretation selected by particle %s', self.text)
             return None, 'N'
         
-        if self.text in {'i', 'ki', 'kei', 'hei'}:
+        if self.text.lower() in {'i', 'ki', 'kei', 'hei'}:
             return None, None
         
-        if self.text[0].isupper():
-            return None, 'N'
-        
         if self.node.includes({'part'}):
+            self.logger.info('Verbal interpretation selected by default, given particle %s', self.text)
             return None, 'V'
+        
+        if self.text[0].isupper():
+            self.logger.info('Nominal interpretation favoured by capitalisation of "%s"', self.text)
+            return None, 'N'
         
         return None, None
     

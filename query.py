@@ -153,8 +153,8 @@ class DocumentQuery:
                     continue
 
                 results = self.query.apply(t, v)
-                for result in results:
-                    included.add_text(n, (t, result))
+                for i, result in enumerate(results):
+                    included.add_text(f'{n}.{i}', (t, result))
             
             if len(included.text):
                 yield included
