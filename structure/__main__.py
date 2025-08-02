@@ -19,7 +19,6 @@ if __name__ == '__main__':
     parser.add_argument('-g', '--grammar', help="Path to grammar")
     parser.add_argument('-t', '--test', action='store_true')
     parser.add_argument('-c', '--count', action='store_true')
-    parser.add_argument('-s', '--structure', action='store_true')
     parser.add_argument('-a', '--annotate', action='store_true')
     parser.add_argument('-G', '--gloss', action='store_true')
     parser.add_argument('-H', '--header', action='store_true')
@@ -39,7 +38,7 @@ if __name__ == '__main__':
             morphology_builder.parse(line)
     
     out = []
-    reviewer = Reviewer(morphology, syntax_builder, args.structure, args.annotate)
+    reviewer = Reviewer(morphology, syntax_builder, args.annotate)
     if args.gloss:
         writer = GlossWriterFactory()
     else:

@@ -138,10 +138,9 @@ class Interpreter(InterpretationNode):
 
 
 class Reviewer:
-    def __init__(self, morphology: MorphologyGraph, syntax: SyntaxBuilder, structure: bool, annotate: bool):
+    def __init__(self, morphology: MorphologyGraph, syntax: SyntaxBuilder, annotate: bool):
         self.morphology = morphology
         self.syntax = syntax
-        self.structure = structure
         self.annotate = annotate
 
     def read(self, text: str, **context):
@@ -153,11 +152,7 @@ class Reviewer:
             else:
                 interpreter = interpreter.extend(word, *glosses)
         
-        interpreter = interpreter.extend('', '#')
-        if self.structure:
-            interpreter = interpreter.structure()
-        
-        interpreter = interpreter.prune()
+        interpreter = interpreter.extend('', '#').structure().prune()
         if self.annotate:
             interpreter = interpreter.annotate()
 

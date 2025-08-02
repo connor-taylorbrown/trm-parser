@@ -96,9 +96,9 @@ e wē tehi items
 n me part.me
 n a part.poss
 n o part.poss
-n i part
-n ki part
-n kei part
+n i part.loc
+n ki part.loc
+n kei part.loc
 n ka part
 n kua part
 n kia part

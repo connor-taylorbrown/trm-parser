@@ -134,13 +134,14 @@ class GlossWriter(SyntaxWriter):
         self.speaker = speaker
         self.id = id
         self.line = line
-        self.lines = []
+        self.items = []
 
     def write_terminal(self, id, terminal):
-        self.lines.append(terminal.gloss)
+        self.items.append(terminal.gloss + '/')
 
     def write_non_terminal(self, id, non_terminal):
-        return
+        if non_terminal.gloss == '$':
+            self.items.append(non_terminal.gloss)
 
     def write_edge(self, source, target):
         return
@@ -153,7 +154,7 @@ class GlossWriter(SyntaxWriter):
             self.document,
             self.speaker,
             self.id,
-            '/'.join(self.lines),
+            ''.join(self.items).strip('/'),
             self.line
         ])]
 
