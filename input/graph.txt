@@ -67,6 +67,7 @@ n t dem.s- dem.p-
 n ē dem.p- mod. desc.
 n wē dem.p- mod. desc.
 n nei mod.prox
+n neki mod.prox
 n nā mod.med
 n rā mod.dist
 n hea desc.int
@@ -77,15 +78,18 @@ e $ ē prefixes
 e $ wē prefixes
 e t ē prefixes
 e $ nei items
+e $ neki items
 e $ nā items
 e $ rā items
 e ē nei items
+e ē neki items
 e ē nā items
 e ē rā items
 e ē hea items
 e ē tahi items
 e ē tehi items
 e wē nei items
+e wē neki items
 e wē nā items
 e wē rā items
 e wē hea items
@@ -99,22 +103,23 @@ n o part.poss
 n i part.loc
 n ki part.loc
 n kei part.loc
+n hei part.loc
 n ka part
 n kua part
 n kia part
 n he part
 n ko part
-n hei part
 n e part
 
-n kāore $
-n ehara $
-n ināianei $
-n engari $
-n mehemea $
-n koinei $
-n koinā $
-n koirā $
+n kāore pron
+n ehara pron
+n ināianei pron
+n engari pron
+n mehemea pron
+n koinei pron
+n koineki pron
+n koinā pron
+n koirā pron
 
 n kē mod
 n mā mod
@@ -131,6 +136,11 @@ n hoki mod
 n pea mod
 n ai mod
 n rānei mod
+n katoa mod
+n anake mod
+n anahe mod
+n kau mod
+n koa mod
 
 n runga *.loc
 n raro *.loc
@@ -160,6 +170,7 @@ e $ ināianei items
 e $ engari items
 e $ mehemea items
 e $ koinei items
+e $ koineki items
 e $ koinā items
 e $ koirā items
 
@@ -178,6 +189,11 @@ e $ hoki items
 e $ pea items
 e $ ai items
 e $ rānei items
+e $ katoa items
+e $ anake items
+e $ anahe items
+e $ kau items
+e $ koa items
 
 e $ runga items
 e $ raro items
@@ -227,6 +243,9 @@ n tō *
 n wā *
 n rā *
 n hoki *
+n kau *
+n koa *
+n hei *
 
 e $ ana items
 e $ taua items
@@ -236,6 +255,9 @@ e $ tō items
 e $ wā items
 e $ rā items
 e $ hoki items
+e $ kau items
+e $ koa items
+e $ hei items
 
 # Tests
 ā

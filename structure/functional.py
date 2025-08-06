@@ -107,7 +107,13 @@ class Interpreter(InterpretationNode):
         return self
     
     def score(self):
-        return sum(node.score() for node in self.utterance.nodes)
+        score = 0
+        for node in self.utterance.nodes:
+            score += node.score()
+            if 'part' in node.gloss:
+                score += 1
+        
+        return score
     
     def prune(self):
         return self
