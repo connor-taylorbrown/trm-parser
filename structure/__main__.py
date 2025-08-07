@@ -15,14 +15,11 @@ def read_header(header: str):
 
 
 def read_line(header: list[str]):
-    id_offset = header.index('ID')
-    utterance_offset = header.index('Fragment')
-    
+    offset = header.index('Fragment')
     for line in sys.stdin:
         data = line.split(',')
-        context, utterance = data[:utterance_offset], data[utterance_offset:]
-        id = context.pop(id_offset)
-        yield ','.join(utterance), id, *context
+        context, utterance = data[:offset], data[offset:]
+        yield ','.join(utterance), *context
 
 
 if __name__ == '__main__':
@@ -34,6 +31,7 @@ if __name__ == '__main__':
     parser.add_argument('-a', '--annotate', action='store_true')
     parser.add_argument('-G', '--gloss', action='store_true')
     parser.add_argument('-L', '--lower', action='store_true')
+    parser.add_argument('-v', '--verbose', action='store_true')
     parser.add_argument('-o', '--output')
     args = parser.parse_args()
 
@@ -56,18 +54,25 @@ if __name__ == '__main__':
         writer = DotWriterFactory()
     
     header = read_header(args.header)
+    if args.verbose:
+        print(f'Using header: {header}')
+    
     out += writer.start(*header)
-    for line, id, *context in read_line(header):
+    for line, *context in read_line(header):
+        if args.verbose:
+            print(*context, line, sep=',')
+
+        id = context[header.index('ID')]
         if args.lower:
             line = line.replace(line[0], line[0].lower(), 1)
 
         if args.count:
             product = count(morphology, line)
-            print(id, *context, product, line, sep=',')
+            print(*context, product, line, sep=',')
             continue
         
         interpretation = reviewer.read(line, line=id)
-        out += InterpretationWriter(id, writer.create(line, id, *context)).write(interpretation)
+        out += InterpretationWriter(id, writer.create(line, *context)).write(interpretation)
 
     if args.output:
         with open(args.output, 'w') as f:

@@ -181,7 +181,7 @@ class GlossWriterFactory(WriterFactory):
         return [','.join([
             *context[:-1],
             'Gloss',
-            'Utterance'
+            'Fragment'
         ]) + '\n']
 
     def create(self, *metadata):

@@ -72,6 +72,8 @@ class Gloss:
 
 
 parser = argparse.ArgumentParser(description="Align and summarize linguistic annotations.")
+parser.add_argument('-k', '--key', type=int)
+parser.add_argument('-g', '--gloss', type=int)
 parser.add_argument('-s', '--summary', action='store_true', help='Print summary of annotations')
 args = parser.parse_args()
 
@@ -84,10 +86,12 @@ for i, line in enumerate(sys.stdin):
     if not i:
         continue
 
-    _, _, id, gloss, *utterance = line.split(',')
+    data = line.split(',')
+    id = data[args.key]
+    gloss, *utterance = data[args.gloss:]
     utterance = ','.join(utterance).split()
     gloss = gloss.split('/')
-    for word in zip(utterance, zip(*chunk(gloss, len(utterance)))):
+    for word in zip(utterance, zip(*chunk(gloss, len(utterance))), strict=True):
         text, labels = word
 
         unique = set(labels)

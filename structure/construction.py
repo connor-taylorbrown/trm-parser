@@ -32,7 +32,7 @@ class Construction:
         part = self.dequeue()
         token = self.peek()
         if not isinstance(token, NonTerminal):
-            return
+            return part
         
         subordinate = self.dequeue()
         return NonTerminal(
@@ -45,7 +45,6 @@ class Construction:
             )
         )
 
-
     def locative(self):
         token = self.peek()
         if not token:
@@ -57,13 +56,13 @@ class Construction:
         part = self.dequeue()
         token = self.peek()
         if not isinstance(token, NonTerminal):
-            return
+            return part
         
         if not token.left:
-            return
+            return part
         
         if token.left.gloss != 'part.poss':
-            return
+            return part
         
         subordinate = self.dequeue()
         return NonTerminal(
