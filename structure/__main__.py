@@ -7,21 +7,32 @@ from structure.morphology import MorphologyBuilder, MorphologyGraph
 from structure.writer import DotWriterFactory, GlossWriterFactory, InterpretationWriter
 
 
-def read_line(header):
-    for i, line in enumerate(sys.stdin):
-        document, speaker, id, *utterance = line.split(',')
-        if i or header:
-            yield document, speaker, id, ','.join(utterance)
+def read_header(header: str):
+    if header:
+        return header.split(',')
+
+    return sys.stdin.readline().strip().split(',')
+
+
+def read_line(header: list[str]):
+    id_offset = header.index('ID')
+    utterance_offset = header.index('Fragment')
+    
+    for line in sys.stdin:
+        data = line.split(',')
+        context, utterance = data[:utterance_offset], data[utterance_offset:]
+        id = context.pop(id_offset)
+        yield ','.join(utterance), id, *context
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Process linguistic input file.")
     parser.add_argument('-g', '--grammar', help="Path to grammar")
+    parser.add_argument('-H', '--header', help='Define header and treat first row as data')
     parser.add_argument('-t', '--test', action='store_true')
     parser.add_argument('-c', '--count', action='store_true')
     parser.add_argument('-a', '--annotate', action='store_true')
     parser.add_argument('-G', '--gloss', action='store_true')
-    parser.add_argument('-H', '--header', action='store_true')
     parser.add_argument('-L', '--lower', action='store_true')
     parser.add_argument('-o', '--output')
     args = parser.parse_args()
@@ -44,18 +55,19 @@ if __name__ == '__main__':
     else:
         writer = DotWriterFactory()
     
-    out += writer.start()
-    for document, speaker, id, line in read_line(args.header):
+    header = read_header(args.header)
+    out += writer.start(*header)
+    for line, id, *context in read_line(header):
         if args.lower:
             line = line.replace(line[0], line[0].lower(), 1)
 
         if args.count:
             product = count(morphology, line)
-            print(document, speaker, id, product, line, sep=',')
+            print(id, *context, product, line, sep=',')
             continue
         
         interpretation = reviewer.read(line, line=id)
-        out += InterpretationWriter(id, writer.create(document, speaker, id, line)).write(interpretation)
+        out += InterpretationWriter(id, writer.create(line, id, *context)).write(interpretation)
 
     if args.output:
         with open(args.output, 'w') as f:

@@ -83,7 +83,7 @@ def display(args, conversations, formatter: ConversationFormatter):
         summary.show()
     else:
         if args.text:
-            print('Document', 'Speaker', 'ID', 'Utterance', sep=',')
+            print('Document', 'Speaker', 'ID', 'Fragment', sep=',')
         for line in show_lines(formatter, conversations):
             doc, line, date, speaker, (type, value) = line
             if args.text:

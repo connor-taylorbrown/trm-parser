@@ -129,11 +129,9 @@ class DotWriter(SyntaxWriter):
     
 
 class GlossWriter(SyntaxWriter):
-    def __init__(self, document, speaker, id, line):
-        self.document = document
-        self.speaker = speaker
-        self.id = id
+    def __init__(self, line, *context):
         self.line = line
+        self.context = context
         self.items = []
 
     def write_terminal(self, id, terminal):
@@ -151,9 +149,7 @@ class GlossWriter(SyntaxWriter):
 
     def read(self):
         return [','.join([
-            self.document,
-            self.speaker,
-            self.id,
+            *self.context,
             ''.join(self.items).strip('/'),
             self.line
         ])]
@@ -164,7 +160,7 @@ class GlossWriter(SyntaxWriter):
 
 class WriterFactory(ABC):
     @abstractmethod
-    def start(self) -> str:
+    def start(self, *context) -> list[str]:
         pass
 
     @abstractmethod
@@ -173,7 +169,7 @@ class WriterFactory(ABC):
 
 
 class DotWriterFactory(WriterFactory):
-    def start(self):
+    def start(self, *context):
         return []
 
     def create(self, *metadata):
@@ -181,9 +177,13 @@ class DotWriterFactory(WriterFactory):
     
 
 class GlossWriterFactory(WriterFactory):
-    def start(self):
-        return ["Document,Speaker,ID,Gloss,Utterance\n"]
+    def start(self, *context):
+        return [','.join([
+            *context[:-1],
+            'Gloss',
+            'Utterance'
+        ]) + '\n']
 
     def create(self, *metadata):
-        document, speaker, id, utterance = metadata
-        return GlossWriter(document, speaker, id, utterance)
+        line, *context = metadata
+        return GlossWriter(line, *context)
