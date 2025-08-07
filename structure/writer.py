@@ -148,11 +148,15 @@ class GlossWriter(SyntaxWriter):
         return
 
     def read(self):
+        def quote(text: str):
+            text = text.replace('"', '""')
+            return '"' + text + '"'
+        
         return [','.join([
-            *self.context,
+            *(quote(t) for t in self.context),
             ''.join(self.items).strip('/'),
             self.line
-        ])]
+        ]) + '\n']
 
     def end(self):
         return

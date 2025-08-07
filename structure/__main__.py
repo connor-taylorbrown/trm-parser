@@ -1,4 +1,5 @@
 import argparse
+import csv
 import sys
 
 from structure.formal import SyntaxBuilder
@@ -16,9 +17,8 @@ def read_header(header: str):
 
 def read_line(header: list[str]):
     offset = header.index('Fragment')
-    for line in sys.stdin:
-        data = line.split(',')
-        context, utterance = data[:offset], data[offset:]
+    for line in csv.reader(sys.stdin):
+        context, utterance = line[:offset], line[offset:]
         yield ','.join(utterance), *context
 
 

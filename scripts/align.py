@@ -1,3 +1,4 @@
+import csv
 from dataclasses import dataclass
 import sys
 import argparse
@@ -82,15 +83,15 @@ if args.summary:
 else:
     result = Gloss()
 
-for i, line in enumerate(sys.stdin):
+for i, data in enumerate(csv.reader(sys.stdin)):
     if not i:
         continue
 
-    data = line.split(',')
     id = data[args.key]
     gloss, *utterance = data[args.gloss:]
     utterance = ','.join(utterance).split()
     gloss = gloss.split('/')
+
     for word in zip(utterance, zip(*chunk(gloss, len(utterance))), strict=True):
         text, labels = word
 
