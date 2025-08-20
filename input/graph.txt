@@ -240,6 +240,7 @@ n taua *
 n tāua *
 n mā *
 n tō *
+n tā *
 n wā *
 n rā *
 n hoki *
@@ -252,6 +253,7 @@ e $ taua items
 e $ tāua items
 e $ mā items
 e $ tō items
+e $ tā items
 e $ wā items
 e $ rā items
 e $ hoki items

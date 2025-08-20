@@ -87,7 +87,7 @@ def display(args, conversations, formatter: ConversationFormatter):
         for line in show_lines(formatter, conversations):
             doc, line, date, speaker, (type, value) = line
             if args.text:
-                print(doc, quote(speaker), id(doc, line, date), value, sep=',')
+                print(doc, quote(speaker), id(doc, line, date), value.replace('"', '""'), sep=',')
             else:
                 print(doc, line, date, speaker, (type, value))
 

@@ -1,7 +1,9 @@
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 import logging
-from structure.annotator import Annotator
+from structure.annotator import AnnotatorFactory
+from structure.state import StateAnnotatorFactory
+from structure.pos import PartOfSpeechAnnotatorFactory
 from structure.construction import Construction
 from structure.formal import Logger, Utterance, SyntaxBuilder
 from structure.morphology import MorphologyGraph
@@ -36,7 +38,7 @@ class InterpretationNode(ABC):
         pass
 
     @abstractmethod
-    def annotate(self):
+    def annotate(self, factory: AnnotatorFactory):
         pass
 
 
@@ -76,9 +78,9 @@ class Organiser(InterpretationNode):
         self.right = self.right.structure()
         return self
     
-    def annotate(self):
-        self.left = self.left.annotate()
-        self.right = self.right.annotate()
+    def annotate(self, factory):
+        self.left = self.left.annotate(factory)
+        self.right = self.right.annotate(factory)
         return self
 
 
@@ -88,6 +90,7 @@ class Interpreter(InterpretationNode):
         self.utterance = utterance
         self.context = context
         self.logger = FunctionalLogger(id=self.id, **self.context)
+        self.annotation = []
 
     def __len__(self):
         return len(self.utterance.nodes)
@@ -126,10 +129,10 @@ class Interpreter(InterpretationNode):
         
         return Interpreter(id=self.id, utterance=construction, context=self.context)
     
-    def annotate(self):
+    def annotate(self, factory):
         for node in self.utterance.nodes:
-            annotator = Annotator.create(node, self.logger)
-            annotator.annotate()
+            annotator = factory.create(node, self.logger)
+            self.annotation.append(annotator.annotate())
         
         return self
     
@@ -141,13 +144,20 @@ class Interpreter(InterpretationNode):
     def create(builder: SyntaxBuilder, **context):
         logger = FunctionalLogger(id=0, **context)
         return Interpreter(id=0, utterance=builder.build(logger), context=context)
+    
+
+@dataclass
+class ReviewerConfig:
+    annotate: bool
+    observations: bool
 
 
 class Reviewer:
-    def __init__(self, morphology: MorphologyGraph, syntax: SyntaxBuilder, annotate: bool):
+    def __init__(self, morphology: MorphologyGraph, syntax: SyntaxBuilder, config: ReviewerConfig):
         self.morphology = morphology
         self.syntax = syntax
-        self.annotate = annotate
+        self.annotate = config.annotate
+        self.observations = config.observations
 
     def read(self, text: str, **context):
         interpreter = Interpreter.create(self.syntax, **context)
@@ -160,7 +170,9 @@ class Reviewer:
         
         interpreter = interpreter.extend('', '#').structure().prune()
         if self.annotate:
-            interpreter = interpreter.annotate()
+            interpreter = interpreter.annotate(PartOfSpeechAnnotatorFactory())
+        elif self.observations:
+            interpreter = interpreter.annotate(StateAnnotatorFactory())
 
         return interpreter
     

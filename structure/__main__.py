@@ -3,7 +3,7 @@ import csv
 import sys
 
 from structure.formal import SyntaxBuilder
-from structure.functional import Reviewer, count
+from structure.functional import Reviewer, ReviewerConfig, count
 from structure.morphology import MorphologyBuilder, MorphologyGraph
 from structure.writer import DotWriterFactory, GlossWriterFactory, InterpretationWriter
 
@@ -29,6 +29,7 @@ if __name__ == '__main__':
     parser.add_argument('-t', '--test', action='store_true')
     parser.add_argument('-c', '--count', action='store_true')
     parser.add_argument('-a', '--annotate', action='store_true')
+    parser.add_argument('-O', '--observations', action='store_true')
     parser.add_argument('-G', '--gloss', action='store_true')
     parser.add_argument('-L', '--lower', action='store_true')
     parser.add_argument('-v', '--verbose', action='store_true')
@@ -47,7 +48,10 @@ if __name__ == '__main__':
             morphology_builder.parse(line)
     
     out = []
-    reviewer = Reviewer(morphology, syntax_builder, args.annotate)
+    reviewer = Reviewer(morphology, syntax_builder, ReviewerConfig(
+        annotate=args.annotate,
+        observations=args.observations))
+    
     if args.gloss:
         writer = GlossWriterFactory()
     else:
