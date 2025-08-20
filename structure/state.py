@@ -40,7 +40,7 @@ class StateAnnotatorFactory(AnnotatorFactory):
             return None
         
         if isinstance(node, NonTerminal):
-            return NonTerminalAnnotator(node.gloss, self.create(node.left), self.create(node.right), logger)
+            return NonTerminalAnnotator(node.gloss, self.create(node.left, logger), self.create(node.right, logger), logger)
         elif isinstance(node, Terminal):
             return TerminalAnnotator(node, logger)
         
@@ -63,7 +63,7 @@ class NonTerminalAnnotator(StateAnnotator):
     def base(self, marker: str):
         if self.left.is_demonstrative():
             # We may not preserve both marker and base ordering, so we choose arbitrarily
-            return [(marker, self.right.base(marker))] + self.left.annotate()
+            return self.right.base(marker) + self.left.annotate()
         elif self.left.preposed():
             # Preposed particles do not qualify as bases
             return self.right.base(marker)
@@ -85,16 +85,13 @@ class NonTerminalAnnotator(StateAnnotator):
 
 
 class TerminalAnnotator(StateAnnotator):
-    def __init__(self, node: Terminal):
+    def __init__(self, node: Terminal, logger: Logger):
         self.gloss = [item for item in Gloss.parse_gloss(node.gloss)]
         self.text = node.text.lower().strip(',.!?"')
+        self.logger = logger
 
-    def preposed(self):
-        if len(self.gloss) > 1:
-            # Particles are unanalysable
-            return None
-        
-        gloss, = self.gloss
+    def preposed(self):        
+        gloss, *_ = self.gloss
         if any(gloss.intersection({'part', 'anc', 'def'})):
             # Text corresponds to preposed particle labels
             return self.text
@@ -134,4 +131,4 @@ class TerminalAnnotator(StateAnnotator):
         if complex:
             return [complex]
         
-        return [None, self.text]
+        return self.base(None)

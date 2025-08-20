@@ -40,7 +40,13 @@ class SyntaxWriter(ABC):
         pass
 
 
-class InterpretationWriter:
+class InterpretationWriter(ABC):
+    @abstractmethod
+    def write(self, node: InterpretationNode):
+        pass
+
+
+class InterpretationSyntaxWriter(InterpretationWriter):
     def __init__(self, name: str, writer: SyntaxWriter):
         self.name = name
         self.syntax_writer = SyntaxVisitor(IdGenerator('n'), writer)
@@ -128,6 +134,18 @@ class DotWriter(SyntaxWriter):
         return '}' + '\n'
     
 
+def write_line(context, content, line):
+    def quote(text: str):
+        text = text.replace('"', '""')
+        return '"' + text + '"'
+    
+    return ','.join([
+        *(quote(t) for t in context),
+        content,
+        line
+    ]) + '\n'
+    
+
 class GlossWriter(SyntaxWriter):
     def __init__(self, line, *context):
         self.line = line
@@ -148,18 +166,36 @@ class GlossWriter(SyntaxWriter):
         return
 
     def read(self):
-        def quote(text: str):
-            text = text.replace('"', '""')
-            return '"' + text + '"'
-        
-        return [','.join([
-            *(quote(t) for t in self.context),
-            ''.join(self.items).strip('/'),
-            self.line
-        ]) + '\n']
+        return [write_line(self.context, ''.join(self.items).strip('/'), self.line)]
 
     def end(self):
         return
+    
+
+class StateWriter(InterpretationWriter):
+    def __init__(self, line, *context):
+        self.line = line
+        self.context = context
+        self.annotations = []
+
+    def traverse(self, node):
+        if isinstance(node, Interpreter):
+            self.annotations.append('$')
+            for annotation in node.annotations:
+                self.annotations.append(annotation)
+
+            return
+        
+        elif not isinstance(node, Organiser):
+            raise TypeError
+        
+        self.traverse(node.left)
+        self.traverse(node.right)
+
+    def write(self, node):
+        self.traverse(node)
+
+        yield write_line(self.context, ''.join(str(annotation) for annotation in self.annotations), self.line)
     
 
 class WriterFactory(ABC):
@@ -168,7 +204,7 @@ class WriterFactory(ABC):
         pass
 
     @abstractmethod
-    def create(self, utterance: str, *metadata: str) -> SyntaxWriter:
+    def create(self, *metadata: str) -> InterpretationWriter:
         pass
 
 
@@ -176,8 +212,9 @@ class DotWriterFactory(WriterFactory):
     def start(self, *context):
         return []
 
-    def create(self, *metadata):
-        return DotWriter()
+    def create(self, *metadata) -> InterpretationWriter:
+        id, *_ = metadata
+        return InterpretationSyntaxWriter(id, DotWriter())
     
 
 class GlossWriterFactory(WriterFactory):
@@ -188,6 +225,19 @@ class GlossWriterFactory(WriterFactory):
             'Fragment'
         ]) + '\n']
 
-    def create(self, *metadata):
-        line, *context = metadata
-        return GlossWriter(line, *context)
+    def create(self, *metadata) -> InterpretationWriter:
+        id, line, *context = metadata
+        return InterpretationSyntaxWriter(id, GlossWriter(line, *context))
+    
+
+class StateWriterFactory(WriterFactory):
+    def start(self, *context):
+        return [','.join([
+            *context[:-1],
+            'States',
+            'Fragment'
+        ]) + '\n']
+    
+    def create(self, *metadata) -> InterpretationWriter:
+        _, line, *context = metadata
+        return StateWriter(line, *context)

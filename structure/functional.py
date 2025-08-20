@@ -2,8 +2,6 @@ from abc import ABC, abstractmethod
 from dataclasses import dataclass
 import logging
 from structure.annotator import AnnotatorFactory
-from structure.state import StateAnnotatorFactory
-from structure.pos import PartOfSpeechAnnotatorFactory
 from structure.construction import Construction
 from structure.formal import Logger, Utterance, SyntaxBuilder
 from structure.morphology import MorphologyGraph
@@ -90,7 +88,7 @@ class Interpreter(InterpretationNode):
         self.utterance = utterance
         self.context = context
         self.logger = FunctionalLogger(id=self.id, **self.context)
-        self.annotation = []
+        self.annotations = []
 
     def __len__(self):
         return len(self.utterance.nodes)
@@ -132,7 +130,9 @@ class Interpreter(InterpretationNode):
     def annotate(self, factory):
         for node in self.utterance.nodes:
             annotator = factory.create(node, self.logger)
-            self.annotation.append(annotator.annotate())
+            annotation = annotator.annotate()
+            if annotation:
+                self.annotations.append(annotation)
         
         return self
     
@@ -144,20 +144,13 @@ class Interpreter(InterpretationNode):
     def create(builder: SyntaxBuilder, **context):
         logger = FunctionalLogger(id=0, **context)
         return Interpreter(id=0, utterance=builder.build(logger), context=context)
-    
-
-@dataclass
-class ReviewerConfig:
-    annotate: bool
-    observations: bool
 
 
 class Reviewer:
-    def __init__(self, morphology: MorphologyGraph, syntax: SyntaxBuilder, config: ReviewerConfig):
+    def __init__(self, morphology: MorphologyGraph, syntax: SyntaxBuilder, annotator: AnnotatorFactory):
         self.morphology = morphology
         self.syntax = syntax
-        self.annotate = config.annotate
-        self.observations = config.observations
+        self.annotator = annotator
 
     def read(self, text: str, **context):
         interpreter = Interpreter.create(self.syntax, **context)
@@ -169,10 +162,8 @@ class Reviewer:
                 interpreter = interpreter.extend(word, *glosses)
         
         interpreter = interpreter.extend('', '#').structure().prune()
-        if self.annotate:
-            interpreter = interpreter.annotate(PartOfSpeechAnnotatorFactory())
-        elif self.observations:
-            interpreter = interpreter.annotate(StateAnnotatorFactory())
+        if self.annotator:
+            interpreter = interpreter.annotate(self.annotator)
 
         return interpreter
     

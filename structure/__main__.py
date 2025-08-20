@@ -3,9 +3,11 @@ import csv
 import sys
 
 from structure.formal import SyntaxBuilder
-from structure.functional import Reviewer, ReviewerConfig, count
+from structure.functional import Reviewer, count
 from structure.morphology import MorphologyBuilder, MorphologyGraph
-from structure.writer import DotWriterFactory, GlossWriterFactory, InterpretationWriter
+from structure.pos import PartOfSpeechAnnotatorFactory
+from structure.state import StateAnnotatorFactory
+from structure.writer import DotWriterFactory, GlossWriterFactory, StateWriterFactory
 
 
 def read_header(header: str):
@@ -48,12 +50,17 @@ if __name__ == '__main__':
             morphology_builder.parse(line)
     
     out = []
-    reviewer = Reviewer(morphology, syntax_builder, ReviewerConfig(
-        annotate=args.annotate,
-        observations=args.observations))
+    if args.annotate:
+        annotator = PartOfSpeechAnnotatorFactory()
+    elif args.observations:
+        annotator = StateAnnotatorFactory()
+        
+    reviewer = Reviewer(morphology, syntax_builder, annotator)
     
     if args.gloss:
         writer = GlossWriterFactory()
+    elif args.observations:
+        writer = StateWriterFactory()
     else:
         writer = DotWriterFactory()
     
@@ -76,7 +83,7 @@ if __name__ == '__main__':
             continue
         
         interpretation = reviewer.read(line, line=id)
-        out += InterpretationWriter(id, writer.create(line, *context)).write(interpretation)
+        out += writer.create(id, line, *context).write(interpretation)
 
     if args.output:
         with open(args.output, 'w') as f:
