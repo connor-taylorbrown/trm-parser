@@ -68,8 +68,12 @@ class NonTerminalAnnotator(StateAnnotator):
         
         preposed = self.left.preposed()
         if preposed:
+            marker += [preposed]
+            if not self.right:
+                return marker, None
+            
             # Preposed particles do not qualify as bases
-            return self.right.base(marker + [preposed])
+            return self.right.base(marker)
         
         return self.left.base(marker)
 

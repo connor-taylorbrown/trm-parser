@@ -21,6 +21,24 @@ class Construction:
     def dequeue(self):
         return self.queue.popleft()
     
+    def repackage(self, label, part, subordinate):
+        if subordinate.left:
+            left = subordinate.left
+            right = subordinate.right
+        else:
+            left = subordinate.right
+            right = None
+
+        return NonTerminal(
+            '$',
+            part,
+            NonTerminal(
+                label,
+                left,
+                right
+            )
+        )
+    
     def counterfactual(self):
         token = self.peek()
         if not token:
@@ -35,15 +53,7 @@ class Construction:
             return part
         
         subordinate = self.dequeue()
-        return NonTerminal(
-            '$',
-            part,
-            NonTerminal(
-                'pred',
-                subordinate.left,
-                subordinate.right
-            )
-        )
+        return self.repackage('pred', part, subordinate)
 
     def locative(self):
         token = self.peek()
@@ -65,15 +75,7 @@ class Construction:
             return part
         
         subordinate = self.dequeue()
-        return NonTerminal(
-            '$',
-            part,
-            NonTerminal(
-                'poss',
-                subordinate.left,
-                subordinate.right
-            )
-        )
+        return self.repackage('poss', part, subordinate)
 
     def component(self):
         counterfactual = self.counterfactual()
