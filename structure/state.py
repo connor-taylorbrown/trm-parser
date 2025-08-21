@@ -26,7 +26,7 @@ class StateAnnotator(Annotator):
         pass
 
     @abstractmethod
-    def base(self, marker: str):
+    def base(self, marker: list[str]):
         pass
 
     @abstractmethod
@@ -60,13 +60,16 @@ class NonTerminalAnnotator(StateAnnotator):
     def is_demonstrative(self):
         return self.gloss == 'dem'
 
-    def base(self, marker: str):
+    def base(self, marker: list[str]):
         if self.left.is_demonstrative():
-            # We may not preserve both marker and base ordering, so we choose arbitrarily
-            return self.right.base(marker) + self.left.annotate()
-        elif self.left.preposed():
+            demonstrative, anchor = self.left.annotate()
+            paradigm, referent = self.right.base(marker)
+            return paradigm + demonstrative, (anchor, referent)
+        
+        preposed = self.left.preposed()
+        if preposed:
             # Preposed particles do not qualify as bases
-            return self.right.base(marker)
+            return self.right.base(marker + [preposed])
         
         return self.left.base(marker)
 
@@ -78,10 +81,10 @@ class NonTerminalAnnotator(StateAnnotator):
         preposed = self.left.preposed()
         if preposed:
             # We have a non-zero-marked base
-            return self.right.base(preposed)
+            return self.right.base([preposed])
         
         # We have a zero-marked base
-        return self.base(None)
+        return self.base([])
 
 
 class TerminalAnnotator(StateAnnotator):
@@ -118,17 +121,17 @@ class TerminalAnnotator(StateAnnotator):
         if not self.text.endswith(clitic):
             raise KeyError(f'Text {self.text} does not correspond to gloss {self.gloss}')
         
-        return (self.text[:-len(clitic)], clitic)
+        return ([self.text[:-len(clitic)]], clitic)
     
     def is_demonstrative(self):
         return any('dem' in item for item in self.gloss)
 
-    def base(self, marker: str):
-        return [(marker, self.text)]
+    def base(self, marker: list[str]):
+        return (marker, self.text)
 
     def annotate(self):
         complex = self.complex()
         if complex:
-            return [complex]
+            return complex
         
-        return self.base(None)
+        return self.base([])
