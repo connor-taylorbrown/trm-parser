@@ -1,6 +1,8 @@
 from abc import abstractmethod
 from structure.annotator import Annotator, AnnotatorFactory
 from structure.formal import Logger, NonTerminal, SyntaxNode, Terminal
+from structure.functional import Interpreter, Organiser
+from structure.writer import InterpretationWriter, WriterFactory, write_line
 
 
 class Gloss:
@@ -139,3 +141,61 @@ class TerminalAnnotator(StateAnnotator):
             return complex
         
         return self.base([])
+    
+class StateWriter(InterpretationWriter):
+    def __init__(self, line, *context):
+        self.line = line
+        self.context = context
+
+    def traverse(self, node):
+        def particles(phrases):
+            for phrase in phrases:
+                marker, _ = phrase
+                for particle in marker:
+                    yield particle
+
+        if isinstance(node, Interpreter):
+            return True, node.annotations
+        
+        elif not isinstance(node, Organiser):
+            raise TypeError
+        
+        left_resolved, left = self.traverse(node.left)
+        right_resolved, right = self.traverse(node.right)
+
+        logger = node.logger
+        if not left_resolved and not right_resolved:
+            return False, None
+        elif not left_resolved:
+            return True, right
+        elif not right_resolved:
+            return True, left
+
+        if len(left) == len(right) and all(a == b for a, b in zip(particles(left), particles(right))):
+            logger.info('Identical interpretations, choosing arbitrarily')
+            return True, left
+
+        if len(left) != len(right):
+            logger.info('Ambiguous interpretations: Minimising phrase count')
+            return True, min(left, right, key=len)
+        
+        logger.info('Unable to resolve ambiguity: %s cannot be preferred to %s', left, right)
+        return False, None
+
+    def write(self, node):
+        resolved, annotations = self.traverse(node)
+        if resolved:
+            yield write_line(self.context, ''.join(str(annotation) for annotation in annotations), self.line)
+    
+
+class StateWriterFactory(WriterFactory):
+    def start(self, *context):
+        return [','.join([
+            *context[:-1],
+            'States',
+            'Fragment'
+        ]) + '\n']
+    
+    def create(self, *metadata) -> InterpretationWriter:
+        _, line, *context = metadata
+        return StateWriter(line, *context)

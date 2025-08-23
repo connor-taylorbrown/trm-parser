@@ -6,8 +6,8 @@ from structure.formal import SyntaxBuilder
 from structure.functional import Reviewer, count
 from structure.morphology import MorphologyBuilder, MorphologyGraph
 from structure.pos import PartOfSpeechAnnotatorFactory
-from structure.state import StateAnnotatorFactory
-from structure.writer import DotWriterFactory, GlossWriterFactory, StateWriterFactory
+from structure.state import StateAnnotatorFactory, StateWriterFactory
+from structure.writer import DotWriterFactory, GlossWriterFactory
 
 
 def read_header(header: str):

@@ -172,32 +172,6 @@ class GlossWriter(SyntaxWriter):
         return
     
 
-class StateWriter(InterpretationWriter):
-    def __init__(self, line, *context):
-        self.line = line
-        self.context = context
-        self.annotations = []
-
-    def traverse(self, node):
-        if isinstance(node, Interpreter):
-            self.annotations.append('$')
-            for annotation in node.annotations:
-                self.annotations.append(annotation)
-
-            return
-        
-        elif not isinstance(node, Organiser):
-            raise TypeError
-        
-        self.traverse(node.left)
-        self.traverse(node.right)
-
-    def write(self, node):
-        self.traverse(node)
-
-        yield write_line(self.context, ''.join(str(annotation) for annotation in self.annotations), self.line)
-    
-
 class WriterFactory(ABC):
     @abstractmethod
     def start(self, *context) -> list[str]:
@@ -228,16 +202,3 @@ class GlossWriterFactory(WriterFactory):
     def create(self, *metadata) -> InterpretationWriter:
         id, line, *context = metadata
         return InterpretationSyntaxWriter(id, GlossWriter(line, *context))
-    
-
-class StateWriterFactory(WriterFactory):
-    def start(self, *context):
-        return [','.join([
-            *context[:-1],
-            'States',
-            'Fragment'
-        ]) + '\n']
-    
-    def create(self, *metadata) -> InterpretationWriter:
-        _, line, *context = metadata
-        return StateWriter(line, *context)
