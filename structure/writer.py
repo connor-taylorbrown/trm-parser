@@ -134,15 +134,14 @@ class DotWriter(SyntaxWriter):
         return '}' + '\n'
     
 
-def write_line(context, content, line):
+def write_line(context, *content):
     def quote(text: str):
         text = text.replace('"', '""')
         return '"' + text + '"'
     
     return ','.join([
         *(quote(t) for t in context),
-        content,
-        line
+        *content
     ]) + '\n'
     
 

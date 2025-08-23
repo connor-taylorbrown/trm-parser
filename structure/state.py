@@ -24,6 +24,10 @@ class StateAnnotator(Annotator):
         pass
 
     @abstractmethod
+    def complex(self):
+        pass
+
+    @abstractmethod
     def is_demonstrative(self):
         pass
 
@@ -58,6 +62,9 @@ class NonTerminalAnnotator(StateAnnotator):
 
     def preposed(self):
         return None
+
+    def complex(self):
+        return None
     
     def is_demonstrative(self):
         return self.gloss == 'dem'
@@ -65,6 +72,10 @@ class NonTerminalAnnotator(StateAnnotator):
     def base(self, marker: list[str]):
         if self.left.is_demonstrative():
             demonstrative, anchor = self.left.annotate()
+            if isinstance(anchor, tuple):
+                self.logger.info('Flattening demonstrative anchor %s', anchor)
+                anchor, _ = anchor
+
             paradigm, referent = self.right.base(marker)
             return paradigm + demonstrative, (anchor, referent)
         
@@ -83,6 +94,11 @@ class NonTerminalAnnotator(StateAnnotator):
         if not self.left:
             # Marker is not yet identified
             return self.right.annotate()
+        
+        complex = self.left.complex()
+        if complex:
+            # Marker and base are single-item
+            return complex
         
         preposed = self.left.preposed()
         if preposed:
@@ -140,12 +156,17 @@ class TerminalAnnotator(StateAnnotator):
         if complex:
             return complex
         
+        preposed = self.preposed()
+        if preposed:
+            return ([preposed], None)
+        
         return self.base([])
     
 class StateWriter(InterpretationWriter):
-    def __init__(self, line, *context):
+    def __init__(self, line, marker: int, *context):
         self.line = line
         self.context = context
+        self.marker = marker
 
     def traverse(self, node):
         def particles(phrases):
@@ -181,15 +202,52 @@ class StateWriter(InterpretationWriter):
         
         logger.info('Unable to resolve ambiguity: %s cannot be preferred to %s', left, right)
         return False, None
+    
+    def particles(self, annotations):
+        for phrase in annotations:
+            marker, _ = phrase
+            yield '.'.join(marker[:self.marker])
+
+    def bases(self, annotations):
+        for phrase in annotations:
+            _, bases = phrase
+            if not bases:
+                continue
+
+            if isinstance(bases, str):
+                yield bases
+                continue
+            
+            for base in bases:
+                yield base
 
     def write(self, node):
+        def delimit(v, delimiter: str):
+            return delimiter.join(i for i in v)
+        
         resolved, annotations = self.traverse(node)
-        if resolved:
+        if not resolved:
+            return
+        
+        if self.marker:
+            yield write_line(self.context, delimit(self.particles(annotations), '/'), delimit(self.bases(annotations), '/'), self.line)
+        else:
             yield write_line(self.context, ''.join(str(annotation) for annotation in annotations), self.line)
     
 
 class StateWriterFactory(WriterFactory):
+    def __init__(self, marker: int):
+        self.marker = marker
+
     def start(self, *context):
+        if self.marker:
+            return [','.join([
+                *context[:-1],
+                'Particles',
+                'Bases',
+                'Fragment'
+            ]) + '\n']
+        
         return [','.join([
             *context[:-1],
             'States',
@@ -198,4 +256,4 @@ class StateWriterFactory(WriterFactory):
     
     def create(self, *metadata) -> InterpretationWriter:
         _, line, *context = metadata
-        return StateWriter(line, *context)
+        return StateWriter(line, self.marker, *context)

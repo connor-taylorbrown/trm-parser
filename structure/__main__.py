@@ -32,6 +32,7 @@ if __name__ == '__main__':
     parser.add_argument('-c', '--count', action='store_true')
     parser.add_argument('-a', '--annotate', action='store_true')
     parser.add_argument('-O', '--observations', action='store_true')
+    parser.add_argument('-m', '--marker', type=int, default=0)
     parser.add_argument('-G', '--gloss', action='store_true')
     parser.add_argument('-L', '--lower', action='store_true')
     parser.add_argument('-v', '--verbose', action='store_true')
@@ -60,7 +61,7 @@ if __name__ == '__main__':
     if args.gloss:
         writer = GlossWriterFactory()
     elif args.observations:
-        writer = StateWriterFactory()
+        writer = StateWriterFactory(args.marker)
     else:
         writer = DotWriterFactory()
     

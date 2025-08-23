@@ -5,7 +5,7 @@ n koe pron.2s
 n ia pron.3s
 n tā pron.1n
 n mā pron.1
-n ko pron.2
+n kō pron.2
 n kou pron.2
 n rā pron.3
 n ua -d
@@ -22,7 +22,7 @@ e $ rua suffixes
 e $ tou suffixes
 e ua tā items
 e ua mā items
-e rua ko items
+e rua kō items
 e ua rā items
 e tou tā items
 e tou mā items
