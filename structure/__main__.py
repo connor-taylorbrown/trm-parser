@@ -6,7 +6,7 @@ from structure.formal import SyntaxBuilder
 from structure.functional import Reviewer, count
 from structure.morphology import MorphologyBuilder, MorphologyGraph
 from structure.pos import PartOfSpeechAnnotatorFactory
-from structure.state import StateAnnotatorFactory, StateWriterFactory
+from structure.observable import ObservableAnnotatorFactory, ObservableWriterFactory
 from structure.writer import DotWriterFactory, GlossWriterFactory
 
 
@@ -54,14 +54,14 @@ if __name__ == '__main__':
     if args.annotate:
         annotator = PartOfSpeechAnnotatorFactory()
     elif args.observations:
-        annotator = StateAnnotatorFactory()
+        annotator = ObservableAnnotatorFactory()
         
     reviewer = Reviewer(morphology, syntax_builder, annotator)
     
     if args.gloss:
         writer = GlossWriterFactory()
     elif args.observations:
-        writer = StateWriterFactory(args.marker)
+        writer = ObservableWriterFactory(args.marker)
     else:
         writer = DotWriterFactory()
     

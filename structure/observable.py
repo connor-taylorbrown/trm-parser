@@ -18,7 +18,7 @@ class Gloss:
             yield set(item.split('.'))
 
 
-class StateAnnotator(Annotator):
+class ObservableAnnotator(Annotator):
     @abstractmethod
     def preposed(self):
         pass
@@ -40,7 +40,7 @@ class StateAnnotator(Annotator):
         pass
     
 
-class StateAnnotatorFactory(AnnotatorFactory):
+class ObservableAnnotatorFactory(AnnotatorFactory):
     def create(self, node: SyntaxNode, logger: Logger):
         if not node:
             return None
@@ -53,8 +53,8 @@ class StateAnnotatorFactory(AnnotatorFactory):
         raise TypeError
 
 
-class NonTerminalAnnotator(StateAnnotator):
-    def __init__(self, gloss: str, left: StateAnnotator, right: StateAnnotator, logger: Logger):
+class NonTerminalAnnotator(ObservableAnnotator):
+    def __init__(self, gloss: str, left: ObservableAnnotator, right: ObservableAnnotator, logger: Logger):
         self.gloss = gloss
         self.left = left
         self.right = right
@@ -109,7 +109,7 @@ class NonTerminalAnnotator(StateAnnotator):
         return self.base([])
 
 
-class TerminalAnnotator(StateAnnotator):
+class TerminalAnnotator(ObservableAnnotator):
     def __init__(self, node: Terminal, logger: Logger):
         self.gloss = [item for item in Gloss.parse_gloss(node.gloss)]
         self.text = node.text.lower().strip(',.!?"')
@@ -162,7 +162,7 @@ class TerminalAnnotator(StateAnnotator):
         
         return self.base([])
     
-class StateWriter(InterpretationWriter):
+class ObservableWriter(InterpretationWriter):
     def __init__(self, line, marker: int, *context):
         self.line = line
         self.context = context
@@ -235,7 +235,7 @@ class StateWriter(InterpretationWriter):
             yield write_line(self.context, ''.join(str(annotation) for annotation in annotations), self.line)
     
 
-class StateWriterFactory(WriterFactory):
+class ObservableWriterFactory(WriterFactory):
     def __init__(self, marker: int):
         self.marker = marker
 
@@ -256,4 +256,4 @@ class StateWriterFactory(WriterFactory):
     
     def create(self, *metadata) -> InterpretationWriter:
         _, line, *context = metadata
-        return StateWriter(line, self.marker, *context)
+        return ObservableWriter(line, self.marker, *context)
