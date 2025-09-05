@@ -102,6 +102,10 @@ class Logger(ABC):
     def info(self, message, *args):
         pass
 
+    @abstractmethod
+    def error(self, message, *args):
+        pass
+
 class Utterance:
     def __init__(self, ranking: Ranking, mapper: Mapper, logger: Logger):
         self.nodes: list[SyntaxNode] = []

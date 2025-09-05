@@ -4,6 +4,7 @@ import sys
 
 from structure.formal import SyntaxBuilder
 from structure.functional import Reviewer, count
+from structure.markov import MarkovWriterFactory
 from structure.morphology import MorphologyBuilder, MorphologyGraph
 from structure.pos import PartOfSpeechAnnotatorFactory
 from structure.observable import ObservableAnnotatorFactory, ObservableWriterFactory
@@ -33,6 +34,7 @@ if __name__ == '__main__':
     parser.add_argument('-a', '--annotate', action='store_true')
     parser.add_argument('-O', '--observations', action='store_true')
     parser.add_argument('-m', '--marker', type=int, default=0)
+    parser.add_argument('-M', '--markov', action='store_true')
     parser.add_argument('-G', '--gloss', action='store_true')
     parser.add_argument('-L', '--lower', action='store_true')
     parser.add_argument('-v', '--verbose', action='store_true')
@@ -62,6 +64,9 @@ if __name__ == '__main__':
         writer = GlossWriterFactory()
     elif args.observations:
         writer = ObservableWriterFactory(args.marker)
+        if args.markov:
+            # Only support Markov writer when Observable feature is enabled, as this is coupled with annotation
+            writer = MarkovWriterFactory(ObservableWriterFactory(marker=0))
     else:
         writer = DotWriterFactory()
     

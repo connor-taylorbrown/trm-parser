@@ -17,6 +17,9 @@ class FunctionalLogger(Logger):
     def info(self, message, *args):
         logger.info(message, *args, extra=self.context)
 
+    def error(self, message, *args):
+        logger.error(message, *args, extra=self.context)
+
 
 class InterpretationNode(ABC):
     @abstractmethod
