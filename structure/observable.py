@@ -112,7 +112,7 @@ class NonTerminalAnnotator(ObservableAnnotator):
 class TerminalAnnotator(ObservableAnnotator):
     def __init__(self, node: Terminal, logger: Logger):
         self.gloss = [item for item in Gloss.parse_gloss(node.gloss)]
-        self.text = node.text.lower().strip(',.!?"')
+        self.text = node.text.lower().strip('()[]').strip(',.!?"')
         self.logger = logger
 
     def preposed(self):        
@@ -163,10 +163,9 @@ class TerminalAnnotator(ObservableAnnotator):
         return self.base([])
     
 class ObservableWriter(InterpretationWriter):
-    def __init__(self, line, marker: int, *context):
+    def __init__(self, line, *context):
         self.line = line
         self.context = context
-        self.marker = marker
 
     def traverse(self, node):
         def particles(phrases):
@@ -206,7 +205,7 @@ class ObservableWriter(InterpretationWriter):
     def particles(self, annotations):
         for phrase in annotations:
             marker, _ = phrase
-            yield '.'.join(marker[:self.marker])
+            yield '.'.join(marker)
 
     def bases(self, annotations):
         for phrase in annotations:
@@ -221,6 +220,27 @@ class ObservableWriter(InterpretationWriter):
             for base in bases:
                 yield base
 
+    def phrases(self, annotations):
+        out = []
+        for phrase in annotations:
+            particles, bases = phrase
+            if particles:
+                marker = '.'.join(particles)
+            else:
+                marker = '*'
+            
+            if not bases:
+                out.append(marker + '/')
+                continue
+
+            if isinstance(bases, str):
+                bases = [bases]
+
+            components = [marker, *bases]
+            out.append(' '.join(components) + '/')
+        
+        return ''.join(out).strip('/')
+
     def write(self, node):
         def delimit(v, delimiter: str):
             return delimiter.join(i for i in v)
@@ -229,31 +249,18 @@ class ObservableWriter(InterpretationWriter):
         if not resolved:
             return
         
-        if self.marker:
-            yield write_line(self.context, delimit(self.particles(annotations), '/'), delimit(self.bases(annotations), '/'), self.line)
-        else:
-            yield write_line(self.context, ''.join(str(annotation) for annotation in annotations), self.line)
-    
+        yield write_line(self.context, self.phrases(annotations), delimit(self.particles(annotations), '/'), delimit(self.bases(annotations), '/'), self.line)    
 
 class ObservableWriterFactory(WriterFactory):
-    def __init__(self, marker: int):
-        self.marker = marker
-
     def start(self, *context):
-        if self.marker:
-            return [','.join([
-                *context[:-1],
-                'Particles',
-                'Bases',
-                'Fragment'
-            ]) + '\n']
-        
         return [','.join([
             *context[:-1],
-            'States',
+            'Phrases',
+            'Particles',
+            'Bases',
             'Fragment'
         ]) + '\n']
     
     def create(self, *metadata) -> InterpretationWriter:
         _, line, *context = metadata
-        return ObservableWriter(line, self.marker, *context)
+        return ObservableWriter(line, *context)

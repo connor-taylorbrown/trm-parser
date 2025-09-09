@@ -2,6 +2,8 @@ hmmlearn
 matplotlib
 numpy
 pandas
+pydtmc
+pygraphviz
 pytest
 scipy
 seaborn
