@@ -2,6 +2,7 @@ import argparse
 import csv
 import sys
 
+from structure.annotator import NullAnnotatorFactory
 from structure.formal import SyntaxBuilder
 from structure.functional import Reviewer, count
 from structure.markov import MarkovWriterFactory
@@ -56,6 +57,8 @@ if __name__ == '__main__':
         annotator = PartOfSpeechAnnotatorFactory()
     elif args.observations:
         annotator = ObservableAnnotatorFactory()
+    else:
+        annotator = NullAnnotatorFactory()
         
     reviewer = Reviewer(morphology, syntax_builder, annotator)
     
