@@ -168,14 +168,14 @@ class ObservableWriter(InterpretationWriter):
         self.context = context
 
     def traverse(self, node):
-        def particles(phrases):
-            for phrase in phrases:
+        def particles(interpretation: Interpreter):
+            for phrase in interpretation.annotations:
                 marker, _ = phrase
                 for particle in marker:
                     yield particle
 
         if isinstance(node, Interpreter):
-            return True, node.annotations
+            return True, node
         
         elif not isinstance(node, Organiser):
             raise TypeError
@@ -201,24 +201,6 @@ class ObservableWriter(InterpretationWriter):
         
         logger.info('Unable to resolve ambiguity: %s cannot be preferred to %s', left, right)
         return False, None
-    
-    def particles(self, annotations):
-        for phrase in annotations:
-            marker, _ = phrase
-            yield '.'.join(marker)
-
-    def bases(self, annotations):
-        for phrase in annotations:
-            _, bases = phrase
-            if not bases:
-                continue
-
-            if isinstance(bases, str):
-                yield bases
-                continue
-            
-            for base in bases:
-                yield base
 
     def phrases(self, annotations):
         out = []
@@ -240,24 +222,22 @@ class ObservableWriter(InterpretationWriter):
             out.append(' '.join(components) + '/')
         
         return ''.join(out).strip('/')
+    
+    def fragment(self, interpretation: Interpreter):
+        return '/'.join(str(p) for p in interpretation.utterance.nodes)
 
     def write(self, node):
-        def delimit(v, delimiter: str):
-            return delimiter.join(i for i in v)
-        
-        resolved, annotations = self.traverse(node)
+        resolved, interpretation = self.traverse(node)
         if not resolved:
             return
         
-        yield write_line(self.context, self.phrases(annotations), delimit(self.particles(annotations), '/'), delimit(self.bases(annotations), '/'), self.line)    
+        yield write_line(self.context, self.phrases(interpretation.annotations), self.fragment(interpretation))    
 
 class ObservableWriterFactory(WriterFactory):
     def start(self, *context):
         return [','.join([
             *context[:-1],
             'Phrases',
-            'Particles',
-            'Bases',
             'Fragment'
         ]) + '\n']
     

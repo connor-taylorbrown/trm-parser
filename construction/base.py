@@ -51,7 +51,11 @@ class Construction:
         
         diff = terminal.mat - antecedent.mat
         diff_predicate, diff_verb = diff[0], diff[:,0]
-        return np.sum(diff_predicate) < -self.tol or np.sum(diff_verb) < -self.tol
+        if not terminal.phrase.startswith('*') and np.sum(diff_predicate) < -self.tol:
+            # Do not take empty marker into account
+            return True
+        
+        return np.sum(diff_verb) < -self.tol
     
     def merge(self, antecedent: SyntaxNode):
         head = self.pop()
