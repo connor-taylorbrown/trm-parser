@@ -2,6 +2,7 @@ from abc import abstractmethod
 from structure.annotator import Annotator, AnnotatorFactory
 from structure.formal import Logger, NonTerminal, SyntaxNode, Terminal
 from structure.functional import Interpreter, Organiser
+from structure.passive import PassiveReader
 from structure.writer import InterpretationWriter, WriterFactory, write_line
 
 
@@ -41,6 +42,9 @@ class ObservableAnnotator(Annotator):
     
 
 class ObservableAnnotatorFactory(AnnotatorFactory):
+    def __init__(self, passives: PassiveReader):
+        self.passives = passives
+
     def create(self, node: SyntaxNode, logger: Logger):
         if not node:
             return None
@@ -48,7 +52,7 @@ class ObservableAnnotatorFactory(AnnotatorFactory):
         if isinstance(node, NonTerminal):
             return NonTerminalAnnotator(node.gloss, self.create(node.left, logger), self.create(node.right, logger), logger)
         elif isinstance(node, Terminal):
-            return TerminalAnnotator(node, logger)
+            return TerminalAnnotator(node, self.passives, logger)
         
         raise TypeError
 
@@ -110,9 +114,10 @@ class NonTerminalAnnotator(ObservableAnnotator):
 
 
 class TerminalAnnotator(ObservableAnnotator):
-    def __init__(self, node: Terminal, logger: Logger):
+    def __init__(self, node: Terminal, passives: PassiveReader, logger: Logger):
         self.gloss = [item for item in Gloss.parse_gloss(node.gloss)]
         self.text = node.text.lower().strip('()[]').strip(',.!?"')
+        self.passives = passives
         self.logger = logger
 
     def preposed(self):        
@@ -149,7 +154,12 @@ class TerminalAnnotator(ObservableAnnotator):
         return any('dem' in item for item in self.gloss)
 
     def base(self, marker: list[str]):
-        return (marker, self.text)
+        morphemes = self.passives.match(self.text)
+        if not morphemes:
+            return (marker, self.text)
+        
+        lemma, *_ = morphemes
+        return (marker, lemma)
 
     def annotate(self):
         complex = self.complex()

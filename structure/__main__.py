@@ -7,6 +7,7 @@ from structure.formal import SyntaxBuilder
 from structure.functional import Reviewer, count
 from structure.markov import MarkovWriterFactory
 from structure.morphology import MorphologyBuilder, MorphologyGraph
+from structure.passive import PassiveReader
 from structure.pos import PartOfSpeechAnnotatorFactory
 from structure.observable import ObservableAnnotatorFactory, ObservableWriterFactory
 from structure.writer import DotWriterFactory, GlossWriterFactory
@@ -34,6 +35,7 @@ if __name__ == '__main__':
     parser.add_argument('-c', '--count', action='store_true')
     parser.add_argument('-a', '--annotate', action='store_true')
     parser.add_argument('-O', '--observations', action='store_true')
+    parser.add_argument('-p', '--passives', help='Path to passive lemmatisations')
     parser.add_argument('-M', '--markov', action='store_true')
     parser.add_argument('-G', '--gloss', action='store_true')
     parser.add_argument('-L', '--lower', action='store_true')
@@ -56,7 +58,12 @@ if __name__ == '__main__':
     if args.annotate:
         annotator = PartOfSpeechAnnotatorFactory()
     elif args.observations:
-        annotator = ObservableAnnotatorFactory()
+        if args.passives:
+            passives = PassiveReader.read(args.passives).orthographic()
+        else:
+            passives = PassiveReader(lemmatise={})
+
+        annotator = ObservableAnnotatorFactory(passives)
     else:
         annotator = NullAnnotatorFactory()
         
