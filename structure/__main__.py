@@ -10,6 +10,7 @@ from structure.morphology import MorphologyBuilder, MorphologyGraph
 from structure.passive import PassiveReader
 from structure.pos import PartOfSpeechAnnotatorFactory
 from structure.observable import ObservableAnnotatorFactory, ObservableWriterFactory
+from structure.qtree import QtreeWriterFactory
 from structure.writer import DotWriterFactory, GlossWriterFactory
 
 
@@ -38,6 +39,7 @@ if __name__ == '__main__':
     parser.add_argument('-p', '--passives', help='Path to passive lemmatisations')
     parser.add_argument('-M', '--markov', action='store_true')
     parser.add_argument('-G', '--gloss', action='store_true')
+    parser.add_argument('-q', '--qtree', action='store_true')
     parser.add_argument('-L', '--lower', action='store_true')
     parser.add_argument('-v', '--verbose', action='store_true')
     parser.add_argument('-o', '--output')
@@ -76,6 +78,8 @@ if __name__ == '__main__':
         if args.markov:
             # Only support Markov writer when Observable feature is enabled, as this is coupled with annotation
             writer = MarkovWriterFactory(ObservableWriterFactory())
+    elif args.qtree:
+        writer = QtreeWriterFactory()
     else:
         writer = DotWriterFactory()
     
